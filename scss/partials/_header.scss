@@ -1,0 +1,29 @@
+//home scss
+
+body{
+  #header{
+    .navbar-brand{
+      a{
+        display: inline-block;
+        width: 81px;
+        height: 94px;
+        background: url('/images/hack-logo.png') 0 0 no-repeat;
+        @include image-2x('/images/hack-logo@2x.png', 81px, 94px);
+        @include hide-text();
+      }
+    }
+
+    #main-links{
+      li{
+        a{
+          color: black;
+        }
+        &.active{
+          a{
+            color: green;
+          }
+        }
+      }
+    }
+  }
+}
