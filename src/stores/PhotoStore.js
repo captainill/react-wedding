@@ -17,23 +17,23 @@ function _addPhotos(rawPhotos) {
 
 class PhotoStore extends BaseStore{
 
-  /*static handlers = {
+  static handlers = {
     'RECEIVE_PHOTOS_SUCCESS': 'handlePhotosSuccess'
-  }*/
+  }
 
   constructor (dispatcher) {
     super(dispatcher);
     this.dispatcher = dispatcher; // Provides access to waitFor and getStore methods
   }
 
-  initialize () {
-    _photos = _addPhotos(require('../data/PhotoData'));
-  }
-
-  /*handlePhotosSuccess(payload) {
-    _photos = payload.photos;
-    this.emitChange();
+  /*initialize () {
+    _photos = _addPhotos();
   }*/
+
+  handlePhotosSuccess(payload) {
+    _photos = payload.photos; //set _photos
+    //this.emitChange();
+  }
 
   get(id){
     return _photos[id];

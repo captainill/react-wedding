@@ -6,6 +6,13 @@ const TIMEOUT = 20000;
 
 const PhotoActionCreators = {
 
+  getAllPhotos(context, {}, done) {
+    var rawPhotos = require('../data/PhotoData');
+
+    context.dispatch(Actions.RECEIVE_PHOTOS_SUCCESS, {photos: rawPhotos});
+    done();
+  },
+
   loadPhoto(context, { id, imageSize }, done) {
 
     /*context.service.read("photo", { id }, { timeout: TIMEOUT },
