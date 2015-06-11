@@ -1,10 +1,11 @@
 /**
  *
- *
+ * <Link to="photo" params={{ id: 2 }} query={{ modal: true }}>photo link</Link>
  */
 
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
+import PhotoGroup from './PhotoGroup.jsx'
 import ApplicationStore from '../stores/ApplicationStore';
 import GroupStore from '../stores/GroupStore';
 import PhotoActionCreators from '../actions/PhotoActionCreators';
@@ -30,11 +31,13 @@ class Home extends React.Component {
   }
 
   render() {
-    debug(this.props.groups);
+    let groups = Object.keys(this.props.groups).map(function(id){
+      return <PhotoGroup id={id} />
+    })
     return (
       <div className='home'>
         <p>Home</p>
-        <Link to="photo" params={{ id: 2 }} query={{ modal: true }}>photo link</Link>
+        {groups}
       </div>
     );
 

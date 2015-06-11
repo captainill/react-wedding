@@ -5,6 +5,9 @@
 
 import BaseStore from 'fluxible/addons/BaseStore';
 import makeId from '../utils/makeId';
+import Debug from 'debug';
+
+const debug = Debug('-------  PhotoStore.jsx: ');
 
 let _photos = {};
 
@@ -43,14 +46,14 @@ class PhotoStore extends BaseStore{
     return _photos;
   }
 
-  getAllForGroup(groupID){
-    let groups = [];
+  getPhotosForGroup(groupID){
+    let groupPhotos = [];
     for (let id in _photos) {
       if (_photos[id].group_id === groupID) {
-        groups.push(_photos[id]);
+        groupPhotos.push(_photos[id]);
       }
     }
-    groups.sort(function(a, b) {
+    groupPhotos.sort(function(a, b) {
       if (a.group_id < b.group_id) {
         return -1;
       } else if (a.group_id > b.group_id) {
@@ -58,7 +61,7 @@ class PhotoStore extends BaseStore{
       }
       return 0;
     });
-    return groups;
+    return groupPhotos;
   }
 
   getState() {

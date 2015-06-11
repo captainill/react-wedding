@@ -4,6 +4,7 @@
  */
 
 import BaseStore from 'fluxible/addons/BaseStore';
+import PhotoStore from './PhotoStore';
 import makeId from '../utils/makeId';
 import Debug from 'debug';
 
@@ -23,8 +24,6 @@ class GroupStore extends BaseStore{
   }
 
   handlePhotosSuccess(payload) {
-    debug('handlePhotosSuccess payload=', payload);
-
     let photos = payload.photos;
     photos.forEach(function(photo) {
       let groupID = photo.group_id;
