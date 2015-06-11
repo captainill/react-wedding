@@ -16,16 +16,8 @@ const debug = Debug('-------  Debug');
 
 class Application extends React.Component {
 
-  static propTypes = {
-    // Injected by React Router:
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired
-    }).isRequired
-  }
-
-  constructor(props, router){
+  constructor(props, context){
     super(props);
-    console.log('Appl ', this.props.params, router);
   }
 
   render() {
@@ -33,6 +25,8 @@ class Application extends React.Component {
         'page-loader': true,
         'is-loading': this.props.isLoading
     })
+
+    debug(this.context.router.getCurrentParams());
 
     return (
       <div className={'wrapper ' + this.props.currentRouteName}>
@@ -44,6 +38,10 @@ class Application extends React.Component {
     );
 
   }
+};
+
+Application.contextTypes = {
+    router: React.PropTypes.func.isRequired
 };
 
 Application = provideContext(connectToStores(Application, [ApplicationStore], function(stores){

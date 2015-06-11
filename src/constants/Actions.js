@@ -11,6 +11,8 @@ const Actions = keyMirror({
   LOAD_PHOTO_SUCCESS: null,
   LOAD_PHOTO_FAILURE: null,
 
+  RECEIVE_PHOTOS_SUCCESS: null,
+
 });
 
 export default Actions;

@@ -7,7 +7,7 @@
     "url": "git@github.com:captainill/.git"
   },
   "scripts": {
-    "dev": "NODE_ENV=development supervisor --harmony --ignore build/ -e js index & NODE_ENV=development node hotLoadServer.js",
+    "dev": "NODE_ENV=development supervisor --harmony --ignore build/ -e js src/server/index & NODE_ENV=development node hotLoadServer.js",
     "start": "NODE_ENV=production node .",
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --colors -p",
     "test": "./node_modules/.bin/eslint app",
@@ -48,7 +48,7 @@
     "serve-favicon": "^2.2.0",
     "style-loader": "^0.8.3",
     "superagent": "^1.2.0",
-    "webpack": "^1.9.10"
+    "webpack": "^1.8.8"
   },
   "devDependencies": {
     "babel-eslint": "^2.0.2",
@@ -61,6 +61,6 @@
     "react-hot-loader": "^1.2.7",
     "supervisor": "^0.6.0",
     "url-loader": "^0.5.6",
-    "webpack-dev-server": "^1.9.0"
+    "webpack-dev-server": "^1.8.0"
   }
 }

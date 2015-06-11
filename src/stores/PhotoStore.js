@@ -6,7 +6,7 @@
 import BaseStore from 'fluxible/addons/BaseStore';
 import makeId from '../utils/makeId';
 
-var _photos = {};
+let _photos = {};
 
 function _addPhotos(rawPhotos) {
   rawPhotos.forEach(function(photo) {
@@ -17,9 +17,9 @@ function _addPhotos(rawPhotos) {
 
 class PhotoStore extends BaseStore{
 
-  static handlers = {
-    'PHOTOS_SUCCESS': 'handlePhotosSuccess'
-  }
+  /*static handlers = {
+    'RECEIVE_PHOTOS_SUCCESS': 'handlePhotosSuccess'
+  }*/
 
   constructor (dispatcher) {
     super(dispatcher);
@@ -30,22 +30,22 @@ class PhotoStore extends BaseStore{
     _photos = _addPhotos(require('../data/PhotoData'));
   }
 
-  handlePhotosSuccess(payload) {
+  /*handlePhotosSuccess(payload) {
     _photos = payload.photos;
     this.emitChange();
-  }
+  }*/
 
   get(id){
     return _photos[id];
   }
 
-  getAllPhotos(){
+  getAll(){
     return _photos;
   }
 
   getAllForGroup(groupID){
-    var groups = [];
-    for (var id in _photos) {
+    let groups = [];
+    for (let id in _photos) {
       if (_photos[id].group_id === groupID) {
         groups.push(_photos[id]);
       }
@@ -59,7 +59,7 @@ class PhotoStore extends BaseStore{
       return 0;
     });
     return groups;
-  },
+  }
 
   getState() {
     return {

@@ -1,44 +1,41 @@
 /**
- * 
- * 
+ *
+ *
  */
 
+if (process.env.NODE_ENV === 'development') {
+  console.clear();
+}
 
 require('babel/polyfill');
 
 import React from 'react';
 import debug from 'debug';
-import app from './app/app';
+import app from '../app';
 import Router from'react-router';
-import navigateAction from './app/actions/navigate';
+import navigateAction from '../actions/navigate';
 import FluxibleComponent from 'fluxible/addons/FluxibleComponent';
-
-import './scss/main.scss';
+import '../../scss/main.scss';
 
 window.React = React; // For chrome dev tool support
-debug.enable('*');
-const bootstrapDebug = debug('-------  SaladHacker');
 
-
+const bootstrapDebug = debug('------- ------- ------- -------  Debug');
 const mountNode = document.getElementById('app');
-const dehydratedState = window.App; // Sent from the server
-
+const dehydratedState = window.__DATA__; // Sent from the server
 const routes = app.getComponent();
 const HistoryLocation = Router.HistoryLocation;
-
 
 function RenderApp(context, Handler){
     bootstrapDebug('React Rendering');
 
-    let Component = React.createFactory(Handler);
     let FC = React.createElement(
       FluxibleComponent,
       {context: context.getComponentContext()},
-      Component()
+      React.createElement(Handler)
     );
     React.render(FC, mountNode, function () {
       bootstrapDebug('React Rendered');
-    })    
+    })
 
     /*
     let Component = React.createFactory(Handler);
@@ -53,12 +50,14 @@ app.rehydrate(dehydratedState, function (err, context) {
         throw err;
     }
 
-    console.log('fucking context=', context);
+    //bootstrapDebug('fucking context=', context);
+    // For debugging
+    window.context = context;
 
     const router = Router.create({
       routes,
       location: HistoryLocation,
-      transitionContext: context.getComponentContext(),
+      transitionContext: context,
     });
 
     window.context = context;

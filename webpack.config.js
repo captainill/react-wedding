@@ -5,7 +5,7 @@ var path = require('path');
 
 module.exports = {
   entry: [
-    './client.js',
+    './src/client',
   ],
 
   output: {
@@ -19,13 +19,6 @@ module.exports = {
     new webpack.IgnorePlugin(/vertx/)
   ],
 
-  node: {
-    console: 'empty',
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty'
-  },
-
   module: {
     loaders: [
       { test: /\.(js|jsx)$/, exclude: /node_modules\/(?!react-router)/, loader: 'babel-loader?stage=0' },
@@ -36,14 +29,6 @@ module.exports = {
                     'css?sourceMap!' +
                     'sass?sourceMap'
                 )
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.node$/,
-        loader: 'node-loader'
       },
       // bootstrap
       {
@@ -61,9 +46,4 @@ module.exports = {
       { test: /\.js$/, include: /node_modules\/bootstrap/, loader: 'imports?jQuery=jquery' },
     ],
   },
-
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.node']
-  },
-
 };

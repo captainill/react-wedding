@@ -23,13 +23,13 @@ class Home extends React.Component {
 
   constructor(props, router){
     super(props);
-    console.log('Home meow ', this.props.params, router);
+    console.log('Home meow ', this.props, this.props.params, router);
   }
 
   render() {
 
     return (
-      <div className='photo'>
+      <div className='home'>
         <p>Home</p>
       </div>
     );
@@ -37,8 +37,8 @@ class Home extends React.Component {
   }
 };
 
-/*Photo = provideContext(connectToStores(Application, [ApplicationStore], function(stores){
-  return stores.ApplicationStore.getState();
-}));*/
+Home = provideContext(connectToStores(Home, [GroupStore], function(stores){
+  return stores.GroupStore.getState();
+}));
 
 module.exports = Home;

@@ -10,7 +10,7 @@ export default {
   entry: [
     `webpack-dev-server/client?http://${config.http.host}:${config.webpack.dev.port}`,
     'webpack/hot/dev-server',
-    './client.js',
+    './src/client',
   ],
 
   output: {
@@ -26,13 +26,6 @@ export default {
     new webpack.IgnorePlugin(/vertx/)
   ],
 
-  node: {
-    console: 'empty',
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty'
-  },
-
   module: {
     loaders: [
       { test: /\.(js|jsx)$/, exclude: /node_modules\/(?!react-router)/, loader: 'react-hot!babel-loader?stage=0' },
@@ -45,17 +38,8 @@ export default {
                     '!sass?'
                 )
       },
-      {
-        test: require.resolve('react'),
-        loader: 'expose?React' },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.node$/,
-        loader: 'node-loader'
-      },
+      { test: require.resolve('react'), loader: 'expose?React' },
+
       // bootstrap
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -75,10 +59,6 @@ export default {
         loader: 'file'
       },
     ],
-  },
-
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.node']
   },
 
   devtool: 'source-map',
