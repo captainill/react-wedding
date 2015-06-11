@@ -7,11 +7,12 @@ import React, { PropTypes } from 'react';
 import DocumentTitle from "react-document-title";
 import Photo from './Photo.jsx';
 import Home from './Home.jsx';
+import { provideContext, connectToStores }  from 'fluxible/addons';
 import Debug from 'debug';
 
-const debug = Debug('-------  Debug:');
+const debug = Debug('-------  MainContent.jsx: ');
 
-export default class MainContent extends React.Component{
+class MainContent extends React.Component{
 
   static contextTypes = {
     router: React.PropTypes.func.isRequired
@@ -19,6 +20,7 @@ export default class MainContent extends React.Component{
 
   constructor(props, context){
     super(props);
+
     this.firstRender = true;
   }
 
@@ -48,11 +50,13 @@ export default class MainContent extends React.Component{
       	<div>
         	<p>MainContent</p>
             {contentComponent}
-          ------
-          {modalComponent}
+            ------
+            {modalComponent}
         </div>
       </DocumentTitle>
     );
   }
 
 }
+
+module.exports = MainContent;

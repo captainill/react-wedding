@@ -1,18 +1,22 @@
 /**
  *
- *
+ * //photo/1?modal=true
  */
 
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import ApplicationStore from '../stores/ApplicationStore';
+import PhotoStore from '../stores/PhotoStore';
 import { provideContext, connectToStores }  from 'fluxible/addons';
 import { RouteHandler } from 'react-router';
 import Debug from 'debug';
 
-const debug = Debug('-------  Debug');
+const debug = Debug('-------  Photo.jsx: ');
 
 class Photo extends React.Component {
+
+  static contextTypes = {
+    router: React.PropTypes.func.isRequired
+  }
 
   constructor(props, router){
     super(props);
@@ -29,8 +33,8 @@ class Photo extends React.Component {
   }
 };
 
-/*Photo = provideContext(connectToStores(Application, [ApplicationStore], function(stores){
-  return stores.ApplicationStore.getState();
-}));*/
+Photo = connectToStores(Photo, [PhotoStore], function(stores){
+  return stores.PhotoStore.getState();
+});
 
 module.exports = Photo;

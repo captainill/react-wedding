@@ -12,7 +12,7 @@ import { provideContext, connectToStores }  from 'fluxible/addons';
 import { RouteHandler } from 'react-router';
 import Debug from 'debug';
 
-const debug = Debug('-------  Debug');
+const debug = Debug('-------  Application.jsx: ');
 
 class Application extends React.Component {
 
