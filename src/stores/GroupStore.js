@@ -7,6 +7,7 @@ import BaseStore from 'fluxible/addons/BaseStore';
 import PhotoStore from './PhotoStore';
 import makeId from '../utils/makeId';
 import Debug from 'debug';
+import { map } from 'lodash';
 
 const debug = Debug('-------  GroupStore.jsx: ');
 
@@ -23,9 +24,14 @@ class GroupStore extends BaseStore{
     this.dispatcher = dispatcher; // Provides access to waitFor and getStore methods
   }
 
+  //hack
+  init(payload){
+    this.handlePhotosSuccess({ photos: payload});
+  }
+
   handlePhotosSuccess(payload) {
     let photos = payload.photos;
-    photos.forEach(function(photo) {
+    photos = map(photos, function(photo) {
       let groupID = photo.group_id;
       let group = _groups[groupID];
 

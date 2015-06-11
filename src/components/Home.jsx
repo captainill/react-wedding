@@ -6,8 +6,8 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import PhotoGroup from './PhotoGroup.jsx'
-import ApplicationStore from '../stores/ApplicationStore';
 import GroupStore from '../stores/GroupStore';
+import PhotoStore from '../stores/PhotoStore';
 import PhotoActionCreators from '../actions/PhotoActionCreators';
 import { provideContext, connectToStores }  from 'fluxible/addons';
 import { RouteHandler, Link } from 'react-router';
@@ -27,10 +27,11 @@ class Home extends React.Component {
   }
 
   componentDidMount(){
-    this.context.executeAction(PhotoActionCreators.getAllPhotos);
+    //this.context.executeAction(PhotoActionCreators.getAllPhotos);
   }
 
   render() {
+    debug(this.props.group)
     const _this = this;
     let groups = Object.keys(this.props.groups).map(function(id){
       return <PhotoGroup group={_this.props.groups[id]} />
@@ -45,7 +46,8 @@ class Home extends React.Component {
   }
 };
 
-Home = connectToStores(Home, [GroupStore], function(stores){
+Home = connectToStores(Home, [PhotoStore, GroupStore], function(stores){
+  stores.GroupStore.init(stores.PhotoStore.getAll()); //hack to init groupstore ouside of action flow
   return stores.GroupStore.getState();
 });
 

@@ -9,14 +9,17 @@ import Debug from 'debug';
 
 const debug = Debug('-------  PhotoStore.jsx: ');
 
-let _photos = {};
-
-function _addPhotos(rawPhotos) {
+function _addRawPhotos(rawPhotos) {
+  let photos = {};
   rawPhotos.forEach(function(photo) {
-      photo.id = makeId();
-      _photos[photo.id] = photo;
+    photo.id = makeId();
+    photos[photo.id] = photo;
   });
+
+  return photos;
 }
+
+let _photos = _addRawPhotos(require('../data/PhotoData'));
 
 class PhotoStore extends BaseStore{
 
@@ -28,10 +31,6 @@ class PhotoStore extends BaseStore{
     super(dispatcher);
     this.dispatcher = dispatcher; // Provides access to waitFor and getStore methods
   }
-
-  /*initialize () {
-    _photos = _addPhotos();
-  }*/
 
   handlePhotosSuccess(payload) {
     _photos = payload.photos; //set _photos

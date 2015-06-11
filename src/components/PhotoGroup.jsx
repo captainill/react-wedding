@@ -30,6 +30,7 @@ class PhotoGroup extends React.Component {
   }
 
   render() {
+    debug(this.state.photos);
     var photos = this.state.photos.map(function(photo){
       //return <img src={photo.url} />
       return <p>{photo.url}</p>
