@@ -5,30 +5,51 @@
 
 import React, { PropTypes } from 'react';
 import DocumentTitle from "react-document-title";
+import Photo from './Photo.jsx';
+import Home from './Home.jsx';
 import Debug from 'debug';
 
 const debug = Debug('-------  Debug:');
 
 export default class MainContent extends React.Component{
 
-  static propTypes = {
-    // Injected by React Router:
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired
-    }).isRequired
+  static contextTypes = {
+    router: React.PropTypes.func.isRequired
   }
 
-  constructor(props, router){
+  constructor(props, context){
     super(props);
-    console.log('MainContent: ', this.props.params, router);
+    this.firstRender = true;
+  }
+
+  hasQeuryParams(){
+    return Boolean(this.context.router.getCurrentQuery().modal);
   }
 
   //&#9829
   render() {
+    let contentComponent = null;
+    let modalComponent = null;
+    let showModal = this.hasQeuryParams();
+
+    if(showModal && this.firstRender){
+      contentComponent = <Photo/>;
+    }else{
+      this.firstRender = false;
+      contentComponent = <Home/>;
+
+      if(showModal){
+        modalComponent = <Photo/>;
+      }
+    }
+
     return (
       <DocumentTitle title="Erica Taylor">
       	<div>
         	<p>MainContent</p>
+            {contentComponent}
+          ------
+          {modalComponent}
         </div>
       </DocumentTitle>
     );

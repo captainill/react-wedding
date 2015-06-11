@@ -14,22 +14,15 @@ const debug = Debug('-------  Debug');
 
 class Photo extends React.Component {
 
-  static propTypes = {
-    // Injected by React Router:
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired
-    }).isRequired
-  }
-
   constructor(props, router){
     super(props);
-    console.log('Photo meow ', this.props.params, router);
   }
 
   render() {
 
     return (
       <div className='photo'>
+        <p>Photo</p>
       </div>
     );
 

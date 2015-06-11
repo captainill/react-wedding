@@ -16,6 +16,10 @@ const debug = Debug('-------  Debug');
 
 class Application extends React.Component {
 
+  static contextTypes = {
+    router: React.PropTypes.func.isRequired
+  }
+
   constructor(props, context){
     super(props);
   }
@@ -39,10 +43,6 @@ class Application extends React.Component {
     );
 
   }
-};
-
-Application.contextTypes = {
-    router: React.PropTypes.func.isRequired
 };
 
 Application = provideContext(connectToStores(Application, [ApplicationStore], function(stores){

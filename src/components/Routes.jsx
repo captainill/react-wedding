@@ -8,7 +8,7 @@ import NotFound from './NotFound.jsx';
 var routes = (
   <Route name="app" path="/" handler={Application}>
     <Route name="main" path="/" handler={MainContent}/>
-    <Route name="photo" path="/photo/:id" handler={Photo}/>
+    <Route name="photo" path="/photo/:id" handler={MainContent}/>
     <NotFoundRoute name="not-found" handler={NotFound}/>
   </Route>
 );
