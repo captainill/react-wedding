@@ -12,7 +12,6 @@ import Debug from 'debug';
 import React from 'react';
 import Router from 'react-router';
 import config from './env/config';
-import mongoose from 'mongoose';
 import webpack from './env/webpack-config';
 import app from './app/app';
 import Html from './app/components/Html';
@@ -21,32 +20,6 @@ import FluxibleComponent from 'fluxible/addons/FluxibleComponent';
 const debug = Debug('-------  SaladHacker');
 const HtmlComponent = React.createFactory(Html);
 const fetchr = app.getPlugin("FetchrPlugin");
-let schemas = require('./app/models');
-
-// Connect to mongodb
-let connect = function () {
-  let options = { server: { socketOptions: { keepAlive: 1 } } };
-  return mongoose.connect(process.env.MONGOLAB_URI || config.db, options);
-};
-let connection = connect();
-
-mongoose.connection.on('error', console.log);
-mongoose.connection.on('disconnected', connect);
-
-
-// Bootstrap models
-/*var UserSchema = require('./app/models/user.js').Schema;
-mongoose.model('User', UserSchema);*/
-
-function db (req, res, next) {
-  req.db = {
-    User: connection.model('User', schemas.UserSchema, 'users'),
-    Recipe: connection.model('Recipe', schemas.RecipeSchema, 'recipes'),
-    Counter: connection.model('Counter', schemas.CounterSchema, 'counter')
-  };
-  next();
-}
-
 
 let server = express();
 server.use(favicon(__dirname + '/favicon.ico'));

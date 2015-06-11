@@ -1,13 +1,13 @@
 //import { get } from "../utils/APIUtils";
 
-import { Recipe } from '../models/recipe';
+//import { Recipe } from '../models/recipe';
 
 export default {
-  name: "recipe",
+  name: "photo",
 
   read(req, resource, { id }, config, done) {
   	//console.log('recipe id=', id);
-	  Recipe.find({inc_id: id})
+	  /*Recipe.find({inc_id: id})
 	  .populate('categories')
 	  .populate('author')
 	  .exec(function(err, result) {
@@ -19,7 +19,7 @@ export default {
           done(err);
           console.log('mongo error');
       };
-	  });
+	  });*/
   }
 
 };

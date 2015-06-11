@@ -25,7 +25,7 @@ class Application extends React.Component {
 
   constructor(props, router){
     super(props);
-    console.log('Application: ', this.props.params, router);
+    console.log('Appl ', this.props.params, router);
   }
 
   render() {
