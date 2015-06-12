@@ -54,8 +54,12 @@ class PhotoGroup extends React.Component {
 
   //50% side by side
   wrapFifty(photos){
-    var fiftyPhotos = photos.map(function(photo, i){
-      return <div className="col" key={i} >{photo}</div>
+    const fiftyPhotos = photos.map(function(photo, i){
+      let cls = classNames({
+        'col': true ,
+        '-border-it-black': (photo._store.props['data-src'].indexOf('.gif') != -1)
+      })
+      return <div className={cls} key={i} >{photo}</div>
     })
 
     return (
@@ -68,25 +72,42 @@ class PhotoGroup extends React.Component {
   //60% / 40% grid
   wrapSixFour(photos){
     return (
-      <div className="row">
-        <div className="col col-5-3" key="1">
-          <div className="col col-3-2" key="1">
+      <div className="">
+        <div className="col -w-5-3" key="1">
+          <div className="col -w-3-2" key="1">
             {photos[0]}
           </div>
-          <div className="col col-3-1" key="2">
-            <div className="col col-1" key="1">
+          <div className="col -w-3-1" key="2">
+            <div className="col -w-1" key="1">
               {photos[1]}
             </div>
-            <div className="col col-1" key="2">
+            <div className="col -w-1" key="2">
               {photos[2]}
             </div>
           </div>
-        </div>
-        <div className="col col-5-2" key="2">
-          <div className="col col-1 pb-50" key="1">
-            {photos[3]}
+          <div className="col -w-3-1 -pb-200" key="3">
+            {photos[5]}
           </div>
-          <div className="col col-1 pb-100" key="2">
+          <div className="col -w-3-2 -pb-50" key="4">
+            {photos[5]}
+          </div>
+          <div className="col -w-3-1 -pb-100" key="5">
+            {photos[5]}
+          </div>
+          <div className="col -w-3-2 -pb-50 -pull-1" key="6">
+            {photos[5]}
+          </div>
+        </div>
+        <div className="col -w-5-2" key="2">
+          <div className="clr">
+            <div className="col -w-2-1 -pb-50" key="1">
+              {photos[3]}
+            </div>
+            <div className="col -w-2-1 -pb-100 -box-it-white" key="2">
+              {photos[4]}
+            </div>
+          </div>
+          <div className="col -w-2-2 -pb-100 -push-1" key="3">
             {photos[4]}
           </div>
         </div>
@@ -95,14 +116,14 @@ class PhotoGroup extends React.Component {
   }
 
   render() {
-    var photos = this.state.photos.map(function(photo, i){
-      var style = {
+    const photos = this.state.photos.map(function(photo, i){
+      const style = {
         backgroundImage: 'url(' + photo.url + ')',
       }
       return <a href={'/photo/' + photo.id + '?modal=true'} style={style} data-src={photo.url} key={i}></a>
     })
 
-    var wrapType = this.createTypeWrap(photos);
+    const wrapType = this.createTypeWrap(photos);
 
     return (
       <div className={'photo-group ' + this.props.group.type }>

@@ -25,3 +25,13 @@ a {
 a.active {
   color: hsl(20, 50%, 50%);
 }
+
+.clr{
+  &:after{
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+}

@@ -1,52 +1,141 @@
+$borderSize: 5px;
 //home scss
 .home{
-  background-color: #f2f2f2;
+
 }
 
 .photo-group{
     position: relative;
     width: 100%;
 
+  .-border-it-black{
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      border: 25px solid black;
+      z-index: 10;
+    }
+
+  }
+
+  .-box-it-white{
+    position: relative;
+    &:after, &:before{
+      content: '';
+      position: absolute;
+      height: $borderSize*5;
+      width: 100%;
+      background-color: white;
+      z-index: 10;
+    }
+
+    &:after{
+      bottom: 0;
+      left: 0;
+    }
+
+    &:before{
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .-border-b{
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 5px;
+      width: 100%;
+      background-color: white;
+      z-index: 10;
+    }
+  }
+
+  .-border-r{
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: 5px;
+      background-color: white;
+      z-index: 10;
+    }
+  }
+
   .col{
     display: inline;
     float: left;
 
-    &.col-1{
+    &.-w-1{
       width: 100%;
     }
 
-    &.col-5-4{
+    &.-w-5-4{
       width: 80%;
     }
 
-    &.col-5-3{
+    &.-w-5-3{
       width: 60%;
+
+      .-pull-1{
+        margin-right: -33.33333%;
+      }
     }
 
-    &.col-5-2{
+    &.-w-5-2{
       width: 40%;
+
+      .-push-1{
+        margin-left: 50%;
+      }
     }
 
-    &.col-5-1{
+    &.-w-5-1{
       width: 20%;
     }
 
-    &.col-3-2{
+    &.-w-3-2{
       width: 66.66666667%;
     }
 
-    &.col-3-1{
+    &.-w-3-1{
       width: 33.33333333%;
     }
 
-    &.pb-50{
+    &.-w-2-1{
+      width: 100%;
+    }
+
+    &.-w-2-2{
+      width: 50%;
+    }
+
+    &.-pb-50{
       a{
         padding-bottom: 50%;
       }
     }
-    &.pb-100{
+
+    &.-pb-100{
       a{
         padding-bottom: 100%;
+      }
+    }
+
+    &.-pb-200{
+      a{
+        padding-bottom: 200%;
       }
     }
 
@@ -88,7 +177,7 @@
 
   &.six-four{
     .col{
-      &.col-5-3, &.col-5-2{
+      &.-w-5-3, &.-w-5-2{
 
       }
     }
