@@ -37,7 +37,7 @@ class Home extends React.Component {
   render() {
     const _this = this;
     const groups = map(this.props.groups, function(group){
-      return <PhotoGroup group={group} />
+      return <PhotoGroup group={group} key={group.id} />
     })
 
     return (

@@ -37,6 +37,9 @@ class PhotoGroup extends React.Component {
       case 'fifty':
         return this.wrapFifty(photos);
       break;
+      case 'six-four':
+        return this.wrapSixFour(photos);
+      break;
     }
   }
 
@@ -51,8 +54,8 @@ class PhotoGroup extends React.Component {
 
   //50% side by side
   wrapFifty(photos){
-    var fiftyPhotos = photos.map(function(photo){
-      return <div className="col">{photo}</div>
+    var fiftyPhotos = photos.map(function(photo, i){
+      return <div className="col" key={i} >{photo}</div>
     })
 
     return (
@@ -62,12 +65,41 @@ class PhotoGroup extends React.Component {
     )
   }
 
+  //60% / 40% grid
+  wrapSixFour(photos){
+    return (
+      <div className="row">
+        <div className="col col-5-3" key="1">
+          <div className="col col-3-2" key="1">
+            {photos[0]}
+          </div>
+          <div className="col col-3-1" key="2">
+            <div className="col col-1" key="1">
+              {photos[1]}
+            </div>
+            <div className="col col-1" key="2">
+              {photos[2]}
+            </div>
+          </div>
+        </div>
+        <div className="col col-5-2" key="2">
+          <div className="col col-1 pb-50" key="1">
+            {photos[3]}
+          </div>
+          <div className="col col-1 pb-100" key="2">
+            {photos[4]}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   render() {
-    var photos = this.state.photos.map(function(photo){
+    var photos = this.state.photos.map(function(photo, i){
       var style = {
         backgroundImage: 'url(' + photo.url + ')',
       }
-      return <a href={'/photo/' + photo.id + '?modal=true'} style={style} data-src={photo.url} ></a>
+      return <a href={'/photo/' + photo.id + '?modal=true'} style={style} data-src={photo.url} key={i}></a>
     })
 
     var wrapType = this.createTypeWrap(photos);

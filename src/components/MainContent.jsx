@@ -49,7 +49,6 @@ class MainContent extends React.Component{
       <DocumentTitle title="Erica Taylor">
       	<div>
             {contentComponent}
-            ------
             {modalComponent}
         </div>
       </DocumentTitle>

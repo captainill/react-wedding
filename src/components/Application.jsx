@@ -30,9 +30,6 @@ class Application extends React.Component {
         'is-loading': this.props.isLoading
     })
 
-    debug(this.context.router.getCurrentParams().id);
-    debug(this.context.router.getCurrentQuery()); //http://localhost:8080/photo/1?taken-by=angie__fu
-
     return (
       <div className={'wrapper ' + this.props.currentRouteName}>
         <Nav />

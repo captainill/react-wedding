@@ -22,5 +22,53 @@ module.exports = [
     group_type: 'fifty',
     ratio: 50,
     target_area: null
+  },
+  {
+    url: 'http://d7ut1n2771fln.cloudfront.net/images/DSC_0116.jpg',
+    alt: 'Taylor being ridiculous. Together in the field.',
+    group_id: '3',
+    group_type: 'six-four',
+    ratio: 67,
+    target_area: null
+  },
+  {
+    url: 'http://d7ut1n2771fln.cloudfront.net/images/DSC_0120.jpg',
+    alt: 'Standing together in the field.',
+    group_id: '3',
+    group_type: 'six-four',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: 'http://d7ut1n2771fln.cloudfront.net/images/erica-taylor-gif.gif',
+    alt: 'In Front of the Empress!',
+    group_id: '3',
+    group_type: 'six-four',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: 'http://d7ut1n2771fln.cloudfront.net/images/IMG_6314.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '3',
+    group_type: 'six-four',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: 'http://d7ut1n2771fln.cloudfront.net/images/IMG_6062.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '3',
+    group_type: 'six-four',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: 'http://d7ut1n2771fln.cloudfront.net/images/IMG_6429.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '3',
+    group_type: 'six-four',
+    ratio: 50,
+    target_area: null
   }
 ];

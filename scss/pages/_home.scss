@@ -7,6 +7,51 @@
     position: relative;
     width: 100%;
 
+  .col{
+    display: inline;
+    float: left;
+
+    &.col-1{
+      width: 100%;
+    }
+
+    &.col-5-4{
+      width: 80%;
+    }
+
+    &.col-5-3{
+      width: 60%;
+    }
+
+    &.col-5-2{
+      width: 40%;
+    }
+
+    &.col-5-1{
+      width: 20%;
+    }
+
+    &.col-3-2{
+      width: 66.66666667%;
+    }
+
+    &.col-3-1{
+      width: 33.33333333%;
+    }
+
+    &.pb-50{
+      a{
+        padding-bottom: 50%;
+      }
+    }
+    &.pb-100{
+      a{
+        padding-bottom: 100%;
+      }
+    }
+
+  }
+
   &.feature{
     width: 100%;
     height: auto;
@@ -33,9 +78,23 @@
 
   &.fifty{
     .col{
-      display: inline;
-      float: left;
       width: 50%;
+    }
+
+    a{
+      padding-bottom: 100%;
+    }
+  }
+
+  &.six-four{
+    .col{
+      &.col-5-3, &.col-5-2{
+
+      }
+    }
+
+    a{
+      padding-bottom: 100%;
     }
   }
 
