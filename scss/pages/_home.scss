@@ -198,3 +198,42 @@ $borderSize: 5px;
     overflow: hidden;
   }
 }
+
+@media (max-width: 992px){
+  .photo-group{
+
+    &.six-four{
+      .col{
+        &.-w-5-2{
+          width: 100%;
+
+          .-w-2-2{
+            //width:100%;
+
+            &.-push-1{
+              margin-left: 0;
+            }
+          }
+        }
+
+        &.-box-it-white{
+          width: 50%;
+        }
+      }
+    }
+
+    .col{
+      &.-w-5-3{
+        width: 100%;
+      }
+
+      &.-w-3-2.-pull-1{
+        width: 33.33333%;
+        margin-right: 0;
+        a{
+          padding-bottom: 100%;
+        }
+      }
+    }
+  }
+}
