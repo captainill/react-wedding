@@ -1,6 +1,6 @@
 /**
- * 
- * 
+ *
+ *
  */
 
 import BaseStore from 'fluxible/addons/BaseStore';
@@ -16,7 +16,7 @@ class ApplicationStore extends BaseStore{
     super(dispatcher);
     this.dispatcher = dispatcher; // Provides access to waitFor and getStore methods
   }
-  
+
   initialize() {
     this.currentRoute = null;
     this.currentRouteName = null;
@@ -32,14 +32,14 @@ class ApplicationStore extends BaseStore{
     this.currentRoute = route;
     this.currentRouteName = route.routes[route.routes.length - 1].name; //deepest route
     this.isLoading = true;
-    
+
     this.emitChange();
   }
 
   handleSuccess(){
     this.isLoading = false;
 
-    this.emitChange();    
+    this.emitChange();
   }
 
   getState() {

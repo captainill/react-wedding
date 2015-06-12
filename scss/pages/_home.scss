@@ -1,5 +1,52 @@
 //home scss
-
 .home{
   background-color: #f2f2f2;
+}
+
+.photo-group{
+    position: relative;
+    width: 100%;
+
+  &.feature{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+
+    &:after{
+      content: 'Erica & Taylor\A Crawford';
+      position: absolute;
+      white-space: pre; /* or pre-wrap */
+      text-align: right;
+      bottom: 50px;
+      right: 50px;
+      line-height: 46px;
+      font-size: 32px;
+      color: white;
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.24);
+    }
+  }
+
+  &.full{
+    width: 100%;
+    height: auto;
+  }
+
+  &.fifty{
+    .col{
+      display: inline;
+      float: left;
+      width: 50%;
+    }
+  }
+
+  a{
+    display: block;
+    transform: translate3d(0, 0, 0);
+    transform-origin: 50% 50%;
+    padding-bottom: 67%;
+    background-position: 50% 50%;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+  }
 }

@@ -2,6 +2,11 @@ import Actions from "../constants/Actions";
 
 const PhotoActionCreators = {
 
+  pageLoaded(context, {}, done){
+    context.dispatch(Actions.CHANGE_ROUTE_SUCCESS);
+    done();
+  },
+
   loadRecipe(context, { id }, done) {
 
     //context.dispatch(Actions.LOAD_RECIPE_START, { id });

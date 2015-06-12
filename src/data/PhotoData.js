@@ -3,7 +3,7 @@ module.exports = [
     url: 'http://d7ut1n2771fln.cloudfront.net/images/DSC_0116.jpg',
     alt: 'Taylor being ridiculous. Together in the field.',
     group_id: '1',
-    group_type: 'full',
+    group_type: 'feature',
     ratio: 67,
     target_area: null
   },

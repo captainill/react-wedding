@@ -4,13 +4,16 @@
  */
 
 import React, { PropTypes } from 'react';
+import { RouteHandler, Link } from 'react-router';
 import classNames from 'classnames';
 import PhotoGroup from './PhotoGroup.jsx'
 import GroupStore from '../stores/GroupStore';
 import PhotoStore from '../stores/PhotoStore';
 import PhotoActionCreators from '../actions/PhotoActionCreators';
+import PageActionCreators from '../actions/PageActionCreators';
+
 import { provideContext, connectToStores }  from 'fluxible/addons';
-import { RouteHandler, Link } from 'react-router';
+import { map } from 'lodash';
 import Debug from 'debug';
 
 const debug = Debug('-------  Home.jsx: ');
@@ -28,17 +31,17 @@ class Home extends React.Component {
 
   componentDidMount(){
     //this.context.executeAction(PhotoActionCreators.getAllPhotos);
+    this.context.executeAction(PageActionCreators.pageLoaded);
   }
 
   render() {
-    debug(this.props.group)
     const _this = this;
-    let groups = Object.keys(this.props.groups).map(function(id){
-      return <PhotoGroup group={_this.props.groups[id]} />
+    const groups = map(this.props.groups, function(group){
+      return <PhotoGroup group={group} />
     })
+
     return (
       <div className='home'>
-        <p>Home</p>
         {groups}
       </div>
     );

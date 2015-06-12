@@ -29,16 +29,52 @@ class PhotoGroup extends React.Component {
     }
   }
 
-  render() {
-    debug(this.state.photos);
-    var photos = this.state.photos.map(function(photo){
-      //return <img src={photo.url} />
-      return <p>{photo.url}</p>
-    })
+  createTypeWrap(photos){
+    switch(this.props.group.type){
+      case 'feature':
+        return this.wrapFeature(photos);
+      break;
+      case 'fifty':
+        return this.wrapFifty(photos);
+      break;
+    }
+  }
+
+  //full row with padding
+  wrapFeature(photos){
     return (
-      <div className='photo-group'>
-        <p>PhotoGroup {this.props.group.id}</p>
+      <div className="row feature-padding">
         {photos}
+      </div>
+    )
+  }
+
+  //50% side by side
+  wrapFifty(photos){
+    var fiftyPhotos = photos.map(function(photo){
+      return <div className="col">{photo}</div>
+    })
+
+    return (
+      <div className="row">
+          {fiftyPhotos}
+      </div>
+    )
+  }
+
+  render() {
+    var photos = this.state.photos.map(function(photo){
+      var style = {
+        backgroundImage: 'url(' + photo.url + ')',
+      }
+      return <a href={'/photo/' + photo.id + '?modal=true'} style={style} data-src={photo.url} ></a>
+    })
+
+    var wrapType = this.createTypeWrap(photos);
+
+    return (
+      <div className={'photo-group ' + this.props.group.type }>
+        {wrapType}
       </div>
     );
 

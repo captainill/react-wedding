@@ -48,7 +48,6 @@ class MainContent extends React.Component{
     return (
       <DocumentTitle title="Erica Taylor">
       	<div>
-        	<p>MainContent</p>
             {contentComponent}
             ------
             {modalComponent}
