@@ -5,6 +5,7 @@
 require('babel/register');
 
 import path from 'path';
+import url from 'url';
 import express from 'express';
 import favicon from 'serve-favicon';
 import serialize from 'serialize-javascript';
@@ -29,6 +30,14 @@ server.use(favicon(path.join(__dirname, '..', '..', '/favicon.ico')));
 server.use('/public', express.static(path.join(__dirname, '..', '..', 'build')));
 server.use(fetchrPlugin.getXhrPath(), fetchrPlugin.getMiddleware()); //use fetchr middleware
 server.use(function (req, res, next) {
+
+  //app is not using query params on server so we remove them if a url
+  //comes to the server with them
+  if(Object.keys(req.query).length !== 0){
+    const path = url.parse(req.url).pathname;
+    return res.redirect(path);
+  }
+
   let context = app.createContext();
   let routes = app.getComponent();
   let location = req.path;

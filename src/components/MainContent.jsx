@@ -35,13 +35,13 @@ class MainContent extends React.Component{
     let showModal = this.hasQeuryParams();
 
     if(showModal && this.firstRender){
-      contentComponent = <Photo/>;
+      contentComponent = <Photo key={'photo'}/>;
     }else{
       this.firstRender = false;
-      contentComponent = <Home/>;
+      contentComponent = <Home key={'home'}/>;
 
       if(showModal){
-        modalComponent = <Photo/>;
+        modalComponent = <Photo key={'photo'}/>;
       }
     }
 

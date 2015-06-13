@@ -7,7 +7,7 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import PhotoStore from '../stores/PhotoStore';
 import { provideContext, connectToStores }  from 'fluxible/addons';
-import { RouteHandler } from 'react-router';
+import { RouteHandler, Link } from 'react-router';
 import Debug from 'debug';
 
 const debug = Debug('-------  PhotoGroup.jsx: ');
@@ -118,7 +118,7 @@ class PhotoGroup extends React.Component {
       const style = {
         backgroundImage: 'url(' + photo.url + ')',
       }
-      return <a href={'/photo/' + photo.id + '?modal=true'} style={style} data-src={photo.url} key={i}></a>
+      return <Link to="photo" params={{id: photo.id}} query={{modal: true}} style={style} data-src={photo.url} key={i} />
     })
 
     const wrapType = this.createTypeWrap(photos);

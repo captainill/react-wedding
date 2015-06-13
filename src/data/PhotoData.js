@@ -64,7 +64,7 @@ module.exports = [
     target_area: null
   },
   {
-    url: 'http://d7ut1n2771fln.cloudfront.net/images/IMG_6429.jpg',
+    url: 'http://d7ut1n2771fln.cloudfront.net/images/IMG_6126.jpg',
     alt: 'In Front of the Empress!',
     group_id: '3',
     group_type: 'six-four',
