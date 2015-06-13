@@ -19,6 +19,7 @@ $borderSize: 5px;
       width: 100%;
       border: 25px solid black;
       z-index: 10;
+      pointer-events: none;
     }
 
   }
