@@ -34,6 +34,10 @@ class Home extends React.Component {
     this.context.executeAction(PageActionCreators.pageLoaded);
   }
 
+  /*shouldComponentUpdate(nextProps, nextState) {
+    return false;
+  }*/
+
   render() {
     const _this = this;
     const groups = map(this.props.groups, function(group){
