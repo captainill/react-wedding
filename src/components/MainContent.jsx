@@ -5,7 +5,8 @@
 
 import React, { PropTypes } from 'react';
 import DocumentTitle from "react-document-title";
-import Photo from './Photo.jsx';
+import PhotoPage from './PhotoPage.jsx';
+import PhotoModal from './PhotoModal.jsx';
 import Home from './Home.jsx';
 import { provideContext, connectToStores }  from 'fluxible/addons';
 import Debug from 'debug';
@@ -20,28 +21,36 @@ class MainContent extends React.Component{
 
   constructor(props, context){
     super(props);
-
-    this.firstRender = true;
   }
 
-  hasQeuryParams(){
+  hasQeury(){
     return Boolean(this.context.router.getCurrentQuery().modal);
+  }
+
+  hasParams(){
+    return Boolean(this.context.router.getCurrentParams().id);
+  }
+
+  getIdParam(){
+    return this.context.router.getCurrentParams().id;
   }
 
   //&#9829
   render() {
     let contentComponent = null;
     let modalComponent = null;
-    let showModal = this.hasQeuryParams();
+    let isModal = this.hasQeury();
+    let isPhotoPage = this.hasParams();
 
-    if(showModal && this.firstRender){
-      contentComponent = <Photo key={'photo'}/>;
+    if(!isModal && isPhotoPage){
+      contentComponent = <PhotoPage photoId={this.getIdParam()} key={'photo'}/>;
     }else{
-      this.firstRender = false;
       contentComponent = <Home key={'home'}/>;
 
-      if(showModal){
-        modalComponent = <Photo key={'photo'}/>;
+      if(isModal){
+        modalComponent = (
+          <PhotoModal photoId={this.getIdParam()}/>
+        )
       }
     }
 

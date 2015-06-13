@@ -26,15 +26,11 @@ class Photo extends React.Component {
 
     return (
       <div className='photo'>
-        <p>Photo</p>
+        <img src={this.props.photo.url} />
       </div>
     );
 
   }
 };
-
-Photo = connectToStores(Photo, [PhotoStore], function(stores){
-  return stores.PhotoStore.getState();
-});
 
 module.exports = Photo;

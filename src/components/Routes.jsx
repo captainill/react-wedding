@@ -6,7 +6,7 @@ import Photo from './Photo.jsx';
 import NotFound from './NotFound.jsx';
 
 var routes = (
-  <Route name="app" path="/" handler={Application}>
+  <Route name="home" path="/" handler={Application}>
     <Route name="main" path="/" handler={MainContent}/>
     <Route name="photo" path="/photo/:id" handler={MainContent}/>
     <NotFoundRoute name="not-found" handler={NotFound}/>
