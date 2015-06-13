@@ -3,3 +3,4 @@ node_modules
 npm-debug.log
 assets/client.js
 assets/styles.css
+assets/images

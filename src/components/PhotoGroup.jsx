@@ -4,10 +4,11 @@
  */
 
 import React, { PropTypes } from 'react';
+import { RouteHandler, Link } from 'react-router';
+import { provideContext, connectToStores }  from 'fluxible/addons';
 import classNames from 'classnames';
 import PhotoStore from '../stores/PhotoStore';
-import { provideContext, connectToStores }  from 'fluxible/addons';
-import { RouteHandler, Link } from 'react-router';
+import Config from '../constants/Config';
 import Debug from 'debug';
 
 const debug = Debug('-------  PhotoGroup.jsx: ');
@@ -55,9 +56,10 @@ class PhotoGroup extends React.Component {
   //50% side by side
   wrapFifty(photos){
     const fiftyPhotos = photos.map(function(photo, i){
+      console.log(photo)
       let cls = classNames({
         'col': true ,
-        '-border-it-black': (photo._store.props['data-src'].indexOf('.gif') != -1)
+        '-border-it-black': (photo.props['data-src'].indexOf('.gif') != -1)
       })
       return <div className={cls} key={i} >{photo}</div>
     })
@@ -116,7 +118,7 @@ class PhotoGroup extends React.Component {
   render() {
     const photos = this.state.photos.map(function(photo, i){
       const style = {
-        backgroundImage: 'url(' + photo.url + ')',
+        backgroundImage: 'url(' + Config.imagePath + photo.url + ')',
       }
       return <Link to="photo" params={{id: photo.id}} query={{modal: true}} style={style} data-src={photo.url} key={i} />
     })

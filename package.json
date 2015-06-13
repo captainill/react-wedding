@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development supervisor --harmony --ignore build/ -e js src/server/index & NODE_ENV=development node hotLoadServer.js",
-    "start": "NODE_ENV=production node .",
-    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --colors -p",
+    "start": "NODE_ENV=production node src/server/index",
+    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config webpack.config.production.js --progress --colors -p",
     "test": "./node_modules/.bin/eslint app",
     "postinstall": "node_modules/webpack/bin/webpack.js -p",
     "seed-dropdb": "make test"
