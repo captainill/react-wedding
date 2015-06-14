@@ -14,11 +14,13 @@ function _addRawPhotos(rawPhotos) {
   rawPhotos.forEach(function(photo) {
     photo.id = makeId();
     photos[photo.id] = photo;
+    _photosLength++;
   });
 
   return photos;
 }
 
+let _photosLength = 0;
 let _photos = _addRawPhotos(require('../data/PhotoData'));
 
 class PhotoStore extends BaseStore{
@@ -41,8 +43,34 @@ class PhotoStore extends BaseStore{
     return _photos[id];
   }
 
+  previous(id){
+    let photoId = Number(id);
+    debug('previos',photoId, _photosLength)
+    if(photoId < 1){
+      return _photosLength;
+    }else{
+      debug('previous', photoId - 1)
+      return photoId - 1;
+    }
+  }
+
+  next(id){
+    let photoId = Number(id);
+    debug('next',photoId, _photosLength)
+    if(photoId > _photosLength){
+      return _photosLength;
+    }else{
+      debug('previous', photoId + 1)
+      return photoId+1;
+    }
+  }
+
   getAll(){
     return _photos;
+  }
+
+  getLength(){
+    return _photosLength;
   }
 
   getPhotosForGroup(groupID){

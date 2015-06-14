@@ -9,10 +9,32 @@
   z-index: 100;
   text-align: center;
 
-  #photo{
-    img{
-      height: 100%;
-      max-width: 100%;
+  #photo-content{
+    #photo{
+      img{
+        height: 100%;
+        max-width: 100%;
+      }
+    }
+
+    #previous-photo, #next-photo{
+      display: inline-block;
+      /* position: absolute;
+      top: 50%;
+      width: 18px;
+      height: 31px;
+      background: url(/images/schedule-arrow@2x.png) 0 0 no-repeat; */
+    }
+
+    #photo-modal-nav{
+      #previous-photo{
+        left: -31px;
+      }
+
+      #next-photo{
+        right: -31px;
+        margin-left: 15px;
+      }
     }
   }
 }
