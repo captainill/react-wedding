@@ -188,15 +188,31 @@ $borderSize: 5px;
     }
   }
 
-  a{
-    display: block;
-    transform: translate3d(0, 0, 0);
-    transform-origin: 50% 50%;
-    padding-bottom: 67%;
-    background-position: 50% 50%;
-    background-size: cover;
-    cursor: pointer;
-    overflow: hidden;
+  .photo-item{
+    width: 100%;
+    height: auto;
+    background-color: #f2f2f2;
+
+    &.lazy-load{
+      opacity: 0;
+      @include transition(all .2s ease-in);
+
+      &.lazy-load-visible{
+        opacity: 1;
+        @include transition(all .2s ease-in);        
+      }
+    }
+
+    a{
+      display: block;
+      transform: translate3d(0, 0, 0);
+      transform-origin: 50% 50%;
+      padding-bottom: 67%;
+      background-position: 50% 50%;
+      background-size: cover;
+      cursor: pointer;
+      overflow: hidden;
+    }
   }
 }
 
