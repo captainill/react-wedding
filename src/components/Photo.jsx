@@ -4,10 +4,11 @@
  */
 
 import React, { PropTypes } from 'react';
-import classNames from 'classnames';
-import PhotoStore from '../stores/PhotoStore';
-import { provideContext, connectToStores }  from 'fluxible/addons';
 import { RouteHandler } from 'react-router';
+import classNames from 'classnames';
+import { provideContext, connectToStores }  from 'fluxible/addons';
+import PhotoStore from '../stores/PhotoStore';
+import Config from '../constants/Config';
 import Debug from 'debug';
 
 const debug = Debug('-------  Photo.jsx: ');
@@ -26,7 +27,7 @@ class Photo extends React.Component {
 
     return (
       <div id='photo'>
-        <img src={this.props.photo.url} />
+        <img src={Config.imagePath + this.props.photo.url} />
       </div>
     );
 

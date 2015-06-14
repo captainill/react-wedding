@@ -56,7 +56,6 @@ class PhotoGroup extends React.Component {
   //50% side by side
   wrapFifty(photos){
     const fiftyPhotos = photos.map(function(photo, i){
-      console.log(photo)
       let cls = classNames({
         'col': true ,
         '-border-it-black': (photo.props['data-src'].indexOf('.gif') != -1)

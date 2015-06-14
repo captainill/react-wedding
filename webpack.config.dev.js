@@ -26,9 +26,23 @@ export default {
     new webpack.IgnorePlugin(/vertx/)
   ],
 
+  node: {
+    tls: 'empty',
+    net: 'empty',
+    fs: 'empty'
+  },
+
+  resolve: {
+    extensions: [ '', '.js', '.jsx', '.node', '.json' ]
+  },
+
   module: {
     loaders: [
-      { test: /\.(js|jsx)$/, exclude: /node_modules\/(?!react-router)/, loader: 'react-hot!babel-loader?stage=0' },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules\/(?!react-router)/,
+        loader: 'react-hot!babel-loader?stage=0'
+      },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
@@ -38,7 +52,10 @@ export default {
                     '!sass?'
                 )
       },
-      { test: require.resolve('react'), loader: 'expose?React' },
+      {
+        test: require.resolve('react'),
+        loader: 'expose?React'
+      },
 
       // bootstrap
       {
@@ -53,12 +70,35 @@ export default {
         test: /\.(woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url-loader?limit=10000&mimetype=application/font-woff2',
       },
-      { test: /\.js$/, include: /node_modules\/bootstrap/, loader: 'imports?jQuery=jquery' },
-      ,{
-        test: /\.(jpe?g$|gif|png)$/,
-        loader: 'file'
+      {
+        test: /\.js$/,
+        include: /node_modules\/bootstrap/,
+        loader: 'imports?jQuery=jquery'
       },
+      {
+        test: /\.(jpe?g$|gif|png)$/,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
+        test: /\.target.mk$/,
+        loader: 'raw-loader'
+      },
+      {
+        test: /\.node$/,
+        loader: 'node-loader'
+      },
+      {
+        test: /\.md$/,
+        loader: 'html!markdown'
+      }
     ],
+    noParse: [
+      /i18nliner\/dist\/lib\/i18nliner/
+    ]
   },
 
   devtool: 'source-map',
