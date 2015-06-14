@@ -46,7 +46,6 @@ class PhotoGroup extends React.Component {
 
   //full row with padding
   wrapFeature(photo){
-    console.log(photo)
     return (
       <div className="row feature-padding">
         {photo[0].Component}
