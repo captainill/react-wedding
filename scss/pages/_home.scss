@@ -1,5 +1,240 @@
+$borderSize: 5px;
 //home scss
+.home{
 
-body{
-  color: black;
+}
+
+.photo-group{
+    position: relative;
+    width: 100%;
+
+  .-border-it-black{
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      border: 25px solid black;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+  }
+
+  .-box-it-white{
+    position: relative;
+    &:after, &:before{
+      content: '';
+      position: absolute;
+      height: $borderSize*5;
+      width: 100%;
+      background-color: white;
+      z-index: 10;
+    }
+
+    &:after{
+      bottom: 0;
+      left: 0;
+    }
+
+    &:before{
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .-border-b{
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 5px;
+      width: 100%;
+      background-color: white;
+      z-index: 10;
+    }
+  }
+
+  .-border-r{
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: 5px;
+      background-color: white;
+      z-index: 10;
+    }
+  }
+
+  .col{
+    display: inline;
+    float: left;
+
+    &.-w-1{
+      width: 100%;
+    }
+
+    &.-w-5-4{
+      width: 80%;
+    }
+
+    &.-w-5-3{
+      width: 60%;
+
+      .-pull-1{
+        margin-right: -33.33333%;
+      }
+    }
+
+    &.-w-5-2{
+      width: 40%;
+
+      .-push-1{
+        margin-left: 50%;
+      }
+    }
+
+    &.-w-5-1{
+      width: 20%;
+    }
+
+    &.-w-3-2{
+      width: 66.66666667%;
+    }
+
+    &.-w-3-1{
+      width: 33.33333333%;
+    }
+
+    &.-w-2-1{
+      width: 100%;
+    }
+
+    &.-w-2-2{
+      width: 50%;
+    }
+
+    &.-pb-50{
+      a{
+        padding-bottom: 50%;
+      }
+    }
+
+    &.-pb-100{
+      a{
+        padding-bottom: 100%;
+      }
+    }
+
+    &.-pb-200{
+      a{
+        padding-bottom: 200%;
+      }
+    }
+
+  }
+
+  &.feature{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+
+    &:after{
+      content: 'Erica & Taylor\A Crawford';
+      position: absolute;
+      white-space: pre; /* or pre-wrap */
+      text-align: right;
+      bottom: 50px;
+      right: 50px;
+      line-height: 46px;
+      font-size: 32px;
+      color: white;
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.24);
+    }
+  }
+
+  &.full{
+    width: 100%;
+    height: auto;
+  }
+
+  &.fifty{
+    .col{
+      width: 50%;
+    }
+
+    a{
+      padding-bottom: 100%;
+    }
+  }
+
+  &.six-four{
+    .col{
+      &.-w-5-3, &.-w-5-2{
+
+      }
+    }
+
+    a{
+      padding-bottom: 100%;
+    }
+  }
+
+  a{
+    display: block;
+    transform: translate3d(0, 0, 0);
+    transform-origin: 50% 50%;
+    padding-bottom: 67%;
+    background-position: 50% 50%;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 992px){
+  .photo-group{
+
+    &.six-four{
+      .col{
+        &.-w-5-2{
+          width: 100%;
+
+          .-w-2-2{
+            //width:100%;
+
+            &.-push-1{
+              margin-left: 0;
+            }
+          }
+        }
+
+        &.-box-it-white{
+          width: 50%;
+        }
+      }
+    }
+
+    .col{
+      &.-w-5-3{
+        width: 100%;
+      }
+
+      &.-w-3-2.-pull-1{
+        width: 33.33333%;
+        margin-right: 0;
+        a{
+          padding-bottom: 100%;
+        }
+      }
+    }
+  }
 }

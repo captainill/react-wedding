@@ -7,11 +7,11 @@
     "url": "git@github.com:captainill/.git"
   },
   "scripts": {
-    "dev": "NODE_ENV=development supervisor --harmony --ignore build/ -e js index & NODE_ENV=development node hotLoadServer.js",
-    "start": "NODE_ENV=production node .",
-    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --colors -p",
+    "dev": "NODE_ENV=development supervisor --harmony --ignore build/ -e js src/server/index & NODE_ENV=development node hotLoadServer.js",
+    "start": "NODE_ENV=production node src/server/index",
+    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config webpack.config.production.js --progress --colors -p",
     "test": "./node_modules/.bin/eslint app",
-    "postinstall": "node_modules/webpack/bin/webpack.js -p",
+    "postinstall": "node_modules/webpack/bin/webpack.js --config webpack.config.production.js -p",
     "seed-dropdb": "make test"
   },
   "author": "",
@@ -24,7 +24,7 @@
     "babel-runtime": "^5.5.6",
     "bcryptjs": "^2.1.0",
     "body-parser": "^1.6.4",
-    "classnames": "^1.2.0",
+    "classnames": "^2.1.2",
     "cookie-parser": "^1.3.3",
     "css-loader": "^0.9.1",
     "csurf": "^1.6.3",
@@ -32,17 +32,18 @@
     "express": "^4.12.3",
     "express-state": "^1.2.0",
     "extract-text-webpack-plugin": "^0.3.8",
+    "file-loader": "^0.8.4",
     "flux-router-component": "^0.6.0",
     "fluxible": "^0.4.10",
     "fluxible-plugin-fetchr": "^0.2.3",
     "fluxible-plugin-routr": "^0.3.0",
+    "immutable": "3.6.2",
+    "json-loader": "^0.5.2",
     "lodash": "^3.7.0",
-    "mongodb": "^2.0.33",
-    "mongoose": "^4.0.5",
-    "mongoose-findorcreate": "^0.1.2",
-    "mongoose-schema-extend": "^0.1.7",
+    "markdown-loader": "^0.1.2",
     "node-sass": "2.0.1",
     "npm": "^2.7.6",
+    "raw-loader": "^0.5.1",
     "react": "0.13.x",
     "react-document-title": "^1.0.2",
     "react-router": "git://github.com/bobpace/react-router#transitionContext",
@@ -51,19 +52,17 @@
     "serve-favicon": "^2.2.0",
     "style-loader": "^0.8.3",
     "superagent": "^1.2.0",
-    "webpack": "^1.9.10"
+    "webpack": "^1.8.8"
   },
   "devDependencies": {
     "babel-eslint": "^2.0.2",
     "eslint": "^0.17.1",
     "expose-loader": "^0.6.0",
-    "file-loader": "^0.8.4",
-    "json-loader": "^0.5.2",
     "node-loader": "^0.5.0",
     "imports-loader": "^0.6.4",
     "react-hot-loader": "^1.2.7",
     "supervisor": "^0.6.0",
     "url-loader": "^0.5.6",
-    "webpack-dev-server": "^1.9.0"
+    "webpack-dev-server": "^1.8.0"
   }
 }
