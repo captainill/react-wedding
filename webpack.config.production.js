@@ -12,7 +12,7 @@ module.exports = {
     publicPath: '/public'
   },
   resolve: {
-    extensions: [ '', '.js' ]
+    extensions: [ '', '.js', '.jsx' ]
   },
   plugins: [
   new ExtractTextPlugin('style.css'),
@@ -32,8 +32,7 @@ module.exports = {
     loaders: [{
       test: /\.(js|jsx)$/,
       loaders: ['babel?stage=0'],
-      exclude: /node_modules\/(?!react-router)/,
-      include: path.resolve(__dirname, 'src')
+      exclude: /node_modules\/(?!react-router)/
     },
     {
       test: /\.scss$/,

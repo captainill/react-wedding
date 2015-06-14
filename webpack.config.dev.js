@@ -22,7 +22,7 @@ export default {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('style.css'),
     new webpack.IgnorePlugin(/vertx/)
   ],
 
