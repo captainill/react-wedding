@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'assets'),
     filename: 'client.js',
-    publicPath: '/assets'
+    publicPath: '/public'
   },
   resolve: {
     extensions: [ '', '.js' ]
