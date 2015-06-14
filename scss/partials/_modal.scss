@@ -33,34 +33,37 @@
     vertical-align: middle;
     max-width: 100%;
 
-    #photo{
-      img{
-        width: auto;
-        max-width: 100%;
-        height: auto;
-        display: block;
-        line-height: 0;
-        margin: 0 auto;
+    figure{
+      position: relative;
+
+      #photo{
+        img{
+          width: auto;
+          max-width: 100%;
+          height: auto;
+          display: block;
+          line-height: 0;
+          margin: 0 auto;
+        }
       }
-    }
 
-    #previous-photo, #next-photo{
-      display: inline-block;
-      /* position: absolute;
-      top: 50%;
-      width: 18px;
-      height: 31px;
-      background: url(/images/schedule-arrow@2x.png) 0 0 no-repeat; */
-    }
+      #previous-photo, #next-photo{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        width: 18px;
+        height: 31px;
+        background: url(/images/schedule-arrow@2x.png) 0 0 no-repeat;
+        background-size: 18px 31px;
+      }
 
-    #photo-modal-nav{
       #previous-photo{
-        left: -31px;
+        left: 30px;
+        @include flip();        
       }
 
       #next-photo{
-        right: -31px;
-        margin-left: 15px;
+        right: 30px;
       }
     }
   }

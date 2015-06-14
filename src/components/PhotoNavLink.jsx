@@ -33,7 +33,7 @@ class PhotoNavLink extends React.Component {
   render() {
 
     return (
-      <Link to="photo" params={{id: parseInt(this.state.targetId) }} query={{modal: true}}>{this.props.direction}</Link>
+      <Link id={this.props.direction + '-photo'} to="photo" params={{id: parseInt(this.state.targetId) }} query={{modal: true}}></Link>
     );
 
   }
