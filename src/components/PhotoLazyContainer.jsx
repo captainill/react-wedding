@@ -65,6 +65,7 @@ class PhotoLazyContainer extends React.Component {
     const classes = classNames({
       'photo-item': true,
       'lazy-load': true,
+      'animated': this.state.visible, 
       'lazy-load-visible': this.state.visible
     });    
 

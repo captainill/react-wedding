@@ -2,4 +2,4 @@ node_modules
 .DS_Store
 npm-debug.log
 assets/client.js
-assets/styles.css
+assets/style.css

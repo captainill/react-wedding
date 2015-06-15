@@ -208,7 +208,7 @@ $borderSize: 5px;
       @include transition(all .2s ease-in);
 
       &.lazy-load-visible{
-        opacity: 1;
+        animation-name: fadeInUp;
         @include transition(all .2s ease-in);        
       }
     }

@@ -31,7 +31,7 @@ var Html = React.createClass({
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <title>{ DocumentTitle.rewind() }</title>
         <link href='http://fonts.googleapis.com/css?family=Sue+Ellen+Francisco' rel='stylesheet' type='text/css' />
-        <link rel="stylesheet" href={this.props.bundlePath + "/styles.css"} />
+        <link rel="stylesheet" href={this.props.bundlePath + "/style.css"} />
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{__html: this.props.markup}}></div>
