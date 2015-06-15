@@ -123,20 +123,26 @@ $borderSize: 5px;
     }
 
     &.-pb-50{
-      a{
-        padding-bottom: 50%;
+      .photo-item{
+        a{
+          padding-bottom: 50%;
+        }                
       }
     }
 
     &.-pb-100{
-      a{
-        padding-bottom: 100%;
+      .photo-item{
+        a{
+          padding-bottom: 100%;
+        }                
       }
     }
 
     &.-pb-200{
-      a{
-        padding-bottom: 200%;
+      .photo-item{
+        a{
+          padding-bottom: 200%;
+        }        
       }
     }
 
@@ -208,8 +214,10 @@ $borderSize: 5px;
       width: 50%;
     }
 
-    a{
-      padding-bottom: 100%;
+    .photo-item{
+      a{
+        padding-bottom: 100%;
+      }
     }
   }
 
@@ -220,20 +228,38 @@ $borderSize: 5px;
       }
     }
 
-    a{
-      padding-bottom: 100%;
+    .photo-item{
+      a{
+        padding-bottom: 100%;
+      }
     }
   }
 
-  a{
-    display: block;
-    transform: translate3d(0, 0, 0);
-    transform-origin: 50% 50%;
-    padding-bottom: 67%;
-    background-position: 50% 50%;
-    background-size: cover;
-    cursor: pointer;
-    overflow: hidden;
+  .photo-item{
+    display: inline-block;
+    width: 100%;
+    background-color: #f2f2f2;
+
+    &.lazy-load{
+      opacity: 0;
+      @include transition(all .2s ease-in);
+
+      &.lazy-load-visible{
+        animation-name: fadeInUp;
+        @include transition(all .2s ease-in);        
+      }
+    }
+
+    a{
+      display: block;
+      transform: translate3d(0, 0, 0);
+      transform-origin: 50% 50%;
+      padding-bottom: 67%;
+      background-position: 50% 50%;
+      background-size: cover;
+      cursor: pointer;
+      overflow: hidden;
+    }
   }
 }
 
@@ -268,8 +294,10 @@ $borderSize: 5px;
       &.-w-3-2.-pull-1{
         width: 33%;
         margin-right: 0;
-        a{
-          padding-bottom: 100%;
+        .photo-item{
+          a{
+            padding-bottom: 100%;
+          }                  
         }
       }
     }

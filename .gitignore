@@ -3,5 +3,5 @@ node_modules
 npm-debug.log
 assets/client.js
 assets/client.js.map
-assets/styles.css
+assets/style.css
 assets/style.css.map

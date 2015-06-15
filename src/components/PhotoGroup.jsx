@@ -4,8 +4,8 @@
  */
 
 import React, { PropTypes } from 'react';
-import { RouteHandler, Link } from 'react-router';
 import { provideContext, connectToStores }  from 'fluxible/addons';
+import PhotoLazyContainer from './PhotoLazyContainer.jsx';
 import classNames from 'classnames';
 import HeartSvg from './svg/HeartSvg';
 import PhotoStore from '../stores/PhotoStore';
@@ -46,14 +46,14 @@ class PhotoGroup extends React.Component {
   }
 
   //full row with padding
-  wrapFeature(photos){
+  wrapFeature(photo){
     return (
       <div className="row feature-padding">
-        {photos}
         <div id="feature-text">
           <h1><span>Presenting</span><hr/></h1>
           <p><HeartSvg/>Mr. & Mrs. Crawford. Married June 7th in Victoria, BC.</p>
         </div>
+        {photo[0].Component}
       </div>
     )
   }
@@ -63,9 +63,9 @@ class PhotoGroup extends React.Component {
     const fiftyPhotos = photos.map(function(photo, i){
       let cls = classNames({
         'col': true ,
-        '-border-it-black': (photo.props['data-src'].indexOf('.gif') != -1)
+        '-border-it-black': (photo.data.url.indexOf('.gif') != -1)
       })
-      return <div className={cls} key={i} >{photo}</div>
+      return <div className={cls} key={i} >{photo.Component}</div>
     })
 
     return (
@@ -81,38 +81,38 @@ class PhotoGroup extends React.Component {
       <div className="">
         <div className="col -w-5-3" key="1">
           <div className="col -w-3-2" key="1">
-            {photos[0]}
+            {photos[0].Component}
           </div>
           <div className="col -w-3-1" key="2">
             <div className="col -w-1" key="1">
-              {photos[1]}
+              {photos[1].Component}
             </div>
             <div className="col -w-1" key="2">
-              {photos[2]}
+              {photos[2].Component}
             </div>
           </div>
           <div className="col -w-3-1 -pb-200" key="3">
-            {photos[5]}
+            {photos[5].Component}
           </div>
           <div className="col -w-3-2 -pb-50" key="4">
-            {photos[5]}
+            {photos[5].Component}
           </div>
           <div className="col -w-3-1 -pb-100" key="5">
-            {photos[5]}
+            {photos[5].Component}
           </div>
           <div className="col -w-3-2 -pb-50 -pull-1" key="6">
-            {photos[5]}
+            {photos[5].Component}
           </div>
         </div>
         <div className="col -w-5-2" key="2">
             <div className="col -w-2-1 -pb-50" key="1">
-              {photos[3]}
+              {photos[3].Component}
             </div>
             <div className="col -w-2-1 -pb-100 -box-it-white" key="2">
-              {photos[4]}
+              {photos[4].Component}
             </div>
           <div className="col -w-2-2 -pb-100 -push-1" key="3">
-            {photos[4]}
+            {photos[4].Component}
           </div>
         </div>
       </div>
@@ -121,10 +121,11 @@ class PhotoGroup extends React.Component {
 
   render() {
     const photos = this.state.photos.map(function(photo, i){
-      const style = {
-        backgroundImage: 'url(' + Config.imagePath + photo.url + ')',
+      return { 
+        Component: <PhotoLazyContainer photo={photo} key={i}/>,
+        data: photo
       }
-      return <Link to="photo" params={{id: photo.id}} query={{modal: true}} style={style} data-src={photo.url} key={i} />
+
     })
 
     const wrapType = this.createTypeWrap(photos);
