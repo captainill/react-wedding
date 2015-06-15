@@ -4,6 +4,7 @@
  */
 
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { provideContext, connectToStores }  from 'fluxible/addons';
 import PhotoLazyContainer from './PhotoLazyContainer.jsx';
 import classNames from 'classnames';
@@ -47,13 +48,19 @@ class PhotoGroup extends React.Component {
 
   //full row with padding
   wrapFeature(photo){
+    const style = {
+      backgroundImage: 'url(' + Config.imagePath + photo[0].data.url + ')',
+    };
+
     return (
       <div className="row feature-padding">
         <div id="feature-text">
           <h1><span>Presenting</span><hr/></h1>
           <p><HeartSvg/>Mr. & Mrs. Crawford. Married June 7th in Victoria, BC.</p>
         </div>
-        {photo[0].Component}
+        <div className="photo-item">
+          <Link to="photo" params={{id: photo[0].data.id}} query={{modal: true}} style={style} data-src={photo[0].data.url} />
+        </div>
       </div>
     )
   }
