@@ -52,7 +52,7 @@ class PhotoGroup extends React.Component {
         {photos}
         <div id="feature-text">
           <h1><span>Presenting</span><hr/></h1>
-          <p><HeartSvg/>Mr. Mrs. Crawford. Married June 7th in Victoria, BC.</p>
+          <p><HeartSvg/>Mr. & Mrs. Crawford. Married June 7th in Victoria, BC.</p>
         </div>
       </div>
     )
