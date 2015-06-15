@@ -45,23 +45,19 @@ class PhotoStore extends BaseStore{
 
   previous(id){
     let photoId = Number(id);
-    debug('previos',photoId, _photosLength)
-    if(photoId < 1){
+    if(photoId == 1){
       return _photosLength;
     }else{
-      debug('previous', photoId - 1)
       return photoId - 1;
     }
   }
 
   next(id){
     let photoId = Number(id);
-    debug('next',photoId, _photosLength)
-    if(photoId > _photosLength){
-      return _photosLength;
+    if(photoId > _photosLength-1){
+      return 1;
     }else{
-      debug('previous', photoId + 1)
-      return photoId+1;
+      return  photoId + 1;
     }
   }
 

@@ -42,6 +42,8 @@ class MainContent extends React.Component{
     let isModal = this.hasQeury();
     let isPhotoPage = this.hasParams();
 
+    debug(isModal, isPhotoPage)
+
     if(!isModal && isPhotoPage){
       contentComponent = <PhotoPage photoId={this.getIdParam()} key={'photo'}/>;
     }else{

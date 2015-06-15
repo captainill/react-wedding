@@ -39,7 +39,16 @@ class PhotoModal extends React.Component {
   }
 
   closeModal(e){
+    e.preventDefault();
+    e.stopPropagation();
+
     this.context.router.transitionTo('home');
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.state = {
+      photo: this.context.getStore(PhotoStore).get(nextProps.photoId)
+    }
   }
 
   /*previousPhoto(){
@@ -53,8 +62,8 @@ class PhotoModal extends React.Component {
   render() {
 
     return (
-      <div id='photo-modal'>
-        <div id='photo-modal-backdrop' onClick={this.closeModal}></div>
+      <div id='photo-modal' onClick={this.closeModal}>
+        <div id='photo-modal-backdrop'></div>
         <div id='photo-wrap'>
           <div id='photo-content'>
             <figure id='photo-figure'>
