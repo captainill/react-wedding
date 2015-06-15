@@ -1,15 +1,38 @@
 //home scss
+#header{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
 
-body{
-  #header{
+  #heart-svg{
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
+    z-index: 10;
+    top: 45px;
+    left: 50px;
+    @include transition(all .2s ease-in);
 
-    p{
-      margin: 7px 0;
+    &:hover{
+      transform: scale(0.9);
+      -moz-transform: scale(0.9);
+      -webkit-transform: scale(0.9);
+      -o-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      @include transition(all .2s ease-in);
+    }      
+  }
+
+  p{
+    margin: 7px 0;
+  }
+}
+
+@media (min-width: 1140px){
+  #header{
+    #heart-svg{
+      top: 55px;
+      left: 60px;
     }
   }
 }

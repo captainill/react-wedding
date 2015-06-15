@@ -4,15 +4,13 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router';
+import HeartSvg from './svg/HeartSvg';
 
 export default class Nav extends React.Component{
-  contextTypes: {
-      router: React.PropTypes.func.isRequired
-  }
   render() {
     return (
       <nav id="header" className="header">
+      	<HeartSvg/>
       </nav>
     );
   }
