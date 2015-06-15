@@ -7,6 +7,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 import { provideContext, connectToStores }  from 'fluxible/addons';
+import ArrowSvg from './svg/ArrowSvg';
 import PhotoStore from '../stores/PhotoStore';
 import Config from '../constants/Config';
 import Debug from 'debug';
@@ -47,7 +48,9 @@ class PhotoNavLink extends React.Component {
 
   render() {
     return (
-      <a href="#" id={this.props.direction + '-photo'} onClick={this.handleClick}></a>
+      <a href="#" id={this.props.direction + '-photo'} onClick={this.handleClick}>
+        <ArrowSvg/>
+      </a>
     );
   }
 };

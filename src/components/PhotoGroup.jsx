@@ -54,12 +54,12 @@ class PhotoGroup extends React.Component {
 
     return (
       <div className="row feature-padding">
+        <div className="photo-item">
+          <Link to="photo" params={{id: photo[0].data.id}} query={{modal: true}} style={style} data-src={photo[0].data.url} />
+        </div>
         <div id="feature-text">
           <h1><span>Presenting</span><hr/></h1>
           <p><HeartSvg/>Mr. & Mrs. Crawford. Married June 7th in Victoria, BC.</p>
-        </div>
-        <div className="photo-item">
-          <Link to="photo" params={{id: photo[0].data.id}} query={{modal: true}} style={style} data-src={photo[0].data.url} />
         </div>
       </div>
     )

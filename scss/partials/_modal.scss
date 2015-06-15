@@ -14,7 +14,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .8);
   }
 
   #photo-wrap{
@@ -35,44 +35,57 @@
     }
   }
 
+  #photo{
+    position: absolute;
+    //height: calc(100% - 62px);
+    width: 100%;
+    height: calc(100%);
+    padding: 0;
+    overflow: hidden;
+
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-height: 100%;
+      max-width: 100%;
+      @include transform( translate(-50%, -50%) );
+    }
+  }
+
+
   #photo-content{
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    max-width: 100%;
+    width: 100%;
+
+
+    #previous-photo, #next-photo{
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+
+      span{
+        display: inline-block;
+        svg{
+          height: 48px;
+          max-width:100%;
+        } 
+      }       
+    }
+
+    #previous-photo{
+      left: 30px;
+      @include flip();
+    }
+
+    #next-photo{
+      right: 30px;
+    }    
 
     figure{
       position: relative;
-
-      #photo{
-        img{
-          width: auto;
-          max-width: 100%;
-          height: auto;
-          display: block;
-          line-height: 0;
-          margin: 0 auto;
-        }
-      }
-
-      #previous-photo, #next-photo{
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        width: 18px;
-        height: 31px;
-        background: url(/images/schedule-arrow@2x.png) 0 0 no-repeat;
-        background-size: 18px 31px;
-      }
-
-      #previous-photo{
-        left: 30px;
-        @include flip();
-      }
-
-      #next-photo{
-        right: 30px;
-      }
     }
   }
 }
