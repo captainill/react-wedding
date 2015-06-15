@@ -1,21 +1,29 @@
 #photo-modal{
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   z-index: 1043;
   outline: 0!important;
   -webkit-backface-visibility: hidden;
+
+  #photo-modal-backdrop{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .6);
+  }
 
   #photo-wrap{
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
-    top: 0;  
+    top: 0;
     padding: 40px;
-    background-color: rgba(255, 255, 255, .6);
     z-index: 100;
     text-align: center;
 
@@ -23,7 +31,7 @@
       content: '';
       display: inline-block;
       height: 100%;
-      vertical-align: middle;      
+      vertical-align: middle;
     }
   }
 
@@ -59,7 +67,7 @@
 
       #previous-photo{
         left: 30px;
-        @include flip();        
+        @include flip();
       }
 
       #next-photo{
