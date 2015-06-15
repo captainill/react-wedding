@@ -146,18 +146,55 @@ $borderSize: 5px;
     width: 100%;
     height: auto;
     padding: 30px;
+    color: white;
 
-    &:after{
-      content: 'Erica & Taylor\A Crawford';
+    #feature-text{
       position: absolute;
-      white-space: pre; /* or pre-wrap */
-      text-align: right;
-      bottom: 50px;
-      right: 50px;
-      line-height: 46px;
-      font-size: 32px;
-      color: white;
-      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.24);
+      bottom: 300px;
+      right: 100px;
+      max-width: 400px;
+      //font-family: 'Gentium Book Basic', serif;
+      font-family: 'Vollkorn', serif;
+      font-weight: 300;
+
+      h1{
+        margin-bottom: 0px;
+        font-size: 40px;
+        line-height: 26px;
+        @include clearfix();
+
+        span{
+          float: left;
+          top: -52px;
+          margin-right: 10px;
+        }
+
+        hr{
+          width: 172px;
+          height: 3px;
+          margin-top: 12px;
+          background-color: white;
+          float: left;
+        }
+      }
+
+      p{
+        position: relative;
+        font-size: 16px;
+        font-style: italic;
+        margin: 5px 0 0 120px;
+
+        .heart-svg{
+          position: absolute;
+          top: 2px;
+          left: -38px;
+
+          svg{
+            height: 15px;
+            max-width:100%;
+          }
+        }
+      }
     }
   }
 

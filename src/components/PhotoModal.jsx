@@ -54,10 +54,11 @@ class PhotoModal extends React.Component {
 
     return (
       <div id='photo-modal' onClick={this.closeModal}>
+        <div id='photo-modal-backdrop'></div>
         <div id='photo-wrap'>
           <div id='photo-content'>
             <figure id='photo-figure'>
-              <Photo photo={this.state.photo} key={'photo'}/>            
+              <Photo photo={this.state.photo} key={'photo'}/>
               <PhotoNavLink direction='previous' id={this.props.photoId}/>
               <PhotoNavLink direction='next' id={this.props.photoId}/>
             </figure>

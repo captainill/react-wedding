@@ -7,6 +7,7 @@ import React, { PropTypes } from 'react';
 import { RouteHandler, Link } from 'react-router';
 import { provideContext, connectToStores }  from 'fluxible/addons';
 import classNames from 'classnames';
+import HeartSvg from './svg/HeartSvg';
 import PhotoStore from '../stores/PhotoStore';
 import Config from '../constants/Config';
 import Debug from 'debug';
@@ -49,6 +50,10 @@ class PhotoGroup extends React.Component {
     return (
       <div className="row feature-padding">
         {photos}
+        <div id="feature-text">
+          <h1><span>Presenting</span><hr/></h1>
+          <p><HeartSvg/>Mr. Mrs. Crawford. Married June 7th in Victoria, BC.</p>
+        </div>
       </div>
     )
   }

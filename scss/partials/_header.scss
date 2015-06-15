@@ -6,12 +6,17 @@
   width: 100%;
   text-align: center;
 
-  #heart-svg{
+  .heart-svg{
     position: absolute;
     z-index: 10;
     top: 45px;
     left: 50px;
     @include transition(all .2s ease-in);
+
+    svg{
+      height: 40px;
+      max-width:100%;
+    }
 
     &:hover{
       transform: scale(0.9);
@@ -20,7 +25,7 @@
       -o-transform: scale(0.9);
       -ms-transform: scale(0.9);
       @include transition(all .2s ease-in);
-    }      
+    }
   }
 
   p{
