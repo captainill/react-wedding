@@ -9,6 +9,7 @@ import Photo from './Photo.jsx';
 import PhotoNavLink from './PhotoNavLink.jsx';
 import CloseSvg from './svg/CloseSvg.jsx';
 import PhotoStore from '../stores/PhotoStore';
+import BodyClass from '../utils/BodyClass';
 import PageActionCreators from '../actions/PageActionCreators';
 import classNames from 'classnames';
 import Debug from 'debug';
@@ -84,25 +85,27 @@ class PhotoModal extends React.Component {
     })
 
     return (
-      <div id='photo-modal' className={cls} onClick={this.closeModal}>
-        <div id='photo-modal-backdrop'></div>
-        <div id='photo-wrap'>
-          <div className={this.state.direction}>
-            <CSSTransitionGroup component="div" transitionName="example">
-              <Photo photo={this.state.photo} key={this.state.photo.id}/>
-            </CSSTransitionGroup>
+      <BodyClass className={'photo-modal-page'}>
+        <div id='photo-modal' className={cls} onClick={this.closeModal}>
+          <div id='photo-modal-backdrop'></div>
+          <div id='photo-wrap'>
+            <div className={this.state.direction}>
+              <CSSTransitionGroup component="div" transitionName="example">
+                <Photo photo={this.state.photo} key={this.state.photo.id}/>
+              </CSSTransitionGroup>
+            </div>
+            <div id='photo-content'>
+              <figure id='photo-figure'>
+              </figure>
+              <PhotoNavLink direction='previous' id={this.props.photoId}/>
+              <PhotoNavLink direction='next' id={this.props.photoId}/>
+            </div>
           </div>
-          <div id='photo-content'>
-            <figure id='photo-figure'>
-            </figure>
-            <PhotoNavLink direction='previous' id={this.props.photoId}/>
-            <PhotoNavLink direction='next' id={this.props.photoId}/>
-          </div>
+          <Link to="home" id="close-photo">
+            <CloseSvg/>
+          </Link>
         </div>
-        <Link to="home" id="close-photo">
-          <CloseSvg/>
-        </Link>
-      </div>
+      </BodyClass>
     );
 
   }

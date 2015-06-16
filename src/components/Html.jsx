@@ -5,10 +5,11 @@
 
 import React from 'react';
 import DocumentTitle from "react-document-title";
+import BodyClass from "../utils/BodyClass";
 import Debug from 'debug';
 import Config from '../constants/Config';
 
-const debug = Debug('-------  SaladHacker');
+const debug = Debug('-------  Wedding App');
 
 /**
  * React class to handle the rendering of the HTML head section
@@ -48,7 +49,7 @@ var Html = React.createClass({
         <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'/>
         <link rel="stylesheet" href={this.props.bundlePath + "/style.css"} />
       </head>
-      <body>
+      <body className={BodyClass.rewind()}>
         <div id="app" dangerouslySetInnerHTML={{__html: this.props.markup}}></div>
       </body>
       <script dangerouslySetInnerHTML={{__html: this.props.state}}></script>

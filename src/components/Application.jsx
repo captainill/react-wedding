@@ -9,6 +9,7 @@ import Nav from './Nav.jsx';
 import Footer from './Footer.jsx';
 import ApplicationStore from '../stores/ApplicationStore';
 import { provideContext, connectToStores }  from 'fluxible/addons';
+import BodyClass from '../utils/BodyClass';
 import { RouteHandler } from 'react-router';
 import Debug from 'debug';
 
@@ -33,16 +34,18 @@ class Application extends React.Component {
     let pageClass = {
         'wrapper': true
     }
-    pageClass[this.props.currentRouteName + ((this.props.currentRoute.query.modal) ? '-modal' : '') +'-page'] = true;
-    pageClass = classNames(pageClass);
+    //pageClass[this.props.currentRouteName + ((this.props.currentRoute.query.modal) ? '-modal' : '') +'-page'] = true;
+    //pageClass = classNames(pageClass);
 
     return (
-      <div className={pageClass}>
+      <BodyClass className={'wrapper'}>
+      <div className>
         <Nav />
         <RouteHandler {...this.props} />
         <Footer />
         <div className={loaderClass}></div>
       </div>
+      </BodyClass>
     );
 
   }

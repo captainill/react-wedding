@@ -51,6 +51,7 @@
     "react": "0.13.x",
     "react-document-title": "^1.0.2",
     "react-router": "git://github.com/bobpace/react-router#transitionContext",
+    "react-side-effect": "^0.3.0",
     "sass-loader": "0.4.2",
     "serialize-javascript": "^1.0.0",
     "serve-favicon": "^2.2.0",

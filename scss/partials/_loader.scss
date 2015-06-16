@@ -14,8 +14,8 @@
 }
 
 .page-loader.is-loading{
-    display: block;
-    //display: none;
+    //display: block;
+    display: none;
     -webkit-animation: shift-rightwards 2s ease-in-out infinite;
     -moz-animation: shift-rightwards 2s ease-in-out infinite;
     -ms-animation: shift-rightwards 2s ease-in-out infinite;
