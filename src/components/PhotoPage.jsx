@@ -23,6 +23,9 @@ class PhotoPage extends React.Component {
     super(props);
 
     this.context = context;
+
+    this.handleResize = this.handleResize.bind(this);
+
     this.state = {
       photo: this.context.getStore(PhotoStore).get(props.photoId)
     }
@@ -30,6 +33,20 @@ class PhotoPage extends React.Component {
 
   componentDidMount(){
     this.context.executeAction(PageActionCreators.pageLoaded);
+
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  }
+
+  componentWillUnmount(){
+    window.removeEventlistener('resize', this.handleResize);
+  }
+
+  handleResize(){
+    const photo = React.findDOMNode(this.refs.photo);
+    let winHeight = (window.innerHeight > 550) ? 550 : window.innerHeight;
+
+    photo.style.height = winHeight + 'px';
   }
 
   render() {
@@ -37,8 +54,7 @@ class PhotoPage extends React.Component {
     return (
       <div id='photo-page'>
         <p>PhotoPage</p>
-        <Photo photo={this.state.photo} key={'photo'}/>
-         <Link to="home">Home</Link>
+        <Photo ref="photo" photo={this.state.photo} key={'photo'}/>
       </div>
     );
 

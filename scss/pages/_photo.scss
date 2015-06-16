@@ -1,5 +1,17 @@
 
 //photo page scss
 #photo-page{
+  #photo{
+    position: relative;
+    width: 100%;
 
+    img{
+      position: absolute;
+      height: 100%;
+      max-width: 100%;
+      top: 0;
+      left: 50%;
+      @include transform( translate(-50%, 0%) );
+    }
+  }
 }
