@@ -38,19 +38,16 @@ class PhotoNavLink extends React.Component {
       targetId: this.context.getStore(PhotoStore)[this.props.direction](nextProps.id)
     }
   }
-  
-  handleClick(e){
-    e.preventDefault();
-    e.stopPropagation();
 
-    this.context.router.transitionTo('photo', {id: parseInt(this.state.targetId) }, {modal: true});
+  handleClick(e){
+    e.stopPropagation();
   }
 
   render() {
     return (
-      <a href="#" id={this.props.direction + '-photo'} onClick={this.handleClick}>
+      <Link id={this.props.direction + '-photo'} to={'photo'} params={{id: this.state.targetId }} query={{modal: true}} onClick={this.handleClick}>
         <ArrowSvg/>
-      </a>
+      </Link>
     );
   }
 };
