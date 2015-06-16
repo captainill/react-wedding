@@ -19,7 +19,40 @@
   }
 
   #back{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    z-index: 2000;
 
+    &:hover{
+      span{
+        svg{
+          @include transform( scale(1.2) );
+          @include transition(all .2s ease-in);
+        }
+      }
+    }
+
+    span{
+      display: inline-block;
+      svg{
+        height: 16px;
+        max-width:100%;
+        @include transition(all .2s ease-in);
+
+        .poly{
+          fill: #000;
+        }
+      }
+
+      &.back-text{
+        margin-left: 5px;
+        vertical-align: top;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 700;
+      }
+    }
   }
 
   #photo{

@@ -6,6 +6,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import Photo from './Photo.jsx';
+import ArrowSvg from './svg/ArrowSvg.jsx';
 import PhotoStore from '../stores/PhotoStore';
 import PageActionCreators from '../actions/PageActionCreators';
 import Debug from 'debug';
@@ -39,7 +40,7 @@ class PhotoPage extends React.Component {
   }
 
   componentWillUnmount(){
-    window.removeEventlistener('resize', this.handleResize);
+    window.removeEventListener('resize', this.handleResize);
   }
 
   handleResize(){
@@ -53,6 +54,10 @@ class PhotoPage extends React.Component {
 
     return (
       <div>
+        <Link to="home" id="back">
+          <ArrowSvg transformSvg='"rotate(180 50 50)"'/>
+          <span className="back-text">Home</span>
+        </Link>
         <Photo ref="photo" photo={this.state.photo} key={'photo'}/>
       </div>
     );
