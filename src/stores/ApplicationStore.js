@@ -4,6 +4,9 @@
  */
 
 import BaseStore from 'fluxible/addons/BaseStore';
+import Debug from 'debug';
+
+const debug = Debug('-------  ApplicationStore.jsx: ');
 
 class ApplicationStore extends BaseStore{
 
@@ -24,7 +27,7 @@ class ApplicationStore extends BaseStore{
   }
 
   handleNavigate(route) {
-
+    
     if (this.currentRoute && route.path === this.currentRoute.path) {
       return;
     }
@@ -55,7 +58,7 @@ class ApplicationStore extends BaseStore{
   }
 
   rehydrate(state) {
-    this.currentRoute = state.route;
+    this.currentRoute = state.currentRoute;
     this.currentRouteName = state.currentRouteName;
     this.isLoading = state.isLoading;
   }

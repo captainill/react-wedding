@@ -25,13 +25,19 @@ class Application extends React.Component {
   }
 
   render() {
-    var loaderClass = classNames({
+    const loaderClass = classNames({
         'page-loader': true,
         'is-loading': this.props.isLoading
     })
 
+    let pageClass = {
+        'wrapper': true
+    }
+    pageClass[this.props.currentRouteName + ((this.props.currentRoute.query.modal) ? '-modal' : '') +'-page'] = true;
+    pageClass = classNames(pageClass);
+
     return (
-      <div className={'wrapper ' + this.props.currentRouteName+'-page'}>
+      <div className={pageClass}>
         <Nav />
         <RouteHandler {...this.props} />
         <Footer />
