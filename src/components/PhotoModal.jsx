@@ -40,7 +40,7 @@ class PhotoModal extends React.Component {
   }
 
   componentDidMount(){
-    this.context.executeAction(PageActionCreators.pageLoaded);
+    //this.context.executeAction(PageActionCreators.pageLoaded);
 
     this.setState({
       didMount: true

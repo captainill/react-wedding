@@ -57,7 +57,7 @@ app.rehydrate(dehydratedState, function (err, context) {
     const router = Router.create({
       routes,
       location: HistoryLocation,
-      transitionContext: context,
+      transitionContext: context.getComponentContext(),
     });
 
     window.context = context;

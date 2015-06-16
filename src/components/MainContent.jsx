@@ -8,7 +8,7 @@ import DocumentTitle from "react-document-title";
 import PhotoPage from './PhotoPage.jsx';
 import PhotoModal from './PhotoModal.jsx';
 import Home from './Home.jsx';
-import { provideContext, connectToStores }  from 'fluxible/addons';
+import PageActionCreators from '../actions/PageActionCreators';
 import Debug from 'debug';
 
 const debug = Debug('-------  MainContent.jsx: ');
@@ -16,11 +16,20 @@ const debug = Debug('-------  MainContent.jsx: ');
 class MainContent extends React.Component{
 
   static contextTypes = {
-    router: React.PropTypes.func.isRequired
+    router: React.PropTypes.func.isRequired,
+    executeAction: React.PropTypes.func.isRequired
+  }
+
+  static async willTransitionTo (transition, params, query, done) {
+    //debug('---------About willTransitionTo ', transition);
+    //transition.context.executeAction(PageActionCreators.pageLoaded);
+    done();
   }
 
   constructor(props, context){
     super(props);
+
+    this.context = context;
   }
 
   hasQeury(){
