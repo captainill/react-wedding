@@ -31,7 +31,7 @@ class Application extends React.Component {
     })
 
     return (
-      <div className={'wrapper ' + this.props.currentRouteName}>
+      <div className={'wrapper ' + this.props.currentRouteName+'-page'}>
         <Nav />
         <RouteHandler {...this.props} />
         <Footer />

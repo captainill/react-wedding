@@ -52,8 +52,7 @@ class PhotoPage extends React.Component {
   render() {
 
     return (
-      <div id='photo-page'>
-        <p>PhotoPage</p>
+      <div>
         <Photo ref="photo" photo={this.state.photo} key={'photo'}/>
       </div>
     );

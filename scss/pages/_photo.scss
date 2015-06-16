@@ -1,6 +1,27 @@
 
 //photo page scss
-#photo-page{
+.photo-page{
+
+  #header{
+    .heart-logo{
+      top: 45px;
+      left: 50px;
+
+      svg{
+        height: 32px;
+        max-width:100%;
+
+        .poly{
+          fill: #000;
+        }
+      }
+    }
+  }
+
+  #back{
+
+  }
+
   #photo{
     position: relative;
     width: 100%;
