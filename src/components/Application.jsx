@@ -39,12 +39,12 @@ class Application extends React.Component {
 
     return (
       <BodyClass className={'wrapper'}>
-      <div className>
-        <Nav />
-        <RouteHandler {...this.props} />
-        <Footer />
-        <div className={loaderClass}></div>
-      </div>
+        <div>
+          <Nav />
+          <RouteHandler {...this.props} />
+          <Footer />
+          <div className={loaderClass}></div>
+        </div>
       </BodyClass>
     );
 

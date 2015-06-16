@@ -6,6 +6,7 @@
 import React, { PropTypes } from 'react';
 import { RouteHandler, Link } from 'react-router';
 import classNames from 'classnames';
+import BodyClass from '../utils/BodyClass';
 import PhotoGroup from './PhotoGroup.jsx'
 import GroupStore from '../stores/GroupStore';
 import PhotoStore from '../stores/PhotoStore';
@@ -45,9 +46,11 @@ class Home extends React.Component {
     })
 
     return (
-      <div className='home'>
-        {groups}
-      </div>
+      <BodyClass className={'home-page'}>
+        <div>
+          {groups}
+        </div>
+      </BodyClass>
     );
 
   }

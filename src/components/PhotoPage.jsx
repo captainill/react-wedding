@@ -5,6 +5,7 @@
 
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import BodyClass from '../utils/BodyClass';
 import Photo from './Photo.jsx';
 import ArrowSvg from './svg/ArrowSvg.jsx';
 import PhotoStore from '../stores/PhotoStore';
@@ -53,13 +54,15 @@ class PhotoPage extends React.Component {
   render() {
 
     return (
-      <div>
-        <Link to="home" id="back">
-          <ArrowSvg transformSvg='"rotate(180 50 50)"'/>
-          <span className="back-text">Home</span>
-        </Link>
-        <Photo ref="photo" photo={this.state.photo} key={'photo'}/>
-      </div>
+      <BodyClass className={'photo-page'}>
+        <div>
+          <Link to="home" id="back">
+            <ArrowSvg transformSvg='"rotate(180 50 50)"'/>
+            <span className="back-text">Home</span>
+          </Link>
+          <Photo ref="photo" photo={this.state.photo} key={'photo'}/>
+        </div>
+      </BodyClass>
     );
 
   }
