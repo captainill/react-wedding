@@ -7,6 +7,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import Photo from './Photo.jsx';
 import PhotoNavLink from './PhotoNavLink.jsx';
+import CloseSvg from './svg/CloseSvg.jsx';
 import PhotoStore from '../stores/PhotoStore';
 import PageActionCreators from '../actions/PageActionCreators';
 import Debug from 'debug';
@@ -64,15 +65,18 @@ class PhotoModal extends React.Component {
     return (
       <div id='photo-modal' onClick={this.closeModal}>
         <div id='photo-modal-backdrop'></div>
-        <Photo photo={this.state.photo} key={'photo'}/>
         <div id='photo-wrap'>
+          <Photo photo={this.state.photo} key={'photo'}/>
           <div id='photo-content'>
             <figure id='photo-figure'>
             </figure>
             <PhotoNavLink direction='previous' id={this.props.photoId}/>
-            <PhotoNavLink direction='next' id={this.props.photoId}/>            
+            <PhotoNavLink direction='next' id={this.props.photoId}/>
           </div>
         </div>
+        <Link to="home" id="close-photo">
+          <CloseSvg/>
+        </Link>
       </div>
     );
 
