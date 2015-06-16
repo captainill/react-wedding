@@ -30,8 +30,6 @@ class PhotoModal extends React.Component {
     super(props);
 
     this.closeModal = this.closeModal.bind(this);
-    /*this.previousPhoto = this.previousPhoto.bind(this);
-    this.nextPhoto = this.nextPhoto.bind(this);*/
 
     this.context = context;
     this.state = {
@@ -58,37 +56,42 @@ class PhotoModal extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const store = this.context.getStore(PhotoStore);
-    debug('will receive', store.getDirection())
-    this.setState({
-      photo: store.get(nextProps.photoId),
-      direction: store.getDirection()
-    })
-  }
+    let direction;
 
-  /*previousPhoto(){
-    this.context.router.transitionTo('photo', {id: parseInt(this.props.photoId) - 1}, {modal: true});
-  }
+    if((nextProps.photoId > this.props.photoId && !(this.props.photoId == 1 && nextProps.photoId == store.getLength())) || (this.props.photoId == store.getLength() && nextProps.photoId == 1)){
+      direction = 'next';
 
-  nextPhoto(){
-    this.context.router.transitionTo('photo', {id: parseInt(this.props.photoId) + 1}, {modal: true});
-  }*/
+      this.setState({
+        photo: store.get(nextProps.photoId),
+        direction: direction
+      })
+    }else{
+      direction = 'previous';
+
+      if(this.props.photoId != nextProps.photoId){
+        this.setState({
+          photo: store.get(nextProps.photoId),
+          direction: direction
+        })
+      }
+    }
+  }
 
   render() {
-
     let cls = classNames({
       'animated': this.state.didMount,
       'modal-visible': this.state.didMount
     })
 
-    debug(this.state.direction)
-
     return (
       <div id='photo-modal' className={cls} onClick={this.closeModal}>
         <div id='photo-modal-backdrop'></div>
         <div id='photo-wrap'>
-          <CSSTransitionGroup component="div" transitionName="example">
-            <Photo photo={this.state.photo} direction={this.state.direction} key={this.state.photo.id}/>
-          </CSSTransitionGroup>
+          <div className={this.state.direction}>
+            <CSSTransitionGroup component="div" transitionName="example">
+              <Photo photo={this.state.photo} direction={this.state.direction} key={this.state.photo.id}/>
+            </CSSTransitionGroup>
+          </div>
           <div id='photo-content'>
             <figure id='photo-figure'>
             </figure>

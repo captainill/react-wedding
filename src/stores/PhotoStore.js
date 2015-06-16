@@ -22,7 +22,6 @@ function _addRawPhotos(rawPhotos) {
 
 let _photosLength = 0;
 let _photos = _addRawPhotos(require('../data/PhotoData'));
-let _direction = null;
 
 class PhotoStore extends BaseStore{
 
@@ -44,14 +43,8 @@ class PhotoStore extends BaseStore{
     return _photos[id];
   }
 
-  getDirection(){
-    return _direction;
-  }
-
   previous(id){
     let photoId = Number(id);
-    debug('do previous')
-    _direction = 'previous';
 
     if(photoId == 1){
       return _photosLength;
@@ -62,8 +55,6 @@ class PhotoStore extends BaseStore{
 
   next(id){
     let photoId = Number(id);
-    debug('do next')
-    _direction = 'next';
 
     if(photoId > _photosLength-1){
       return 1;
