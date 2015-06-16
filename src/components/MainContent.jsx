@@ -3,7 +3,7 @@
  *
  */
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react/addons';
 import DocumentTitle from "react-document-title";
 import PhotoPage from './PhotoPage.jsx';
 import PhotoModal from './PhotoModal.jsx';
@@ -59,8 +59,8 @@ class MainContent extends React.Component{
     return (
       <DocumentTitle title="Erica Taylor">
       	<div>
-            {contentComponent}
-            {modalComponent}
+          {contentComponent}
+          {modalComponent}
         </div>
       </DocumentTitle>
     );

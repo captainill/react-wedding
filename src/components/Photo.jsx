@@ -24,9 +24,15 @@ class Photo extends React.Component {
   }
 
   render() {
-
+    debug(this.props.direction)
+    
+    const cls = classNames({
+      'photo': true,
+      'right': (this.props.direction && (this.props.direction === 'next')),
+      'left': (this.props.direction && (this.props.direction === 'previous'))
+    })
     return (
-      <div id='photo'>
+      <div className={cls}>
         <img src={Config.imagePath + this.props.photo.url} />
       </div>
     );
