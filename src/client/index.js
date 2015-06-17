@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'development') {
 require('babel/polyfill');
 
 import React from 'react';
-import debug from 'debug';
+import Debug from 'debug';
 import app from '../app';
 import Router from'react-router';
 import navigateAction from '../actions/navigate';
@@ -19,15 +19,13 @@ import '../../scss/main.scss';
 
 window.React = React; // For chrome dev tool support
 
-const bootstrapDebug = debug('------- ------- ------- -------  Debug');
+const debug = Debug('------- ------- ------- -------  Debug');
 const mountNode = document.getElementById('app');
 const dehydratedState = window.__DATA__; // Sent from the server
 const routes = app.getComponent();
 const HistoryLocation = Router.HistoryLocation;
 
 function RenderApp(context, Handler){
-    bootstrapDebug('React Rendering');
-
     let FC = React.createElement(
       FluxibleComponent,
       {context: context.getComponentContext()},
@@ -50,7 +48,6 @@ app.rehydrate(dehydratedState, function (err, context) {
         throw err;
     }
 
-    //bootstrapDebug('fucking context=', context);
     // For debugging
     window.context = context;
 

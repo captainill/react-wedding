@@ -50,7 +50,9 @@ class PhotoModal extends React.Component {
 
   componentDidMount(){
     //this.context.executeAction(PageActionCreators.pageLoaded);
-
+    this.setState({
+      didMount: true
+    })
 
   }
 
@@ -70,13 +72,8 @@ class PhotoModal extends React.Component {
     const store = this.context.getStore(PhotoStore);
     let direction;
 
-    debug(typeof nextProps.photoId, typeof this.props.photoId)
-    debug(nextProps.photoId, this.props.photoId, (nextProps.photoId > this.props.photoId));
-
     if((nextProps.photoId > this.props.photoId && !(this.props.photoId == 1 && nextProps.photoId == store.getLength())) || (this.props.photoId == store.getLength() && nextProps.photoId == 1)){
       direction = 'next';
-
-      debug(direction);
 
       this.setState({
         photo: store.get(nextProps.photoId),
@@ -87,16 +84,14 @@ class PhotoModal extends React.Component {
     }else{
       direction = 'previous';
 
-      debug(direction);
-
-      //if(this.props.photoId != nextProps.photoId){
+      if(this.props.photoId != nextProps.photoId){
         this.setState({
           photo: store.get(nextProps.photoId),
           nextId: store.next(nextProps.photoId),
           previousId: store.previous(nextProps.photoId),          
           direction: direction
         })
-      //}
+      }
     }
   }
 
