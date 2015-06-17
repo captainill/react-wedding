@@ -87,7 +87,7 @@ class PhotoModal extends React.Component {
     return (
       <BodyClass className={'photo-modal-page'}>
         <div id='photo-modal' className={cls} onClick={this.closeModal}>
-          <div id='photo-modal-backdrop'></div>
+          <div id='photo-modal-backdrop'></div>       
           <div id='photo-wrap'>
             <div className={this.state.direction}>
               <CSSTransitionGroup component="div" transitionName="example">
@@ -95,15 +95,14 @@ class PhotoModal extends React.Component {
               </CSSTransitionGroup>
             </div>
             <div id='photo-content'>
-              <figure id='photo-figure'>
-              </figure>
-              <PhotoNavLink direction='previous' id={this.props.photoId}/>
-              <PhotoNavLink direction='next' id={this.props.photoId}/>
+              <figure id='photo-figure'></figure>
             </div>
           </div>
           <Link to="home" id="close-photo">
             <CloseSvg/>
           </Link>
+          <PhotoNavLink direction='previous' id={this.props.photoId}/>
+          <PhotoNavLink direction='next' id={this.props.photoId}/>             
         </div>
       </BodyClass>
     );

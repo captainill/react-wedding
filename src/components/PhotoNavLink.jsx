@@ -45,8 +45,8 @@ class PhotoNavLink extends React.Component {
 
   render() {
     return (
-      <Link id={this.props.direction + '-photo'} to={'photo'} params={{id: this.state.targetId }} query={{modal: true}} onClick={this.handleClick}>
-        <ArrowSvg/>
+      <Link className="modal-nav" id={ 'modal-' + this.props.direction} to={'photo'} params={{id: this.state.targetId }} query={{modal: true}} onClick={this.handleClick}>
+        <ArrowSvg transformSvg={(this.props.direction==='previous') ? '"rotate(180 50 50)"' : '""'}/>
       </Link>
     );
   }

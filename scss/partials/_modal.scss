@@ -16,6 +16,17 @@
     #photo-wrap{
       animation-name: fadeInUp;
     }
+
+    .modal-nav{
+      &#modal-previous{
+        -webkit-animation-name: fadeInRight;
+        animation-name: fadeInRight;
+      }
+      &#modal-next{
+        -webkit-animation-name: fadeInLeft;
+        animation-name: fadeInLeft;
+      }
+    }
   }
 
   #photo-modal-backdrop{
@@ -24,7 +35,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0, .88);
+    background-color: rgba(0, 0, 0, .84);
     animation-duration: 1s;
     animation-fill-mode: both;    
   }
@@ -41,6 +52,29 @@
       }
     }
   }
+
+  .modal-nav{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    animation-duration: 1s;
+    animation-fill-mode: both;    
+
+    .wrap-svg{
+      svg{
+        height: 48px;
+      }
+    }
+  }
+
+  #modal-previous{
+    left: 20px;
+  }
+
+  #modal-next{
+    right: 20px;
+  }  
 
   #photo-wrap{
     position: absolute;
@@ -80,28 +114,6 @@
     vertical-align: middle;
     width: 100%;
     height: 100%;
-
-    #previous-photo, #next-photo{
-      display: inline-block;
-      position: absolute;
-      top: 50%;
-      margin-top: -15px;
-
-      .wrap-svg{
-        svg{
-          height: 48px;
-        }
-      }
-    }
-
-    #previous-photo{
-      left: 20px;
-      @include flip();
-    }
-
-    #next-photo{
-      right: 20px;
-    }
 
     figure{
       position: relative;

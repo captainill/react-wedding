@@ -1,0 +1,12 @@
+.wrap-svg{
+  display: inline-block;
+
+  svg{
+    max-width:100%;
+    @include transition(all .2s ease-in);
+    
+    .poly{
+      fill: $white;
+    }    
+  }
+}
