@@ -5,28 +5,27 @@
 
 // Global values
 // --------------------------------------------------
+$header-height: 90px;
+$btn-border-radius: 4px;
+$el-border-radius: 6px;
 
-$header-height:  		   	90px;
-$btn-border-radius:   	4px;
-$el-border-radius:   		6px;
 // colors
 // -------------------------
+$white: #fff;
+$black: #000;
+$pink: #fa6bac;
+$gray-darker: #555;
+$gray: #777;
+$gray-light: #939393;
+$gray-lighter: #979797;
+$pink: #fa6bac;
+$btn-color: #4592C5;
 
-$white: 							#fff;
-$black: 							#000;
-$pink:								#fa6bac;
-$gray-darker: 				#555;
-$gray: 								#777;
-$gray-light:   				#939393;
-$gray-lighter:   			#979797;
-$pink:								#fa6bac;
-$btn-color:  					#4592C5;
-
-$text-shadow: 				1px 1px 1px #000;
-$shadow: 					    $text-shadow;
+$text-shadow: 1px 1px 1px #000;
+$shadow: $text-shadow;
 
 //margin + padding
-$pad: 2em;
+$pad: 20px;
 $small-pad: 30px;
 $med-pad: 70px;
 $large-pad: 120px;

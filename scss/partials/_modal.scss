@@ -43,13 +43,19 @@
   #close-photo{
     display: inline-block;
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 20px;
+    @include logoTransition();
 
     .wrap-svg{
       svg{
-        height: 32px;
+        height: 24px;
       }
+    }
+
+    &:hover{
+      @include transform( scale(1.4) );
+      @include logoTransition();      
     }
   }
 
