@@ -13,12 +13,12 @@
     z-index: 10;
     top: 45px;
     left: 50px;
-    @include logoTransition()
+    @include logoTransition();
 
     svg{
       height: 24px;
       .poly{
-        @include logoTransition()
+        @include logoTransition();
       }
     }
 
@@ -26,11 +26,11 @@
       svg{
         .poly{
           fill: $pink;
-          @include logoTransition()
+          @include logoTransition();
         }
       }
       @include transform( scale(1.4) );
-      @include logoTransition()
+      @include logoTransition();
     }
   }
 

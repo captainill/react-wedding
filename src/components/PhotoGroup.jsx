@@ -99,29 +99,6 @@ class PhotoGroup extends React.Component {
               {photos[2].Component}
             </div>
           </div>
-          <div className="col -w-3-1 -pb-200" key="3">
-            {photos[5].Component}
-          </div>
-          <div className="col -w-3-2 -pb-50" key="4">
-            {photos[5].Component}
-          </div>
-          <div className="col -w-3-1 -pb-100" key="5">
-            {photos[5].Component}
-          </div>
-          <div className="col -w-3-2 -pb-50 -pull-1" key="6">
-            {photos[5].Component}
-          </div>
-        </div>
-        <div className="col -w-5-2" key="2">
-            <div className="col -w-2-1 -pb-50" key="1">
-              {photos[3].Component}
-            </div>
-            <div className="col -w-2-1 -pb-100 -box-it-white" key="2">
-              {photos[4].Component}
-            </div>
-          <div className="col -w-2-2 -pb-100 -push-1" key="3">
-            {photos[4].Component}
-          </div>
         </div>
       </div>
     )
