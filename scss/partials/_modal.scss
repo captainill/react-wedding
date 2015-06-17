@@ -7,13 +7,15 @@
   z-index: 1043;
   outline: 0!important;
   -webkit-backface-visibility: hidden;
-
-  opacity: 0;
   @include transition(all .2s ease-in);
 
   &.modal-visible{
-    animation-name: fadeInUp;
-    @include transition(all .2s ease-in);
+    #photo-modal-backdrop{
+      animation-name: fadeIn;
+    }
+    #photo-wrap{
+      animation-name: fadeInUp;
+    }
   }
 
   #photo-modal-backdrop{
@@ -23,6 +25,8 @@
     top: 0;
     left: 0;
     background-color: rgba(255, 255, 255, .8);
+    animation-duration: 1s;
+    animation-fill-mode: both;    
   }
 
   #close-photo{
@@ -52,6 +56,9 @@
     top: 0;
     //z-index: 100;
     text-align: center;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: .4s;
   }
 
   .photo{
@@ -135,6 +142,12 @@
   transform: translate(0, 50px);
   opacity: 0.01;
 }
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 
 @keyframes fadeOutLeft {
   0% {
