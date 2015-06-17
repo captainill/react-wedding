@@ -87,7 +87,7 @@ class PhotoGroup extends React.Component {
   wrapSixFour(photos){
     return (
       <div className="row">
-        <div className="col -w-5-3" key="1">
+        <div className="col -w-1" key="1">
           <div className="col -w-3-2" key="1">
             {photos[0].Component}
           </div>
