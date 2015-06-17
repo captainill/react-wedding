@@ -70,7 +70,8 @@ class PhotoGroup extends React.Component {
     const fiftyPhotos = photos.map(function(photo, i){
       let cls = classNames({
         'col': true ,
-        '-border-it-black': (photo.data.url.indexOf('.gif') != -1)
+        'left': (i % 2 == 0),
+        'right': !(i % 2 == 0)
       })
       return <div className={cls} key={i} >{photo.Component}</div>
     })
@@ -85,7 +86,7 @@ class PhotoGroup extends React.Component {
   //60% / 40% grid
   wrapSixFour(photos){
     return (
-      <div className="">
+      <div className="row">
         <div className="col -w-5-3" key="1">
           <div className="col -w-3-2" key="1">
             {photos[0].Component}

@@ -38,22 +38,6 @@
   transform: skewY($skew);
 }
 
-@mixin v-nav-style{
-  margin: 0 15px;
-  padding: 0;
-  line-height: 26px;
-  color: #2E2E2E;
-  font-size: 14px;
-  font-weight: 400;
-  @include transition( color 0.3s ease );
-
-  &:hover{
-        color: $blue;
-        @include transition( color 0.3s ease );
-        background-color: transparent;
-    }
-}
-
 @mixin bez-1-transition{
   @include transition( all 300ms ease-in-out );
 }

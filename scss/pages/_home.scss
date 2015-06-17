@@ -74,6 +74,11 @@ $borderSize: 5px;
     }
   }
 
+  .row{
+    padding-bottom: $pad;
+    @include clearfix();
+  }
+
   .col{
     display: inline;
     float: left;
@@ -151,7 +156,6 @@ $borderSize: 5px;
   &.feature{
     width: 100%;
     height: auto;
-    padding: 30px;
     color: white;
 
     #feature-text{
@@ -211,8 +215,19 @@ $borderSize: 5px;
   }
 
   &.fifty{
+    padding-right: $pad;
+    padding-left: $pad;
+
     .col{
       width: 50%;
+  
+      &.left{
+        padding-right: $pad/2;
+      }
+
+      &.right{
+        padding-left: $pad/2;
+      }    
     }
 
     .photo-item{

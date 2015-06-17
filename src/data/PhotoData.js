@@ -1,6 +1,6 @@
 module.exports = [
   {
-    url: '/images/DSC_0116.jpg',
+    url: '/images/DSC_0120.jpg',
     alt: 'Taylor being ridiculous. Together in the field.',
     group_id: '1',
     group_type: 'feature',
@@ -8,7 +8,7 @@ module.exports = [
     target_area: null
   },
   {
-    url: '/images/DSC_0120.jpg',
+    url: '/images/DSC_0116.jpg',
     alt: 'Standing together in the field.',
     group_id: '2',
     group_type: 'fifty',
