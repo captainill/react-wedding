@@ -9,11 +9,6 @@
 
       svg{
         height: 32px;
-        max-width:100%;
-
-        .poly{
-          fill: #000;
-        }
       }
     }
   }
@@ -33,16 +28,9 @@
       }
     }
 
-    span{
-      display: inline-block;
+    .wrap-svg{
       svg{
         height: 16px;
-        max-width:100%;
-        @include transition(all .2s ease-in);
-
-        .poly{
-          fill: #000;
-        }
       }
 
       &.back-text{

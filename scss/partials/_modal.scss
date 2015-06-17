@@ -24,7 +24,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(0,0,0, .88);
     animation-duration: 1s;
     animation-fill-mode: both;    
   }
@@ -35,15 +35,9 @@
     top: 20px;
     right: 20px;
 
-    span{
-      display: inline-block;
+    .wrap-svg{
       svg{
         height: 32px;
-        max-width:100%;
-
-        .poly{
-          fill: #000;
-        }
       }
     }
   }
@@ -93,15 +87,9 @@
       top: 50%;
       margin-top: -15px;
 
-      span{
-        display: inline-block;
+      .wrap-svg{
         svg{
           height: 48px;
-          max-width:100%;
-
-          .poly{
-            fill: #000;
-          }
         }
       }
     }
