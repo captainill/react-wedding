@@ -334,6 +334,9 @@
   @-ms-keyframes $animation-name {
     @content;
   } 
+  @-o-keyframes $animation-name {
+    @content;
+  }   
   @keyframes $animation-name {
     @content;
   }
