@@ -32,13 +32,13 @@ function RenderApp(context, Handler){
       React.createElement(Handler)
     );
     React.render(FC, mountNode, function () {
-      bootstrapDebug('React Rendered');
+      debug('React Rendered');
     })
 
     /*
     let Component = React.createFactory(Handler);
     React.render(Component(), mountNode, function () {
-        bootstrapDebug('React Rendered');
+        debug('React Rendered');
     });*/
 };
 
