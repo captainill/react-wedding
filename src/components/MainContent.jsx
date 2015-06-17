@@ -41,7 +41,7 @@ class MainContent extends React.Component{
   }
 
   getIdParam(){
-    return this.context.router.getCurrentParams().id;
+    return Number(this.context.router.getCurrentParams().id);
   }
 
   //&#9829

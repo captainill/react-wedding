@@ -43,6 +43,9 @@ class PhotoGroup extends React.Component {
       case 'six-four':
         return this.wrapSixFour(photos);
       break;
+      case 'grid-one':
+        return this.wrapGridOne(photos);
+      break;      
     }
   }
 
@@ -104,6 +107,10 @@ class PhotoGroup extends React.Component {
     )
   }
 
+  wrapGridOne(){
+    return null;
+  }
+  
   render() {
     const photos = this.state.photos.map(function(photo, i){
       return { 

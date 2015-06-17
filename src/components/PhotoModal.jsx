@@ -27,25 +27,31 @@ class PhotoModal extends React.Component {
     getStore: React.PropTypes.func.isRequired
   }
 
+  static propTypes = {
+    photoId: React.PropTypes.number.isRequired
+  }
+
   constructor(props, context){
     super(props);
 
-    this.closeModal = this.closeModal.bind(this);
+    let store = context.getStore(PhotoStore);
 
     this.context = context;
     this.state = {
-      photo: this.context.getStore(PhotoStore).get(props.photoId),
+      photo: store.get(props.photoId),
+      nextId: store.next(props.photoId),
+      previousId: store.previous(props.photoId),
       didMount: false,
       direction: null
     }
+
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount(){
     //this.context.executeAction(PageActionCreators.pageLoaded);
 
-    this.setState({
-      didMount: true
-    })
+
   }
 
   closeModal(e){
@@ -55,26 +61,42 @@ class PhotoModal extends React.Component {
     this.context.router.transitionTo('home');
   }
 
+  shouldComponentUpdate(nextProps, nextState){
+    debug('shouldComponentUpdate: ', nextProps.photoId, nextState.previousId, nextState.nextId);
+    return true;
+  }
+
   componentWillReceiveProps(nextProps) {
     const store = this.context.getStore(PhotoStore);
     let direction;
 
+    debug(typeof nextProps.photoId, typeof this.props.photoId)
+    debug(nextProps.photoId, this.props.photoId, (nextProps.photoId > this.props.photoId));
+
     if((nextProps.photoId > this.props.photoId && !(this.props.photoId == 1 && nextProps.photoId == store.getLength())) || (this.props.photoId == store.getLength() && nextProps.photoId == 1)){
       direction = 'next';
 
+      debug(direction);
+
       this.setState({
         photo: store.get(nextProps.photoId),
+        nextId: store.next(nextProps.photoId),
+        previousId: store.previous(nextProps.photoId),
         direction: direction
       })
     }else{
       direction = 'previous';
 
-      if(this.props.photoId != nextProps.photoId){
+      debug(direction);
+
+      //if(this.props.photoId != nextProps.photoId){
         this.setState({
           photo: store.get(nextProps.photoId),
+          nextId: store.next(nextProps.photoId),
+          previousId: store.previous(nextProps.photoId),          
           direction: direction
         })
-      }
+      //}
     }
   }
 
@@ -101,8 +123,8 @@ class PhotoModal extends React.Component {
           <Link to="home" id="close-photo">
             <CloseSvg/>
           </Link>
-          <PhotoNavLink direction='previous' id={this.props.photoId}/>
-          <PhotoNavLink direction='next' id={this.props.photoId}/>             
+          <PhotoNavLink direction='previous' id={this.state.previousId}/>
+          <PhotoNavLink direction='next' id={this.state.nextId}/>             
         </div>
       </BodyClass>
     );

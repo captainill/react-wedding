@@ -105,5 +105,7 @@ module.exports = [
     group_type: 'grid-one',
     ratio: 50,
     target_area: null
-  }  
+  }
+
+
 ];
