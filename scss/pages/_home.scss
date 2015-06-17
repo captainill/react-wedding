@@ -250,7 +250,7 @@ $borderSize: 5px;
   .photo-item{
     display: inline-block;
     width: 100%;
-    background-color: #f2f2f2;
+    background-color: #202020;
 
     &.lazy-load{
       opacity: 0;
@@ -262,7 +262,7 @@ $borderSize: 5px;
       }
     }
 
-    a{
+    .image{
       display: block;
       transform: translate3d(0, 0, 0);
       transform-origin: 50% 50%;
@@ -271,6 +271,13 @@ $borderSize: 5px;
       background-size: cover;
       cursor: pointer;
       overflow: hidden;
+      opacity: 0;
+      @include transition(all .2s ease-in);
+
+      &.image-loaded{
+        opacity: 1;
+        @include transition(all .2s ease-in);
+      }
     }
   }
 }

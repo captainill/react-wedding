@@ -7,6 +7,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 import { provideContext, connectToStores }  from 'fluxible/addons';
+import Image from './Image.jsx';
 import PhotoStore from '../stores/PhotoStore';
 import Config from '../constants/Config';
 import Debug from 'debug';
@@ -58,9 +59,6 @@ class PhotoLazyContainer extends React.Component {
 
   render() {
     const photo = this.props.photo;
-    const style = {
-      backgroundImage: 'url(' + Config.imagePath + this.props.photo.url + ')',
-    }
 
     const classes = classNames({
       'photo-item': true,
@@ -71,7 +69,7 @@ class PhotoLazyContainer extends React.Component {
 
     return (
       <div className={classes}>
-        <Link to="photo" params={{id: photo.id}} query={{modal: true}} style={style} data-src={photo.url} />
+        <Image photo={photo} />
       </div>
     );
 
