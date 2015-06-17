@@ -11,9 +11,11 @@
 
   &.modal-visible{
     #photo-modal-backdrop{
+      -webkit-animation-name: fadeIn;
       animation-name: fadeIn;
     }
     #photo-wrap{
+      -webkit-animation-name: fadeInUp;
       animation-name: fadeInUp;
     }
 
@@ -129,23 +131,23 @@
 
 .modal-enter {
   opacity: 0.01;
-  transform: translate(0, -50px);
-  transition: all .5s ease-in;
+  @include transform( translate(0, -50px) );
+  @include transition( all .5s ease-in );
 }
 
 .modal-enter.modal-enter-active {
-  transform: translate(0, 0);
+  @include transform( translate(0, 0) );
   opacity: 1;
 }
 
 .modal-leave {
-  transform: translate(0, 0);
+  @include transform( translate(0, 0) );
   opacity: 1;
-  transition: all .5s ease-in;
+  @include transition( all .5s ease-in );
 }
 
 .modal-leave.modal-leave-active {
-  transform: translate(0, 50px);
+  @include transform( translate(0, 50px) );
   opacity: 0.01;
 }
 
