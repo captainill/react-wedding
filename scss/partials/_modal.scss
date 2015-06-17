@@ -67,12 +67,21 @@
     top: 50%;
     margin-top: -15px;
     animation-duration: 1s;
-    animation-fill-mode: both;    
+    animation-fill-mode: both;
+    @include logoTransition();      
 
     .wrap-svg{
+      @include logoTransition();
       svg{
-        height: 48px;
+        height: 32px;
       }
+    }
+
+    &:hover{
+      .wrap-svg{
+        @include transform( scale(1.4) );
+        @include logoTransition();        
+      } 
     }
   }
 
