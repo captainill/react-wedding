@@ -3,9 +3,19 @@
 // --------------------------------------------------
 
 
-//
+// App Specific
 // -------------------------
 
+@mixin logoTransition{
+  @include transition(all .4s $easeOutQuint);
+}
+
+@mixin bez-1-transition{
+  @include transition( all 300ms ease-in-out );
+}
+
+// General
+// -------------------------
 @mixin flip{
   -moz-transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
@@ -18,18 +28,6 @@
  	 -webkit-font-smoothing: antialiased;
 }
 
-@mixin consul-gradient-bg() {
-	background: #694a9c; /* Old browsers */
-	background: -moz-linear-gradient(left, #694a9c 0%, #cd2028 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#694a9c), color-stop(100%,#cd2028)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left, #694a9c 0%,#cd2028 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left, #694a9c 0%,#cd2028 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left, #694a9c 0%,#cd2028 100%); /* IE10+ */
-	background: linear-gradient(to right, #694a9c 0%,#cd2028 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#694a9c', endColorstr='#cd2028',GradientType=1 ); /* IE6-9 */
-
-}
-
 @mixin skewY($skew) {
 	-webkit-transform: skewY($skew);
   -moz-transform: skewY($skew);
@@ -37,11 +35,6 @@
   -o-transform: skewY($skew);
   transform: skewY($skew);
 }
-
-@mixin bez-1-transition{
-  @include transition( all 300ms ease-in-out );
-}
-
 
 @keyframes press {
   0% {
@@ -88,20 +81,4 @@
 .animated.flipOutX,
 .animated.flipOutY {
   animation-duration: .75s;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 50%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.fadeInUp {
-  animation-name: fadeInUp;
 }

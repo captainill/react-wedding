@@ -13,16 +13,24 @@
     z-index: 10;
     top: 45px;
     left: 50px;
-    @include transition(all .2s ease-in);
+    @include logoTransition()
 
     svg{
-      height: 32px;
-      max-width:100%;
+      height: 24px;
+      .poly{
+        @include logoTransition()
+      }
     }
 
     &:hover{
-      @include transform( scale(0.9) );
-      @include transition(all .2s ease-in);
+      svg{
+        .poly{
+          fill: $pink;
+          @include logoTransition()
+        }
+      }
+      @include transform( scale(1.4) );
+      @include logoTransition()
     }
   }
 
