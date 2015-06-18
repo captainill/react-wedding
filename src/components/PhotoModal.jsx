@@ -12,6 +12,7 @@ import PhotoStore from '../stores/PhotoStore';
 import BodyClass from '../utils/BodyClass';
 import PageActionCreators from '../actions/PageActionCreators';
 import classNames from 'classnames';
+import addDocumentKeyBoardSupport from '../utils/addDocumentKeyBoardSupport';
 import Debug from 'debug';
 
 const { addons } = React;
@@ -19,6 +20,8 @@ const { CSSTransitionGroup } = addons;
 
 const debug = Debug('-------  PhotoModal.jsx: ');
 
+//right now I can't see a good way to invoke methods of the DecoratedComponent
+//@addDocumentKeyBoardSupport()
 class PhotoModal extends React.Component {
 
   static contextTypes = {
@@ -46,26 +49,7 @@ class PhotoModal extends React.Component {
     }
 
     this.closeModal = this.closeModal.bind(this);
-  }
-
-  componentDidMount(){
-    //this.context.executeAction(PageActionCreators.pageLoaded);
-    this.setState({
-      didMount: true
-    })
-
-  }
-
-  closeModal(e){
-    e.preventDefault();
-    e.stopPropagation();
-
-    this.context.router.transitionTo('home');
-  }
-
-  shouldComponentUpdate(nextProps, nextState){
-    debug('shouldComponentUpdate: ', nextProps.photoId, nextState.previousId, nextState.nextId);
-    return true;
+    this.onKeyDown = this.onKeyDown.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -88,11 +72,23 @@ class PhotoModal extends React.Component {
         this.setState({
           photo: store.get(nextProps.photoId),
           nextId: store.next(nextProps.photoId),
-          previousId: store.previous(nextProps.photoId),          
+          previousId: store.previous(nextProps.photoId),
           direction: direction
         })
       }
     }
+  }
+
+  componentDidMount(){
+    document.addEventListener('keydown', this.onKeyDown);
+
+    this.setState({
+      didMount: true
+    })
+  }
+
+  componentWillUMount(){
+    document.removeEventListener('keydown', this.onKeyDown);
   }
 
   render() {
@@ -103,8 +99,8 @@ class PhotoModal extends React.Component {
 
     return (
       <BodyClass className={'photo-modal-page'}>
-        <div id='photo-modal' className={cls} onClick={this.closeModal}>
-          <div id='photo-modal-backdrop'></div>       
+        <div id='photo-modal' className={cls} onClick={this.closeModal} >
+          <div id='photo-modal-backdrop'></div>
           <div id='photo-wrap'>
             <div className={this.state.direction}>
               <CSSTransitionGroup component="div" transitionName="example">
@@ -119,12 +115,36 @@ class PhotoModal extends React.Component {
             <CloseSvg/>
           </Link>
           <PhotoNavLink direction='previous' id={this.state.previousId}/>
-          <PhotoNavLink direction='next' id={this.state.nextId}/>             
+          <PhotoNavLink direction='next' id={this.state.nextId}/>
         </div>
       </BodyClass>
     );
-
   }
+
+  onKeyDown(e){
+    switch(e.keyCode){
+      case 27: //esc
+        this.closeModal(null);
+      break;
+      case 37: //left
+        this.context.router.transitionTo('photo', {id: this.state.previousId },  {modal: true});
+      break;
+      case 39: //right
+        this.context.router.transitionTo('photo', {id: this.state.nextId },  {modal: true});
+      break;
+    }
+  }
+
+  closeModal(e){
+
+    if(e){
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    this.context.router.transitionTo('home');
+  }
+
 };
 
 module.exports = PhotoModal;
