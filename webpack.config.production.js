@@ -15,7 +15,7 @@ module.exports = {
     extensions: [ '', '.js', '.jsx' ]
   },
   plugins: [
-  new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('style.css'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
