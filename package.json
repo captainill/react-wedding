@@ -38,6 +38,7 @@
     "fluxible": "^0.4.10",
     "fluxible-plugin-fetchr": "^0.2.3",
     "fluxible-plugin-routr": "^0.3.0",
+    "hoist-non-react-statics": "^1.0.2",
     "immutable": "3.6.2",
     "imports-loader": "^0.6.4",
     "json-loader": "^0.5.2",
