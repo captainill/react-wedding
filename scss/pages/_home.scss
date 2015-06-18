@@ -4,6 +4,7 @@ $borderSize: 5px;
 .photo-group{
     position: relative;
     width: 100%;
+    @include group-max-width();
 
   .-border-it-black{
     position: relative;
@@ -170,6 +171,7 @@ $borderSize: 5px;
   &.feature{
     width: 100%;
     height: auto;
+    max-width: none;
     color: white;
 
     #feature-text{
