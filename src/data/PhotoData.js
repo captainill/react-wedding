@@ -13,7 +13,7 @@ module.exports = [
     alt: 'Standing together in the field.',
     group_id: '2',
     group_type: 'fifty',
-    ratio: 50,
+    ratio: 100,
     target_area: null
   },
   {
@@ -21,7 +21,7 @@ module.exports = [
     alt: 'In Front of the Empress!',
     group_id: '2',
     group_type: 'fifty',
-    ratio: 50,
+    ratio: 100,
     target_area: null
   },
 
@@ -103,6 +103,24 @@ module.exports = [
     alt: 'In Front of the Empress!',
     group_id: '4',
     group_type: 'grid-one',
+    ratio: 50,
+    target_area: null
+  },
+
+
+  {
+    url: '/images/IMG_6319.jpg',
+    alt: '',
+    group_id: '5',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6321.jpg',
+    alt: '',
+    group_id: '5',
+    group_type: 'fifty',
     ratio: 50,
     target_area: null
   }

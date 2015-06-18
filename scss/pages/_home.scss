@@ -81,6 +81,22 @@ $borderSize: 5px;
     display: inline;
     float: left;
 
+    &.-pad-bottom-100{
+      .photo-item{
+        a{
+          padding-bottom: 100%;
+        }
+      }
+    }
+
+    &.-pad-bottom-50{
+      .photo-item{
+        a{
+          padding-bottom: 50%;
+        }
+      }
+    }
+
     &.-w-1{
       width: 100%;
     }
@@ -217,14 +233,14 @@ $borderSize: 5px;
 
     .col{
       width: 50%;
-  
-      &.left{
+
+      &.-left{
         padding-right: $pad/2;
       }
 
-      &.right{
+      &.-right{
         padding-left: $pad/2;
-      }    
+      }
     }
 
     .photo-item{
@@ -235,54 +251,51 @@ $borderSize: 5px;
   }
 
   &.six-four{
-    .col{
-      &.-w-3-2{
-        padding-right: $pad/2;
-      }
-      &.-w-3-1{
-        padding-left: $pad/2;
+    .row{
+      padding-bottom: $pad/2;
+      .col{
+        &.-w-3-2{
+          padding-right: $pad/2;
+        }
+        &.-w-3-1{
+          padding-left: $pad/2;
 
-        .-w-1:first-child{
-          padding-bottom: $pad/2;
+          .-w-1:first-child{
+            padding-bottom: $pad/2;
 
-          a{
-            position: relative;
-            &:after{
-              content: '';
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              height: $pad/4;
-              background-color: black;
-              z-index: 10;
+            a{
+              position: relative;
+              &:after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: $pad/4;
+                background-color: black;
+                z-index: 10;
+              }
+            }
+          }
+
+          .-w-1:last-child{
+            padding-bottom: $pad/2;
+
+            a{
+              position: relative;
+              &:after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: $pad/4;
+                background-color: black;
+                z-index: 10;
+              }
             }
           }
         }
-        
-        .-w-1:last-child{
-          padding-bottom: $pad/2;
-
-          a{
-            position: relative;
-            &:after{
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: $pad/4;
-              background-color: black;
-              z-index: 10;
-            }   
-          }       
-        }        
-      }
-    }
-
-    .photo-item{
-      a{
-        padding-bottom: 100%;
       }
     }
   }

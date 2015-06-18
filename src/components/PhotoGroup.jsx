@@ -45,7 +45,7 @@ class PhotoGroup extends React.Component {
       break;
       case 'grid-one':
         return this.wrapGridOne(photos);
-      break;      
+      break;
     }
   }
 
@@ -71,11 +71,18 @@ class PhotoGroup extends React.Component {
   //50% side by side
   wrapFifty(photos){
     const fiftyPhotos = photos.map(function(photo, i){
-      let cls = classNames({
+      let cls = {
         'col': true ,
-        'left': (i % 2 == 0),
-        'right': !(i % 2 == 0)
-      })
+        '-left': (i % 2 == 0),
+        '-right': !(i % 2 == 0),
+      }
+
+      if(photo.data.ratio){
+        cls['-pad-bottom-' + photo.data.ratio] = true;
+      }
+
+      cls = classNames(cls);
+
       return <div className={cls} key={i} >{photo.Component}</div>
     })
 
@@ -91,14 +98,14 @@ class PhotoGroup extends React.Component {
     return (
       <div className="row">
         <div className="col -w-1" key="1">
-          <div className="col -w-3-2" key="1">
+          <div className="col -w-3-2 -pad-bottom-100" key="1">
             {photos[0].Component}
           </div>
           <div className="col -w-3-1" key="2">
-            <div className="col -w-1" key="1">
+            <div className="col -w-1 -pad-bottom-100" key="1">
               {photos[1].Component}
             </div>
-            <div className="col -w-1" key="2">
+            <div className="col -w-1 -pad-bottom-100" key="2">
               {photos[2].Component}
             </div>
           </div>
@@ -110,10 +117,10 @@ class PhotoGroup extends React.Component {
   wrapGridOne(){
     return null;
   }
-  
+
   render() {
     const photos = this.state.photos.map(function(photo, i){
-      return { 
+      return {
         Component: <PhotoLazyContainer photo={photo} key={i}/>,
         data: photo
       }
