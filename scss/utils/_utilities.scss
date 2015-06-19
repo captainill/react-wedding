@@ -66,26 +66,26 @@
 }
 
 .animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
+  @include animation-duration(1s);
+  @include animation-fill-mode(both);
 }
 
 .animated.infinite {
-  animation-iteration-count: infinite;
+  @include animation-iteration-count(infinite);
 }
 
 .animated.hinge {
-  animation-duration: 2s;
+  @include animation-duration(2s);
 }
 
 .animated.bounceIn,
 .animated.bounceOut {
-  animation-duration: .75s;
+  @include animation-duration(.75s);
 }
 
 .animated.flipOutX,
 .animated.flipOutY {
-  animation-duration: .75s;
+  @include animation-duration(.75s);
 }
 
 @include keyframes(fadeInUp) {

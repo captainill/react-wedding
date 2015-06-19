@@ -308,6 +308,7 @@ $borderSize: 5px;
     background-color: #202020;
 
     &.lazy-load{
+      opacity: 0;
       @include transition(all .2s ease-in);
 
       &.lazy-load-visible{

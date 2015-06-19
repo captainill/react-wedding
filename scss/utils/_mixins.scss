@@ -323,6 +323,34 @@
   box-shadow: 2px 3px 2px rgba(0,0,0,0.08);
 }
 
+@mixin animation-duration($duration){
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -ms-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+};
+
+@mixin animation-fill-mode($mode){
+  -webkit-animation-fill-mode: $mode;
+  -moz-animation-fill-mode: $mode;
+  -ms-animation-fill-mode: $mode;
+  -o-animation-fill-mode: $mode;
+  animation-fill-mode: $mode;
+};
+
+@mixin animation-iteration-count($count){
+  -webkit-animation-iteration-count: $count;
+  -moz-animation-iteration-count: $count;
+  -ms-animation-iteration-count: $count;
+  -o-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+};
+
+.animated.infinite {
+  @include animation-iteration-count(infinite);
+}
+
 
 @mixin keyframes($animation-name) {
   @-webkit-keyframes $animation-name {
@@ -333,10 +361,10 @@
   }
   @-ms-keyframes $animation-name {
     @content;
-  } 
+  }
   @-o-keyframes $animation-name {
     @content;
-  }   
+  }
   @keyframes $animation-name {
     @content;
   }
