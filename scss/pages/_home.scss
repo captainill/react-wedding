@@ -127,11 +127,11 @@ $borderSize: 5px;
     }
 
     &.-w-3-2{
-      width: 66.5%;
+      width: 66.62%%;
     }
 
     &.-w-3-1{
-      width: 33.25%;
+      width: 33.37%;
     }
 
     &.-w-2-1{
@@ -230,8 +230,8 @@ $borderSize: 5px;
   }
 
   &.fifty{
-    padding-right: $pad;
-    padding-left: $pad;
+/*     padding-right: $pad;
+    padding-left: $pad; */
 
     .col{
       width: 50%;
