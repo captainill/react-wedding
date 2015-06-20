@@ -18,7 +18,8 @@ module.exports = [
     target_area: null
   },
   {
-    url: '/images/erica-taylor-gif.gif',
+    //url: '/images/erica-taylor-gif.gif',
+    url: '/images/DSC_0104.jpg',
     alt: 'In Front of the Empress!',
     group_id: '2',
     group_type: 'fifty',
@@ -29,7 +30,7 @@ module.exports = [
 
   //large square left /  2 small right -- should be empress maybe
   {
-    url: '/images/IMG_6172.jpg',
+    url: '/images/DSC_0137.jpg',
     alt: 'Taylor being ridiculous. Together in the field.',
     group_id: '3',
     group_type: 'six-four',
