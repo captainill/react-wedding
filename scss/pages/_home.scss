@@ -139,7 +139,7 @@ $borderSize: 5px;
     }
 
     &.-w-3-2{
-      width: 66.62%%;
+      width: 66.62%;
     }
 
     &.-w-3-1{
@@ -285,7 +285,7 @@ $borderSize: 5px;
                 left: 0;
                 width: 100%;
                 height: $pad/4;
-                background-color: black;
+                background-color: $bg-color;
                 z-index: 10;
               }
             }
@@ -301,7 +301,7 @@ $borderSize: 5px;
                 left: 0;
                 width: 100%;
                 height: $pad/4;
-                background-color: black;
+                background-color: $bg-color;
                 z-index: 10;
               }
             }
@@ -357,7 +357,7 @@ $borderSize: 5px;
   .photo-item{
     display: inline-block;
     width: 100%;
-    background-color: #202020;
+    background-color: $bg-color;
 
     &.lazy-load{
       opacity: 0;
