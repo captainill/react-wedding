@@ -19,7 +19,6 @@ $borderSize: 5px;
       z-index: 10;
       pointer-events: none;
     }
-
   }
 
   .-box-it-white{
@@ -186,6 +185,14 @@ $borderSize: 5px;
     height: auto;
     max-width: none;
     color: white;
+
+    .photo-item{
+      &:hover{
+        &:after{
+          border: none;
+        }
+      }
+    }
 
     #feature-text{
       position: absolute;
@@ -362,7 +369,7 @@ $borderSize: 5px;
         position: absolute;
         bottom: $pad;
         left: 0;
-        height: 2px;
+        height: 1px;
         width: 100%;
         background-color: white;
         z-index: 10;
@@ -404,9 +411,29 @@ $borderSize: 5px;
   }  
 
   .photo-item{
+    position: relative;
     display: inline-block;
     width: 100%;
     background-color: $bg-color;
+
+    &:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      border: 0px solid transparent;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    &:hover{
+      &:after{
+        border: 8px solid $yellow;
+        @include transition(all .2s ease-in)
+      }      
+    }
 
     &.lazy-load{
       opacity: 0;
