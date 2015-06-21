@@ -73,6 +73,7 @@ $borderSize: 5px;
   }
 
   .row{
+    position: relative;
     padding-bottom: $pad;
     @include clearfix();
   }
@@ -356,6 +357,17 @@ $borderSize: 5px;
 
   &.spaceless-one{
     .row{
+      &:before{
+        content: '';
+        position: absolute;
+        bottom: $pad;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: white;
+        z-index: 10;
+      }  
+
       .col{
         a{
           //padding-bottom: 100%;
