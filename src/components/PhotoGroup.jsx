@@ -68,7 +68,7 @@ class PhotoGroup extends React.Component {
         </div>
         <div id="feature-text">
           <h1><span>Presenting</span><hr/></h1>
-          <p><HeartSvg/>Mr. & Mrs. Crawford. Married June 7th in Victoria, BC.</p>
+          <p><HeartSvg dimension="15px"/>Mr. & Mrs. Crawford. Married June 7th in Victoria, BC.</p>
         </div>
       </div>
     )
@@ -182,7 +182,7 @@ class PhotoGroup extends React.Component {
     })
 
     const wrapType = this.createTypeWrap(photos);
-    
+
     return (
       <div className={'photo-group ' + this.props.group.type }>
         {wrapType}
