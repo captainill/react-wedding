@@ -1,3 +1,16 @@
+@mixin heart-hover{
+  &:hover{
+    svg{
+      .poly{
+        fill: $pink;
+        @include logoTransition();
+      }
+    }
+    @include transform( scale(1.4) );
+    @include logoTransition();
+  }  
+}
+
 //home scss
 #header{
   position: absolute;
@@ -18,24 +31,29 @@
     svg{
       height: 24px;
       .poly{
+        fill: #fedf6f;
         @include logoTransition();
       }
     }
-
-    &:hover{
-      svg{
-        .poly{
-          fill: $pink;
-          @include logoTransition();
-        }
-      }
-      @include transform( scale(1.4) );
-      @include logoTransition();
-    }
+    @include heart-hover();
   }
 
   p{
     margin: 7px 0;
+  }
+}
+
+.photo-modal-page{
+  #header{
+    .heart-logo{
+      svg{
+        .poly{
+          fill: #fff;  
+          @include transition(all 1s ease-in-out);
+        }
+      }
+      @include heart-hover();
+    }
   }
 }
 

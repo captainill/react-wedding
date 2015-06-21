@@ -40,6 +40,9 @@ class PhotoGroup extends React.Component {
       case 'fifty':
         return this.wrapFifty(photos);
       break;
+      case 'spaceless-one':
+        return this.wrapSpacelessOne(photos);
+      break;      
       case 'six-four':
         return this.wrapSixFour(photos);
       break;
@@ -142,6 +145,33 @@ class PhotoGroup extends React.Component {
     )
   }
 
+  wrapSpacelessOne(photos){
+    return (
+      <div className="row">
+        <div className="col -w-4-2" key="1">
+          {photos[0].Component}
+        </div>
+        <div className="col -w-4-1 -left" key="2">
+          {photos[1].Component}
+        </div>
+        <div className="col -w-4-1 -right" key="3">
+          <div className="col -w-4-4">
+            {photos[2].Component}
+          </div>
+          <div className="col -w-4-4">
+            {photos[3].Component}
+          </div>
+          <div className="col -w-4-4">
+            {photos[4].Component}
+          </div>
+          <div className="col -w-4-4">
+            {photos[5].Component}
+          </div>
+        </div>
+      </div>
+    )
+  }  
+
   render() {
     const photos = this.state.photos.map(function(photo, i){
       return {
@@ -152,7 +182,7 @@ class PhotoGroup extends React.Component {
     })
 
     const wrapType = this.createTypeWrap(photos);
-
+    
     return (
       <div className={'photo-group ' + this.props.group.type }>
         {wrapType}

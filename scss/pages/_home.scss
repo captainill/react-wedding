@@ -354,6 +354,43 @@ $borderSize: 5px;
     }
   }
 
+  &.spaceless-one{
+    .row{
+      .col{
+        a{
+          //padding-bottom: 100%;
+        }
+
+        &.-w-4-2{
+          //padding-right: $pad/2;
+          //padding-left: $pad/2;
+          a{
+            padding-bottom: 100%;
+          }          
+        }
+
+        &.-w-4-1.-left{
+          //padding-right: $pad/2;
+          a{
+            padding-bottom: 200%;
+          }
+        }
+
+        &.-w-4-1.-right{
+          //padding-left: $pad/2;
+          .-w-4-4{
+            .photo-item{
+              //padding-bottom: $pad/2;
+              a{
+                padding-bottom: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }  
+
   .photo-item{
     display: inline-block;
     width: 100%;

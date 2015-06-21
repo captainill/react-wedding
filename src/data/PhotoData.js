@@ -27,6 +27,57 @@ module.exports = [
     target_area: null
   },
 
+  //Spaceless One
+  {
+    url: '/images/DSC_0116.jpg',
+    alt: 'Standing together in the field.',
+    group_id: '22',
+    group_type: 'spaceless-one',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    //url: '/images/erica-taylor-gif.gif',
+    url: '/images/DSC_0104.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '22',
+    group_type: 'spaceless-one',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6219-1.jpg',
+    alt: 'Standing together in the field.',
+    group_id: '22',
+    group_type: 'spaceless-one',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6220-2.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '22',
+    group_type: 'spaceless-one',
+    ratio: 100,
+    target_area: null
+  },  
+  {
+    url: '/images/IMG_6221-3.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '22',
+    group_type: 'spaceless-one',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6223-4.jpg',
+    alt: 'Standing together in the field.',
+    group_id: '22',
+    group_type: 'spaceless-one',
+    ratio: 100,
+    target_area: null
+  },
+
 
   //large square left /  2 small right -- should be empress maybe
   {
