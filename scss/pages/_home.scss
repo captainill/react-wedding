@@ -4,7 +4,7 @@ $borderSize: 5px;
 .photo-group{
     position: relative;
     width: 100%;
-    @include group-max-width();
+    @include site-max-width();
 
   .-border-it-black{
     position: relative;

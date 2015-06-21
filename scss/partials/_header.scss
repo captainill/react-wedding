@@ -13,27 +13,38 @@
 
 //home scss
 #header{
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   text-align: center;
   z-index: 2000;
 
-  .heart-logo{
+  .row{
+    position: relative;
+    width: 100%;
+    @include site-max-width();
+  }
+
+  .heart-click{
     display: inline-block;
-    position: fixed;
+    position: absolute;
     z-index: 10;
     top: 30px;
-    left: 30px;
+    left: 20px;
+  }
+
+  .heart-logo{
+    display: inline-block;
     @include logoTransition();
 
     svg{
+      position: relative;
       height: 24px;
       .poly{
-        fill: #fedf6f;
+        //fill: #fedf6f;
         @include logoTransition();
-      }
+      }   
     }
     @include heart-hover();
   }
@@ -43,7 +54,7 @@
   }
 }
 
-.photo-modal-page{
+/* .photo-modal-page{
   #header{
     .heart-logo{
       svg{
@@ -55,7 +66,7 @@
       @include heart-hover();
     }
   }
-}
+} */
 
 @media (min-width: 1140px){
   #header{

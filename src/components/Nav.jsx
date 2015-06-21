@@ -34,7 +34,9 @@ export default class Nav extends React.Component{
   render() {
     return (
       <nav id="header" className="header">
-        <a href="/" onClick={this.hanldeHeartClick}><HeartSvg/></a>
+        <div className="row">
+          <a href="/" className="heart-click" onClick={this.hanldeHeartClick}><HeartSvg/></a>
+        </div>
       </nav>
     );
   }
