@@ -37,9 +37,9 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, .84);
-    animation-duration: 1s;
-    animation-fill-mode: both;    
+    background-color: rgba(0, 0, 0, .84); 
+    @include animation-duration(1s);
+    @include animation-fill-mode(both);      
   }
 
   #close-photo{
@@ -66,8 +66,8 @@
     position: absolute;
     top: 50%;
     margin-top: -15px;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+    @include animation-duration(1s);
+    @include animation-fill-mode(both);   
     @include logoTransition();      
 
     .wrap-svg{
@@ -101,10 +101,9 @@
     top: 0;
     //z-index: 100;
     text-align: center;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-delay: .4s;
-  }
+    @include animation-duration(1s);
+    @include animation-fill-mode(both);   
+    @include animation-delay(.4s);  }
 
   .photo{
     position: absolute;
@@ -162,12 +161,9 @@
 
 //the class of the items we're animating
 .photo{
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+  @include animation-duration(0.4s);
+  @include animation-fill-mode(both);  
+  @include transition-timing-function(ease-in)
 }
 
 .next{
