@@ -5,12 +5,13 @@
 
 import BaseStore from 'fluxible/addons/BaseStore';
 import PhotoStore from './PhotoStore';
-import makeId from '../utils/makeId';
 import Debug from 'debug';
 import { map } from 'lodash';
 
 const debug = Debug('-------  GroupStore.jsx: ');
 
+let counter = 0;
+let keyMap = {};
 let _groups = {};
 
 class GroupStore extends BaseStore{
@@ -33,13 +34,18 @@ class GroupStore extends BaseStore{
     let photos = payload.photos;
     photos = map(photos, function(photo) {
       let groupID = photo.group_id;
-      let group = _groups[groupID];
+      let group = _groups[keyMap[groupID]];
 
       if (group) {
         return;
       }
 
-      _groups[groupID] = {
+      //the keymap just lets me have an arbitraty group_id to group photos in this flat system while ordering the groups
+      //purely on where they appear in PhotoData
+      let key = counter++;
+      keyMap[groupID] = key;
+
+      _groups[key] = {
         id: groupID,
         type: photo.group_type
       };

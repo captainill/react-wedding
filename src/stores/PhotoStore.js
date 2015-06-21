@@ -78,14 +78,14 @@ class PhotoStore extends BaseStore{
         groupPhotos.push(_photos[id]);
       }
     }
-    groupPhotos.sort(function(a, b) {
+    /*groupPhotos.sort(function(a, b) {
       if (a.group_id < b.group_id) {
         return -1;
       } else if (a.group_id > b.group_id) {
         return 1;
       }
       return 0;
-    });
+    });*/
     return groupPhotos;
   }
 
