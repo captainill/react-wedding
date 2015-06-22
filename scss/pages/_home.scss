@@ -518,6 +518,17 @@ $borderSize: 5px;
   }
 }
 
+
+@media (max-width: $site-max-width + $med-pad){
+  .photo-group{
+    padding: 0 $med-pad;
+
+    &.feature{
+      padding: 0;
+    }
+  }
+}
+
 @media (max-width: 992px){
   .photo-group{
 
@@ -603,5 +614,12 @@ $borderSize: 5px;
         }
       }
     }
+  }
+}
+
+@media (max-width: 320px){
+  .photo-group{
+    padding: 0 $pad;
+    margin-bottom: $pad;
   }
 }
