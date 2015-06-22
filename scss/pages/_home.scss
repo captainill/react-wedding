@@ -521,6 +521,12 @@ $borderSize: 5px;
 @media (max-width: 992px){
   .photo-group{
 
+    &.feature{
+      #feature-text{
+        right: 20px;
+      }
+    }
+
     &.six-four{
       .col{
         &.-w-5-2{
@@ -559,13 +565,13 @@ $borderSize: 5px;
   }
 }
 
-@media (max-width: 480px){
+@media (max-width: 768px){
   .photo-group{
     &.feature{
       .photo-item a{
         min-height: 360px;
       }
-      
+
       #feature-text{
         top: 20px;
         bottom: 0;
