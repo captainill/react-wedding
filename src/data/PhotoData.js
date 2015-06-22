@@ -60,6 +60,27 @@ module.exports = [
   },
 
 
+
+  // sixty-thirty
+  {
+    url: '/images/DSC_0137.jpg',
+    alt: 'Taylor being ridiculous. Together in the field.',
+    group_id: '44',
+    group_type: 'sixty-thirty',
+    ratio: 67,
+    target_area: null
+  },
+  {
+    //url: '/images/IMG_6260.jpg',
+    url: '/images/IMG_6176.jpg',
+    alt: 'Standing together in the field.',
+    group_id: '44',
+    group_type: 'sixty-thirty',
+    ratio: 50,
+    target_area: null
+  },
+
+
   //Full
   {
     url: '/images/DSC_0171.jpg',
@@ -70,6 +91,7 @@ module.exports = [
     target_area: null
   },
 
+  
 
   //large square left /  2 small right -- should be empress maybe
   {
@@ -120,6 +142,9 @@ module.exports = [
     ratio: 50,
     target_area: null
   },
+
+
+
 
   {
     url: '/images/IMG_6172.jpg',

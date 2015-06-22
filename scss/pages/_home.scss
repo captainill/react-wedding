@@ -278,6 +278,37 @@ $borderSize: 5px;
     }
   }
 
+  &.sixty-thirty{
+    .row{
+      .col{
+        &.-left{
+          //width: 66%;
+          width: 66.66666%;
+          //padding-right: $pad * .6666666;
+
+          .photo-item{
+            a{
+              //padding-bottom: 151.515151515152%;
+              padding-bottom: 100%;
+            }             
+          }         
+        }
+        &.-w-3-1.-right{
+          //width: 34%;
+          width: 33.33333%;
+          //padding-left: $pad * .3333333;
+
+          .photo-item{
+            a{
+              padding-bottom: 200%;
+              //padding-bottom: 101.117647%;
+            }            
+          }
+        }
+      }
+    }
+  }
+
   &.six-four{
     .row{
       .col{
@@ -375,7 +406,7 @@ $borderSize: 5px;
         position: absolute;
         bottom: $pad;
         left: 0;
-        height: 1px;
+        height: 2px;
         width: 100%;
         background-color: white;
         z-index: 10;
@@ -441,7 +472,7 @@ $borderSize: 5px;
 
     &:hover{
       &:after{
-        border: 8px solid $yellow;
+        border: 8px solid rgba(255, 255, 255, .2);
         @include transition(all .2s ease-in);
       }      
     }

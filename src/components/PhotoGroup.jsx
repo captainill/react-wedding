@@ -46,6 +46,9 @@ class PhotoGroup extends React.Component {
       case 'spaceless-one':
         return this.wrapSpacelessOne(photos);
       break;      
+      case 'sixty-thirty':
+        return this.wrapSixtyThirty(photos);
+      break;      
       case 'six-four':
         return this.wrapSixFour(photos);
       break;
@@ -134,6 +137,21 @@ class PhotoGroup extends React.Component {
             </div>
           </div>
         </div>
+      </div>
+    )
+  }
+
+
+  //66% / 34% grid
+  wrapSixtyThirty(photos){
+    return (
+      <div className="row">
+        <div className="col -w-3-2 -left" key="1">
+          {photos[0].Component}
+        </div>
+        <div className="col -w-3-1 -right" key="2">
+          {photos[1].Component}
+        </div>     
       </div>
     )
   }
