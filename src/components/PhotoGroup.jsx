@@ -84,16 +84,10 @@ class PhotoGroup extends React.Component {
   }
 
   //full row with padding
-  wrapFull(photo){
-    const style = {
-      backgroundImage: 'url(' + Config.imagePath + photo[0].data.url + ')',
-    };
-
+  wrapFull(photos){
     return (
       <div className="row feature-padding">
-        <div className="photo-item">
-          <Link className="image image-loaded" to="photo" params={{id: photo[0].data.id}} query={{modal: true}} style={style} data-src={photo[0].data.url} />
-        </div>
+        {photos[0].Component}
       </div>
     )
   }  
