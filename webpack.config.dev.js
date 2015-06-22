@@ -4,7 +4,7 @@ import path from 'path';
 
 import config from './env/config';
 
-let app_dir = '../assets';
+let app_dir = '../';
 
 export default {
   entry: [
@@ -16,7 +16,7 @@ export default {
   output: {
     path: path.join(__dirname, 'assets'),
     filename: 'client.js',
-    publicPath: `http://${config.http.host}:${config.webpack.dev.port}/assets`,
+    publicPath: `http://${config.http.host}:${config.webpack.dev.port}/`,
   },
 
   plugins: [

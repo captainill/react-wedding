@@ -19,5 +19,5 @@ export default new WebpackDevServer(webpack(webpackConfig), {
     path: webpackConfig.output.path,
     filename: webpackConfig.output.filename,
   },
-  publicPath: '/assets',
+  publicPath: '/',
 });

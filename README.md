@@ -14,7 +14,7 @@ npm run dev
 ```bash
 npm run build
 # dumps bundles into /assets
-NODE_ENV=production node .
+NODE_ENV=production node ./src/server
 # runs index.js with prod env var
 ```
 

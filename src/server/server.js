@@ -27,7 +27,7 @@ fetchrPlugin.registerService(require('../services/photo'));
 
 let server = express();
 server.use(favicon(path.join(__dirname, '..', '..', '/favicon.ico')));
-server.use('/public', express.static(path.join(__dirname, '..', '..', '/assets')));
+server.use('/assets', express.static(path.join(__dirname, '..', '..', '/assets')));
 server.use(fetchrPlugin.getXhrPath(), fetchrPlugin.getMiddleware()); //use fetchr middleware
 server.use(function (req, res, next) {
 
