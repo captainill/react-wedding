@@ -14,6 +14,15 @@ $borderSize: 5px;
       margin-bottom: 100px;
     }
 
+    &.g-6,
+    &.g-8,
+    &.g-9,
+    &.g-10{
+      .row{
+          padding-bottom: 0;
+      }
+    }
+
   .-border-it-black{
     position: relative;
     &:after{
@@ -154,6 +163,14 @@ $borderSize: 5px;
       }
     }
 
+    &.-pb-67{
+      .photo-item{
+        a{
+          padding-bottom: 67%;
+        }
+      }
+    }    
+
     &.-pb-100{
       .photo-item{
         a{
@@ -247,11 +264,6 @@ $borderSize: 5px;
   &.full{
     .col{
       width: 100%;
-      .photo-item{
-        a{
-          padding-bottom: 100%;
-        }
-      }
     }
   }
 

@@ -85,9 +85,21 @@ class PhotoGroup extends React.Component {
 
   //full row with padding
   wrapFull(photos){
+    const photo = photos[0];
+      let cls = {
+        'col': true ,
+        '-w-3-1': true,
+      }
+
+      if(photo.data.ratio){
+        cls['-pb-' + photo.data.ratio] = true;
+      }
+
+      cls = classNames(cls);
+
     return (
       <div className="row feature-padding">
-        {photos[0].Component}
+        <div className={cls}>{photo.Component}</div>
       </div>
     )
   }  
@@ -153,7 +165,6 @@ class PhotoGroup extends React.Component {
 
       return <div className={cls} key={i} >{photo.Component}</div>
     })
-
 
     return (
       <div className="row">

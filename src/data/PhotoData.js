@@ -87,7 +87,7 @@ module.exports = [
     alt: 'Standing together in the field.',
     group_id: '33',
     group_type: 'full',
-    ratio: 100,
+    ratio: 67,
     target_area: null
   },
 
@@ -204,6 +204,9 @@ module.exports = [
     target_area: null
   },
 
+
+
+
   //3 horizontal thirds/ 33% each
   {
     url: '/images/IMG_6062.jpg',
@@ -231,42 +234,80 @@ module.exports = [
   },
 
 
-  // 5 columm
-  // 1, 2, 1, 1
-  // vert, square, vert, vert
+
+  //Full
   {
-    url: '/images/erica-taylor-gif.gif',
-    alt: 'gif',
-    group_id: '444',
-    group_type: 'grid-one',
-    ratio: 67,
-    target_area: null
-  },
-  {
-    url: '/images/DSC_0281.jpg',
-    alt: 'Standing together in the field.',
-    group_id: '444',
-    group_type: 'grid-one',
+    url: '/images/IMG_6125.jpg',
+    alt: 'Crawford\'s backyard!',
+    group_id: '8',
+    group_type: 'full',
     ratio: 50,
     target_area: null
   },
-  {
-    url: '/images/DSC_0286.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '444',
-    group_type: 'grid-one',
-    ratio: 50,
-    target_area: null
-  },
-  {
-    url: '/images/IMG_6355.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '444',
-    group_type: 'grid-one',
-    ratio: 50,
-    target_area: null
-  }, 
 
 
+
+  {
+    url: '/images/IMG_6082.jpg',
+    alt: '',
+    group_id: '9',
+    group_type: 'grid-two',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6103.jpg',
+    alt: '',
+    group_id: '9',
+    group_type: 'grid-two',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6113.jpg',
+    alt: '',
+    group_id: '9',
+    group_type: 'grid-two',
+    ratio: 100,
+    target_area: null
+  },  
+
+
+
+  {
+    url: '/images/38320005.jpg',
+    alt: '',
+    group_id: '10',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/38320011.jpg',
+    alt: '',
+    group_id: '10',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+
+  {
+    url: '/images/38320007.jpg',
+    alt: '',
+    group_id: '10',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/DSC_0041.jpg',
+    alt: '',
+    group_id: '10',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },  
 
 ];
+
+//IMG_6126
