@@ -22,7 +22,7 @@ export default class Image extends React.Component{
   }
 
   onImageLoad() {
-      this.setState({loaded: true});
+    this.setState({loaded: true});
   }
 
   componentDidMount() {
