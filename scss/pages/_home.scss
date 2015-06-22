@@ -17,7 +17,10 @@ $borderSize: 5px;
     &.g-6,
     &.g-8,
     &.g-9,
-    &.g-10{
+    &.g-10,
+    &.g-11,
+    &.g-12,
+    &.g-13{
       .row{
           padding-bottom: 0;
       }
@@ -171,6 +174,14 @@ $borderSize: 5px;
       }
     }    
 
+    &.-pb-80{
+      .photo-item{
+        a{
+          padding-bottom: 80%;
+        }
+      }
+    }  
+
     &.-pb-100{
       .photo-item{
         a{
@@ -185,7 +196,15 @@ $borderSize: 5px;
           padding-bottom: 120% !important;
         }
       }
-    }    
+    }  
+
+    &.-pb-160{
+      .photo-item{
+        a{
+          padding-bottom: 160% !important;
+        }
+      }
+    }        
 
     &.-pb-200{
       .photo-item{
@@ -351,12 +370,12 @@ $borderSize: 5px;
     .row{
       .col{
         a{
-          padding-bottom: 80%;
+          //padding-bottom: 80%;
         }
         &.-w-4-1.-left{
           //padding-right: $pad/2;
           a{
-            padding-bottom: 160%;
+            //padding-bottom: 160%;
           }
         }
 
@@ -368,7 +387,7 @@ $borderSize: 5px;
         &.-w-4-1.-right{
           //padding-right: $pad/2;
           a{
-            padding-bottom: 160%;
+            //padding-bottom: 160%;
           }          
         }
         /* &.-w-4-1.-right{

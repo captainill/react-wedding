@@ -163,7 +163,7 @@ module.exports = [
     alt: '',
     group_id: '7',
     group_type: 'grid-two',
-    ratio: 100,
+    ratio: 160,
     target_area: null
   },
   {
@@ -171,7 +171,7 @@ module.exports = [
     alt: '',
     group_id: '7',
     group_type: 'grid-two',
-    ratio: 100,
+    ratio: 80,
     target_area: null
   },
   {
@@ -179,7 +179,7 @@ module.exports = [
     alt: '',
     group_id: '7',
     group_type: 'grid-two',
-    ratio: 100,
+    ratio: 160,
     target_area: null
   },  
 
@@ -212,7 +212,7 @@ module.exports = [
     url: '/images/IMG_6062.jpg',
     alt: '',
     group_id: '6',
-    group_type: 'thirds',
+    group_type: 'quarters',
     ratio: 120,
     target_area: null
   },
@@ -220,7 +220,7 @@ module.exports = [
     url: '/images/IMG_6079.jpg',
     alt: '',
     group_id: '6',
-    group_type: 'thirds',
+    group_type: 'quarters',
     ratio: 120,
     target_area: null
   },  
@@ -228,7 +228,15 @@ module.exports = [
     url: '/images/IMG_6069.jpg',
     alt: '',
     group_id: '6',
-    group_type: 'thirds',
+    group_type: 'quarters',
+    ratio: 120,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6082.jpg',
+    alt: '',
+    group_id: '6',
+    group_type: 'quarters',
     ratio: 120,
     target_area: null
   },
@@ -248,7 +256,7 @@ module.exports = [
 
 
   {
-    url: '/images/IMG_6082.jpg',
+    url: '/images/DSC_0028.jpg',
     alt: '',
     group_id: '9',
     group_type: 'grid-two',
@@ -260,7 +268,7 @@ module.exports = [
     alt: '',
     group_id: '9',
     group_type: 'grid-two',
-    ratio: 100,
+    ratio: 50,
     target_area: null
   },
   {
@@ -307,7 +315,155 @@ module.exports = [
     ratio: 50,
     target_area: null
   },  
+  {
+    url: '/images/38320006.jpg',
+    alt: '',
+    group_id: '10',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/DSC_0023.jpg',
+    alt: '',
+    group_id: '10',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },   
+  
+
+
+
+
+  {
+    url: '/images/IMG_6377.jpg',
+    alt: '',
+    group_id: '11',
+    group_type: 'quarters',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6126.jpg',
+    alt: '',
+    group_id: '11',
+    group_type: 'quarters',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/DSC_0029.jpg',
+    alt: '',
+    group_id: '11',
+    group_type: 'quarters',
+    ratio: 100,
+    target_area: null
+  },    
+  {
+    url: '/images/crawfords.gif',
+    alt: '',
+    group_id: '11',
+    group_type: 'quarters',
+    ratio: 100,
+    target_area: null
+  },   
+
+
+  {
+    url: '/images/IMG_6411.jpg',
+    alt: '',
+    group_id: '12',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6412.jpg',
+    alt: '',
+    group_id: '12',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+
+  {
+    url: '/images/IMG_6408.jpg',
+    alt: '',
+    group_id: '12',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6505.jpg',
+    alt: '',
+    group_id: '12',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+
+  {
+    url: '/images/IMG_6458.jpg',
+    alt: '',
+    group_id: '12',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6506.jpg',
+    alt: '',
+    group_id: '12',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+
+  {
+    url: '/images/IMG_6481.jpg',
+    alt: '',
+    group_id: '12',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6473.jpg',
+    alt: '',
+    group_id: '12',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
+
+
+
+  {
+    url: '/images/thomas.gif',
+    alt: '',
+    group_id: '13',
+    group_type: 'grid-two',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6378.jpg',
+    alt: '',
+    group_id: '13',
+    group_type: 'grid-two',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/friends.gif',
+    alt: '',
+    group_id: '13',
+    group_type: 'grid-two',
+    ratio: 100,
+    target_area: null
+  },  
+
 
 ];
-
-//IMG_6126

@@ -59,7 +59,8 @@ class PhotoGroup extends React.Component {
         return this.wrapGridTwo(photos);
       break;
       case 'thirds':
-        return this.wrapThirds(photos);
+      case 'quarters':
+        return this.wrapColumns(photos);
       break;      
     }
   }
@@ -150,11 +151,35 @@ class PhotoGroup extends React.Component {
 
 
   //60% / 40% grid
+  wrapColumns(photos){
+    const collection = photos.map(function(photo, i){
+      let cls = {
+        'col': true ,
+        '-w-3-1': photo.data.group_type === 'thirds',
+        '-w-4-1': photo.data.group_type === 'quarters',
+      }
+
+      if(photo.data.ratio){
+        cls['-pb-' + photo.data.ratio] = true;
+      }
+
+      cls = classNames(cls);
+
+      return <div className={cls} key={i} >{photo.Component}</div>
+    })
+
+    return (
+      <div className="row">
+        { collection }
+      </div>
+    )
+  }  
+
   wrapThirds(photos){
     const thirdsPhotos = photos.map(function(photo, i){
       let cls = {
         'col': true ,
-        '-w-3-1': true,
+        '-w-4-1': true,
       }
 
       if(photo.data.ratio){
@@ -172,8 +197,6 @@ class PhotoGroup extends React.Component {
       </div>
     )
   }  
-
-
 
   //66% / 34% grid
   wrapSixtyThirty(photos){
@@ -211,13 +234,13 @@ class PhotoGroup extends React.Component {
   wrapGridTwo(photos){
     return (
       <div className="row">
-        <div className="col -w-4-1 -left" key="1">
+        <div className={'col -w-4-1 -left'+ ' -pb-' + photos[0].data.ratio} key="1">
           {photos[0].Component}
         </div>
-        <div className="col -w-4-2" key="2">
+        <div className={'col -w-4-2'+ ' -pb-' + photos[1].data.ratio} key="2">
           {photos[1].Component}
         </div>
-        <div className="col -w-4-1 -right" key="3">
+        <div className={'col -w-4-1 -right'+ ' -pb-' + photos[2].data.ratio} key="3">
             {photos[2].Component}
         </div>
       </div>
