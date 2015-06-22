@@ -623,6 +623,8 @@ $borderSize: 5px;
     margin-bottom: $pad;
     
     .col{
+      &.-w-5-2,
+      &.-w-5-1,
       &.-w-4-2,
       &.-w-4-1{
         width: 100%;
