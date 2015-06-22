@@ -258,16 +258,23 @@ $borderSize: 5px;
   &.fifty{
 /*     padding-right: $pad;
     padding-left: $pad; */
+    &.g-5{
+      .-right{
+        a{
+          background-position: bottom center;
+        }
+      }
+    }
 
     .col{
       width: 50%;
 
       &.-left{
-        padding-right: $pad/2;
+        //padding-right: $pad/2;
       }
 
       &.-right{
-        padding-left: $pad/2;
+        //padding-left: $pad/2;
       }
     }
 

@@ -188,14 +188,6 @@ module.exports = [
 
   //horizontal fifty/fifty by the water
   {
-    url: '/images/IMG_6314.jpg',
-    alt: '',
-    group_id: '5',
-    group_type: 'fifty',
-    ratio: 50,
-    target_area: null
-  },
-  {
     url: '/images/IMG_6316.jpg',
     alt: '',
     group_id: '5',
@@ -203,24 +195,15 @@ module.exports = [
     ratio: 50,
     target_area: null
   },
+  {
+    url: '/images/DSC_0212.jpg',
+    alt: '',
+    group_id: '5',
+    group_type: 'fifty',
+    ratio: 50,
+    target_area: null
+  },
 
-  //by the water horizontal fifty fifty
-  {
-    url: '/images/IMG_6319.jpg',
-    alt: '',
-    group_id: '6',
-    group_type: 'fifty',
-    ratio: 50,
-    target_area: null
-  },
-  {
-    url: '/images/IMG_6321.jpg',
-    alt: '',
-    group_id: '6',
-    group_type: 'fifty',
-    ratio: 50,
-    target_area: null
-  },
 
 
 ];

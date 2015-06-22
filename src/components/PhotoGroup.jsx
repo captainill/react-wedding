@@ -228,7 +228,7 @@ class PhotoGroup extends React.Component {
     const wrapType = this.createTypeWrap(photos);
 
     return (
-      <div className={'photo-group ' + this.props.group.type }>
+      <div className={'photo-group ' + ' g-'+ this.props.group.id  +' '+this.props.group.type }>
         {wrapType}
       </div>
     );
