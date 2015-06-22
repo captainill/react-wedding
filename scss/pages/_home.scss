@@ -5,14 +5,15 @@ $borderSize: 5px;
     position: relative;
     width: 100%;
     @include site-max-width();
+    margin-bottom: 100px;
 
-    &.feature{
+    /* &.feature{
       margin-bottom: 100px;
     }
 
     &.g-5{
       margin-bottom: 100px;
-    }
+    } */
 
     &.g-6,
     &.g-8,
