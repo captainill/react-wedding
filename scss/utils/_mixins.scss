@@ -323,6 +323,11 @@
   box-shadow: 2px 3px 2px rgba(0,0,0,0.08);
 }
 
+@mixin animation-name($name){
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+
 @mixin animation-duration($duration){
   -webkit-animation-duration: $duration;
   -moz-animation-duration: $duration;

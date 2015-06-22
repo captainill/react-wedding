@@ -376,6 +376,10 @@ $borderSize: 5px;
       }  
 
       .col{
+        .photo-item{
+          @include reset-photo-item-animation;
+        }
+
         a{
           //padding-bottom: 100%;
         }
@@ -426,12 +430,13 @@ $borderSize: 5px;
       border: 0px solid transparent;
       z-index: 10;
       pointer-events: none;
+      @include transition(all .1s ease-in);
     }
 
     &:hover{
       &:after{
         border: 8px solid $yellow;
-        @include transition(all .2s ease-in)
+        @include transition(all .2s ease-in);
       }      
     }
 
@@ -440,8 +445,7 @@ $borderSize: 5px;
       @include transition(all .2s ease-in);
 
       &.lazy-load-visible{
-        -webkit-animation-name: fadeInUp;
-        animation-name: fadeInUp;
+        @include animation-name(fadeInUp);
         @include transition(all .2s ease-in);
       }
     }
