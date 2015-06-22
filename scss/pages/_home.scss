@@ -621,5 +621,39 @@ $borderSize: 5px;
   .photo-group{
     padding: 0 $pad;
     margin-bottom: $pad;
+    
+    .col{
+      &.-w-4-2,
+      &.-w-4-1{
+        width: 100%;
+      }
+    }
+
+    &.fifty{
+      .col{
+        width: 100%;
+      }
+    }
+
+    &.full{
+      .col{
+        &.-pb-50{
+          a{
+            padding-bottom: 100%;
+          }
+        }
+      }
+    }
+    &.spaceless-one{
+      .row{
+        .col{
+          &.-left.-w-4-1{
+            a{
+              padding-bottom: 100%;
+            }
+          }
+        }
+      }
+    }    
   }
 }
