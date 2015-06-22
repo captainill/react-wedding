@@ -59,23 +59,13 @@ module.exports = [
     target_area: null
   },
 
-    
 
-  //field photos fifty fifty
+  //Full
   {
-    url: '/images/DSC_0116.jpg',
+    url: '/images/DSC_0171.jpg',
     alt: 'Standing together in the field.',
-    group_id: '2',
-    group_type: 'fifty',
-    ratio: 100,
-    target_area: null
-  },
-  {
-    //url: '/images/erica-taylor-gif.gif',
-    url: '/images/DSC_0104.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '2',
-    group_type: 'fifty',
+    group_id: '33',
+    group_type: 'full',
     ratio: 100,
     target_area: null
   },

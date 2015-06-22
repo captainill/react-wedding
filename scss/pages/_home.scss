@@ -245,8 +245,14 @@ $borderSize: 5px;
   }
 
   &.full{
-    width: 100%;
-    height: auto;
+    .col{
+      width: 100%;
+      .photo-item{
+        a{
+          padding-bottom: 100%;
+        }
+      }
+    }
   }
 
   &.fifty{

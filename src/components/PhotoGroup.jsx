@@ -37,6 +37,9 @@ class PhotoGroup extends React.Component {
       case 'feature':
         return this.wrapFeature(photos);
       break;
+      case 'full':
+        return this.wrapFull(photos);
+      break;      
       case 'fifty':
         return this.wrapFifty(photos);
       break;
@@ -55,7 +58,7 @@ class PhotoGroup extends React.Component {
     }
   }
 
-  //full row with padding
+  //full row feature with padding
   wrapFeature(photo){
     const style = {
       backgroundImage: 'url(' + Config.imagePath + photo[0].data.url + ')',
@@ -73,6 +76,21 @@ class PhotoGroup extends React.Component {
       </div>
     )
   }
+
+  //full row with padding
+  wrapFull(photo){
+    const style = {
+      backgroundImage: 'url(' + Config.imagePath + photo[0].data.url + ')',
+    };
+
+    return (
+      <div className="row feature-padding">
+        <div className="photo-item">
+          <Link className="image image-loaded" to="photo" params={{id: photo[0].data.id}} query={{modal: true}} style={style} data-src={photo[0].data.url} />
+        </div>
+      </div>
+    )
+  }  
 
   //50% side by side
   wrapFifty(photos){
