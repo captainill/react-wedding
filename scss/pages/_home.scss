@@ -165,7 +165,7 @@ $borderSize: 5px;
     &.-pb-100{
       .photo-item{
         a{
-          padding-bottom: 100%;
+          padding-bottom: 100% !important;
         }
       }
     }
@@ -173,7 +173,7 @@ $borderSize: 5px;
     &.-pb-200{
       .photo-item{
         a{
-          padding-bottom: 200%;
+          padding-bottom: 200% !important;
         }
       }
     }
@@ -309,48 +309,20 @@ $borderSize: 5px;
     }
   }
 
-  &.six-four{
+  &.grid-one{
     .row{
       .col{
-        &.-w-3-2{
-          padding-right: $pad/2;
+        &.second{
+           margin-bottom: -2px;
         }
-        &.-w-3-1{
-          padding-left: $pad/2;
 
-          .-w-1:first-child{
-            padding-bottom: $pad/2;
+        .photo-item{
+          position: relative;
+          @include psuedo-subpixel-cover(0);
+        }
 
-            a{
-              position: relative;
-              &:after{
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: $pad/4;
-                background-color: $bg-color;
-                z-index: 10;
-              }
-            }
-          }
-
-          .-w-1:last-child{
-            a{
-              position: relative;
-              &:after{
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: $pad/4;
-                background-color: $bg-color;
-                z-index: 10;
-              }
-            }
-          }
+        a{
+          padding-bottom: 50%;
         }
       }
     }
@@ -360,21 +332,27 @@ $borderSize: 5px;
     .row{
       .col{
         a{
-          padding-bottom: 60%;
+          padding-bottom: 80%;
         }
         &.-w-4-1.-left{
-          padding-right: $pad/2;
+          //padding-right: $pad/2;
           a{
-            padding-bottom: 120%;
+            padding-bottom: 160%;
           }
         }
 
         &.-w-4-2{
-          padding-right: $pad/2;
-          padding-left: $pad/2;
+          //padding-right: $pad/2;
+          //padding-left: $pad/2;
         }
 
         &.-w-4-1.-right{
+          //padding-right: $pad/2;
+          a{
+            padding-bottom: 160%;
+          }          
+        }
+        /* &.-w-4-1.-right{
           padding-left: $pad/2;
           .-w-4-4{
             &:first-child{
@@ -394,23 +372,14 @@ $borderSize: 5px;
               }
             }
           }
-        }
+        } */
       }
     }
   }
 
   &.spaceless-one{
     .row{
-      &:before{
-        content: '';
-        position: absolute;
-        bottom: $pad;
-        left: 0;
-        height: 2px;
-        width: 100%;
-        background-color: white;
-        z-index: 10;
-      }  
+      @include psuedo-subpixel-cover($pad);
 
       .col{
         .photo-item{

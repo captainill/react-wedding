@@ -15,6 +15,19 @@
   }
 }
 
+@mixin psuedo-subpixel-cover($bottom){
+  &:before{
+    content: '';
+    position: absolute;
+    bottom: $bottom;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+  }    
+}
+
 @mixin site-max-width(){
   max-width: 1140px;
   margin: 0 auto;

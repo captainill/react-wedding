@@ -91,19 +91,54 @@ module.exports = [
     target_area: null
   },
 
-  
+  // 5 columm
+  // 1, 2, 1, 1
+  // vert, square, vert, vert
+  {
+    url: '/images/erica-taylor-gif.gif',
+    alt: 'gif',
+    group_id: '444',
+    group_type: 'grid-one',
+    ratio: 67,
+    target_area: null
+  },
+  {
+    url: '/images/DSC_0281.jpg',
+    alt: 'Standing together in the field.',
+    group_id: '444',
+    group_type: 'grid-one',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/DSC_0286.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '444',
+    group_type: 'grid-one',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6355.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '444',
+    group_type: 'grid-one',
+    ratio: 50,
+    target_area: null
+  },  
+
 
   //large square left /  2 small right -- should be empress maybe
-  {
-    url: '/images/DSC_0137.jpg',
-    alt: 'Taylor being ridiculous. Together in the field.',
+/*  {
+    url: '/images/erica-taylor-gif.gif',
+    alt: 'gif',
     group_id: '3',
     group_type: 'six-four',
     ratio: 67,
     target_area: null
   },
   {
-    url: '/images/DSC_0120.jpg',
+    url: '/images/DSC_0281.jpg',
     alt: 'Standing together in the field.',
     group_id: '3',
     group_type: 'six-four',
@@ -111,73 +146,44 @@ module.exports = [
     target_area: null
   },
   {
-    url: '/images/erica-taylor-gif.gif',
+    url: '/images/DSC_0286.jpg',
     alt: 'In Front of the Empress!',
     group_id: '3',
     group_type: 'six-four',
     ratio: 50,
     target_area: null
   },
-  {
-    url: '/images/IMG_6314-bw.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '3',
-    group_type: 'six-four',
-    ratio: 50,
-    target_area: null
-  },
-  {
-    url: '/images/IMG_6062.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '3',
-    group_type: 'six-four',
-    ratio: 50,
-    target_area: null
-  },
-  {
-    url: '/images/IMG_6126.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '3',
-    group_type: 'six-four',
-    ratio: 50,
-    target_area: null
-  },
+*/
 
 
+  //BW
+  //1 vert, 1 square, 2 small
+  {
+    url: '/images/DSC_0221-bw.jpg',
+    alt: '',
+    group_id: '7',
+    group_type: 'grid-two',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6312-bw.jpg',
+    alt: '',
+    group_id: '7',
+    group_type: 'grid-two',
+    ratio: 100,
+    target_area: null
+  },
+  {
+    url: '/images/DSC_0233-bw.jpg',
+    alt: '',
+    group_id: '7',
+    group_type: 'grid-two',
+    ratio: 100,
+    target_area: null
+  },  
 
 
-  {
-    url: '/images/IMG_6172.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '4',
-    group_type: 'grid-one',
-    ratio: 50,
-    target_area: null
-  },
-  {
-    url: '/images/IMG_6314.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '4',
-    group_type: 'grid-one',
-    ratio: 50,
-    target_area: null
-  },
-  {
-    url: '/images/IMG_6062.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '4',
-    group_type: 'grid-one',
-    ratio: 50,
-    target_area: null
-  },
-  {
-    url: '/images/IMG_6126.jpg',
-    alt: 'In Front of the Empress!',
-    group_id: '4',
-    group_type: 'grid-one',
-    ratio: 50,
-    target_area: null
-  },
 
 
   //horizontal fifty/fifty by the water
@@ -216,22 +222,5 @@ module.exports = [
     target_area: null
   },
 
-  //1 vert, 1 square, 2 small
-  {
-    url: '/images/DSC_0221.jpg',
-    alt: '',
-    group_id: '7',
-    group_type: 'grid-two',
-    ratio: 100,
-    target_area: null
-  },
-  {
-    url: '/images/IMG_6429.jpg',
-    alt: '',
-    group_id: '7',
-    group_type: 'grid-two',
-    ratio: 100,
-    target_area: null
-  }
 
 ];

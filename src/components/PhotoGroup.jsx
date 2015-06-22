@@ -124,19 +124,17 @@ class PhotoGroup extends React.Component {
   wrapSixFour(photos){
     return (
       <div className="row">
-        <div className="col -w-1">
-          <div className="col -w-3-2 -pad-bottom-100" key="1">
-            {photos[0].Component}
+        <div className="col -w-3-1" key="2">
+          <div className="col -w-1 -pad-bottom-100">
+            {photos[1].Component}
           </div>
-          <div className="col -w-3-1" key="2">
-            <div className="col -w-1 -pad-bottom-100">
-              {photos[1].Component}
-            </div>
-            <div className="col -w-1 -pad-bottom-100">
-              {photos[2].Component}
-            </div>
+          <div className="col -w-1 -pad-bottom-100">
+            {photos[2].Component}
           </div>
         </div>
+        <div className="col -w-3-2 -pad-bottom-100" key="1">
+          {photos[0].Component}
+        </div>  
       </div>
     )
   }
@@ -156,8 +154,23 @@ class PhotoGroup extends React.Component {
     )
   }
 
-  wrapGridOne(){
-    return null;
+  wrapGridOne(photos){
+    return (
+      <div className="row">
+        <div className="col -w-5-1 -pb-200" key="4">
+          {photos[3].Component}
+        </div>   
+        <div className="col -w-5-2 -pb-100" key="1">
+          {photos[0].Component}
+        </div>
+        <div className="col -w-5-1 -pb-200" key="2">
+          {photos[1].Component}
+        </div>
+        <div className="col -w-5-1 -pb-200" key="3">
+          {photos[2].Component}
+        </div>
+      </div>
+    )
   }
 
   wrapGridTwo(photos){
@@ -170,12 +183,7 @@ class PhotoGroup extends React.Component {
           {photos[1].Component}
         </div>
         <div className="col -w-4-1 -right" key="3">
-          <div className="col -w-4-4">
-            {photos[1].Component}
-          </div>
-          <div className="col -w-4-4">
-            {photos[1].Component}
-          </div>
+            {photos[2].Component}
         </div>
       </div>
     )
