@@ -6,6 +6,14 @@ $borderSize: 5px;
     width: 100%;
     @include site-max-width();
 
+    &.feature{
+      margin-bottom: 100px;
+    }
+
+    &.g-5{
+      margin-bottom: 100px;
+    }
+
   .-border-it-black{
     position: relative;
     &:after{
@@ -82,22 +90,6 @@ $borderSize: 5px;
     display: inline;
     float: left;
 
-    &.-pad-bottom-100{
-      .photo-item{
-        a{
-          padding-bottom: 100%;
-        }
-      }
-    }
-
-    &.-pad-bottom-50{
-      .photo-item{
-        a{
-          padding-bottom: 50%;
-        }
-      }
-    }
-
     &.-w-1{
       width: 100%;
     }
@@ -143,7 +135,7 @@ $borderSize: 5px;
     }
 
     &.-w-3-1{
-      width: 33.37%;
+      width: 33.33333333%;
     }
 
     &.-w-2-1{
@@ -169,6 +161,14 @@ $borderSize: 5px;
         }
       }
     }
+
+    &.-pb-120{
+      .photo-item{
+        a{
+          padding-bottom: 120% !important;
+        }
+      }
+    }    
 
     &.-pb-200{
       .photo-item{

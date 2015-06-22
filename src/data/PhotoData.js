@@ -204,6 +204,69 @@ module.exports = [
     target_area: null
   },
 
+  //3 horizontal thirds/ 33% each
+  {
+    url: '/images/IMG_6062.jpg',
+    alt: '',
+    group_id: '6',
+    group_type: 'thirds',
+    ratio: 120,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6079.jpg',
+    alt: '',
+    group_id: '6',
+    group_type: 'thirds',
+    ratio: 120,
+    target_area: null
+  },  
+  {
+    url: '/images/IMG_6069.jpg',
+    alt: '',
+    group_id: '6',
+    group_type: 'thirds',
+    ratio: 120,
+    target_area: null
+  },
+
+
+  // 5 columm
+  // 1, 2, 1, 1
+  // vert, square, vert, vert
+  {
+    url: '/images/erica-taylor-gif.gif',
+    alt: 'gif',
+    group_id: '444',
+    group_type: 'grid-one',
+    ratio: 67,
+    target_area: null
+  },
+  {
+    url: '/images/DSC_0281.jpg',
+    alt: 'Standing together in the field.',
+    group_id: '444',
+    group_type: 'grid-one',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/DSC_0286.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '444',
+    group_type: 'grid-one',
+    ratio: 50,
+    target_area: null
+  },
+  {
+    url: '/images/IMG_6355.jpg',
+    alt: 'In Front of the Empress!',
+    group_id: '444',
+    group_type: 'grid-one',
+    ratio: 50,
+    target_area: null
+  }, 
+
 
 
 ];
