@@ -94,7 +94,7 @@ $borderSize: 5px;
 
   .row{
     position: relative;
-    padding-bottom: $pad;
+    //2pxpadding-bottom: $pad;
     @include clearfix();
   }
 
@@ -233,7 +233,7 @@ $borderSize: 5px;
 
     #feature-text{
       position: absolute;
-      bottom: 300px;
+      bottom: 100px;
       right: 100px;
       max-width: 400px;
       //font-family: 'Gentium Book Basic', serif;
@@ -418,7 +418,8 @@ $borderSize: 5px;
 
   &.spaceless-one{
     .row{
-      @include psuedo-subpixel-cover($pad);
+      overflow: hidden;
+      @include psuedo-subpixel-cover(0);
 
       .col{
         .photo-item{
@@ -552,6 +553,47 @@ $borderSize: 5px;
           a{
             padding-bottom: 100%;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px){
+  .photo-group{
+    &.feature{
+      .photo-item a{
+        min-height: 360px;
+      }
+      
+      #feature-text{
+        top: 20px;
+        bottom: 0;
+        right: auto;
+        left: 20px;
+        max-width: 280px;
+        padding-left: 50px;
+
+        h1{
+          font-size: 26px;
+          line-height: 24px;
+
+          hr{
+            width: 40px;
+            height: 2px;
+            margin-top: 12px;
+            background-color: white;
+            float: left;
+          }
+        }
+
+        p{
+          font-size: 13px;
+          margin: 0;
+
+          .heart-logo{
+            opacity: 0;
+          }        
         }
       }
     }

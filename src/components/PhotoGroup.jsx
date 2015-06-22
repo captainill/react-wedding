@@ -7,6 +7,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { provideContext, connectToStores }  from 'fluxible/addons';
 import PhotoLazyContainer from './PhotoLazyContainer.jsx';
+import Image from './Image.jsx';
 import classNames from 'classnames';
 import HeartSvg from './svg/HeartSvg';
 import PhotoStore from '../stores/PhotoStore';
@@ -74,7 +75,7 @@ class PhotoGroup extends React.Component {
     return (
       <div className="row feature-padding">
         <div className="photo-item">
-          <Link className="image image-loaded" to="photo" params={{id: photo[0].data.id}} query={{modal: true}} style={style} data-src={photo[0].data.url} />
+            <Image photo={photo[0].data} />
         </div>
         <div id="feature-text">
           <h1><span>Presenting</span><hr/></h1>
