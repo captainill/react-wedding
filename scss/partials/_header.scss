@@ -74,7 +74,7 @@
 
 .touch{
   #header{
-    .heart-logo{
+    .heart-click{
       &:active{
         @include heart-hover();
       }

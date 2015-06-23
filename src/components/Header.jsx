@@ -35,7 +35,7 @@ export default class Header extends React.Component{
     return (
       <nav id="header" className="header">
         <div className="row">
-          <a href="/" className="heart-click" onClick={this.hanldeHeartClick}><HeartSvg/></a>
+          <a href="/" className="heart-click" onClick={this.hanldeHeartClick} onTouchStart=""><HeartSvg/></a>
           <Link to="home" id="back">
             Home
           </Link>
