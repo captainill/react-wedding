@@ -8,7 +8,7 @@
     }
     @include transform( scale(1.4) );
     @include logoTransition();
-  }  
+  }
 }
 
 //home scss
@@ -19,6 +19,10 @@
   width: 100%;
   text-align: center;
   z-index: 2000;
+
+  #back{
+    display: none;
+  }
 
   .row{
     position: relative;
@@ -44,7 +48,7 @@
       .poly{
         fill: #fff;
         @include logoTransition();
-      }   
+      }
     }
     @include heart-hover();
   }
@@ -59,7 +63,7 @@
     .heart-logo{
       svg{
         .poly{
-          fill: #fff;  
+          fill: #fff;
           @include transition(all 1s ease-in-out);
         }
       }

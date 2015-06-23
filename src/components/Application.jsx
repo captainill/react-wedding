@@ -5,7 +5,7 @@
 
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import Nav from './Nav.jsx';
+import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import ApplicationStore from '../stores/ApplicationStore';
 import { provideContext, connectToStores }  from 'fluxible/addons';
@@ -40,7 +40,7 @@ class Application extends React.Component {
     return (
       <BodyClass className={'wrapper'}>
         <div>
-          <Nav />
+          <Header />
           <RouteHandler {...this.props} />
           <Footer />
           <div className={loaderClass}></div>

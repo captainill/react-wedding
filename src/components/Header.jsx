@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 import HeartSvg from './svg/HeartSvg';
 import scrollToTop from '../utils/scrollToTop';
 
-export default class Nav extends React.Component{
+export default class Header extends React.Component{
 
   constructor(props, context){
     super(props);
@@ -36,6 +36,9 @@ export default class Nav extends React.Component{
       <nav id="header" className="header">
         <div className="row">
           <a href="/" className="heart-click" onClick={this.hanldeHeartClick}><HeartSvg/></a>
+          <Link to="home" id="back">
+            <span className="back-text">Home</span>
+          </Link>
         </div>
       </nav>
     );

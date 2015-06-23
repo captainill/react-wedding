@@ -3,7 +3,7 @@ import keyMirror from "react/lib/keyMirror";
 const envrironment = process.env.NODE_ENV;
 
 const Config = {
-  imagePath: (envrironment === 'production') ? 'http://d2dxb827r4wo7a.cloudfront.net' : '/public',
+  imagePath: (envrironment === 'production') ? 'http://d2dxb827r4wo7a.cloudfront.net' : '/assets',
   creatorTwitter: '@captainill',
   keywords: 'Love,HTML,JavaScript',
   siteUrl: 'http://tayloranderica.com',

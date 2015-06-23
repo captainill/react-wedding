@@ -7,7 +7,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import BodyClass from '../utils/BodyClass';
 import Photo from './Photo.jsx';
-import ArrowSvg from './svg/ArrowSvg.jsx';
+//import ArrowSvg from './svg/ArrowSvg.jsx';
 import PhotoStore from '../stores/PhotoStore';
 import PageActionCreators from '../actions/PageActionCreators';
 import Debug from 'debug';
@@ -51,15 +51,12 @@ class PhotoPage extends React.Component {
     photo.style.height = winHeight + 'px';
   }
 
+  //<ArrowSvg transformSvg='"rotate(180 50 50)"'/>
   render() {
 
     return (
       <BodyClass className={'photo-page'}>
         <div>
-          <Link to="home" id="back">
-            <ArrowSvg transformSvg='"rotate(180 50 50)"'/>
-            <span className="back-text">Home</span>
-          </Link>
           <Photo ref="photo" photo={this.state.photo} key={'photo'}/>
         </div>
       </BodyClass>

@@ -37,9 +37,9 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, .84); 
+    background-color: rgba(0, 0, 0, .84);
     @include animation-duration(1s);
-    @include animation-fill-mode(both);      
+    @include animation-fill-mode(both);
   }
 
   #close-photo{
@@ -57,7 +57,7 @@
 
     &:hover{
       @include transform( scale(1.4) );
-      @include logoTransition();      
+      @include logoTransition();
     }
   }
 
@@ -67,8 +67,8 @@
     top: 50%;
     margin-top: -15px;
     @include animation-duration(1s);
-    @include animation-fill-mode(both);   
-    @include logoTransition();      
+    @include animation-fill-mode(both);
+    @include logoTransition();
 
     .wrap-svg{
       @include logoTransition();
@@ -80,8 +80,8 @@
     &:hover{
       .wrap-svg{
         @include transform( scale(1.4) );
-        @include logoTransition();        
-      } 
+        @include logoTransition();
+      }
     }
   }
 
@@ -91,7 +91,7 @@
 
   #modal-next{
     right: 20px;
-  }  
+  }
 
   #photo-wrap{
     position: absolute;
@@ -102,7 +102,7 @@
     //z-index: 100;
     text-align: center;
     @include animation-duration(1s);
-    @include animation-fill-mode(both);   
+    @include animation-fill-mode(both);
     @include animation-delay(.4s);  }
 
   .photo{
@@ -162,7 +162,7 @@
 //the class of the items we're animating
 .photo{
   @include animation-duration(0.4s);
-  @include animation-fill-mode(both);  
+  @include animation-fill-mode(both);
   @include transition-timing-function(ease-in)
 }
 
