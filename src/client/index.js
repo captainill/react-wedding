@@ -19,6 +19,8 @@ import '../../scss/main.scss';
 
 window.React = React; // For chrome dev tool support
 
+React.initializeTouchEvents(true);
+
 const debug = Debug('------- ------- ------- -------  Debug');
 const mountNode = document.getElementById('app');
 const dehydratedState = window.__DATA__; // Sent from the server
