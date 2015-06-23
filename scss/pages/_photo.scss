@@ -3,42 +3,36 @@
 .photo-page{
 
   #header{
-    .heart-logo{
-      top: 45px;
+    position: relative;
+    height: 48px;
+
+    #back{
+      display: block;
+      position: absolute;
+      top: 15px;
       left: 50px;
+      z-index: 2000;
+      //text-transform: uppercase;
+      font-size: 14px;
+      text-decoration: none;
 
-      svg{
-        height: 32px;
+      &:hover{
+        text-decoration: underline;
       }
     }
-  }
 
-  #back{
-    position: absolute;
-    top: 100px;
-    left: 50px;
-    z-index: 2000;
+    .heart-click{
+      top: 13px;
+      left: 20px;
+    }
 
-    &:hover{
-      span{
-        svg{
-          @include transform( scale(1.2) );
-          @include transition(all .2s ease-in);
+    .heart-logo{
+      height: 24px;
+
+      svg{
+        .poly{
+          fill: $black;
         }
-      }
-    }
-
-    .wrap-svg{
-      svg{
-        height: 16px;
-      }
-
-      &.back-text{
-        margin-left: 5px;
-        vertical-align: top;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: 700;
       }
     }
   }
@@ -49,8 +43,10 @@
 
     img{
       position: absolute;
-      height: 100%;
+      width: auto;
+      height: auto;
       max-width: 100%;
+      max-height: 100%;
       top: 0;
       left: 50%;
       @include transform( translate(-50%, 0%) );

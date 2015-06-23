@@ -40,11 +40,14 @@
 
   .heart-logo{
     display: inline-block;
+    height: 34px;
     @include logoTransition();
 
     svg{
       position: relative;
-      height: 34px;
+      height: 100%;
+      width: auto;
+
       .poly{
         fill: #fff;
         @include logoTransition();
