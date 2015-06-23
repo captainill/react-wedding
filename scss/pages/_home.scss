@@ -144,11 +144,11 @@ $borderSize: 5px;
     }
 
     &.-w-3-2{
-      width: 66.62%;
+      width: 66.66666%;
     }
 
     &.-w-3-1{
-      width: 33.33333333%;
+      width: 33.33333%;
     }
 
     &.-w-2-1{
@@ -324,7 +324,6 @@ $borderSize: 5px;
       .col{
         &.-left{
           //width: 66%;
-          width: 66.66666%;
           //padding-right: $pad * .6666666;
 
           .photo-item{
@@ -336,7 +335,6 @@ $borderSize: 5px;
         }
         &.-w-3-1.-right{
           //width: 34%;
-          width: 33.33333%;
           //padding-left: $pad * .3333333;
 
           .photo-item{
@@ -628,7 +626,9 @@ $borderSize: 5px;
       &.-w-5-2,
       &.-w-5-1,
       &.-w-4-2,
-      &.-w-4-1{
+      &.-w-4-1,
+      &.-w-3-2,
+      &.-w-3-1{
         width: 100%;
       }
     }
