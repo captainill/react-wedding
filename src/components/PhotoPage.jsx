@@ -46,7 +46,7 @@ class PhotoPage extends React.Component {
 
   handleResize(){
     const photo = React.findDOMNode(this.refs.photo);
-    let winHeight = (window.innerHeight > 550) ? 550 : window.innerHeight;
+    let winHeight = (window.innerHeight < 550) ? 550 : (window.innerHeight > 1140 ) ? 1140 : window.innerHeight - 68;
 
     photo.style.height = winHeight + 'px';
   }
