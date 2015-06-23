@@ -33,7 +33,7 @@ var Html = React.createClass({
         <meta property="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta property="keywords" content={Config.keywords} />
         <meta property="description" content={Config.siteDescription} />
-        <meta name="og:title" content={Config.siteTitle} />
+        <meta property="og:title" content={Config.siteTitle} />
         <meta property="og:image" content={Config.siteImageUrl} />
         <meta property="og:site_name" content={Config.siteTitle} />
         <meta property="og:url" content={Config.siteUrl} />
