@@ -91,6 +91,10 @@ class PhotoModal extends React.Component {
     document.removeEventListener('keydown', this.onKeyDown);
   }
 
+  componentWillLeave(){
+    alert('ok leave');
+  }
+
   render() {
     let cls = classNames({
       'animated': this.state.didMount,
@@ -103,9 +107,7 @@ class PhotoModal extends React.Component {
           <div id='photo-modal-backdrop'></div>
           <div id='photo-wrap'>
             <div className={this.state.direction}>
-              <CSSTransitionGroup component="div" transitionName="example">
                 <Photo photo={this.state.photo} key={this.state.photo.id}/>
-              </CSSTransitionGroup>
             </div>
             <div id='photo-content'>
               <figure id='photo-figure'></figure>

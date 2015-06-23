@@ -9,7 +9,7 @@
   -webkit-backface-visibility: hidden;
   @include transition(all .2s ease-in);
 
-  &.modal-visible{
+ /*  &.modal-visible{
     #photo-modal-backdrop{
       -webkit-animation-name: fadeIn;
       animation-name: fadeIn;
@@ -29,7 +29,7 @@
         animation-name: fadeInLeft;
       }
     }
-  }
+  } */
 
   #photo-modal-backdrop{
     position: fixed;
@@ -137,26 +137,15 @@
   }
 }
 
-.modal-enter {
-  opacity: 0.01;
-  @include transform( translate(0, -50px) );
-  @include transition( all .5s ease-in );
-}
 
-.modal-enter.modal-enter-active {
-  @include transform( translate(0, 0) );
-  opacity: 1;
+.modal-enter-active{
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
 }
 
 .modal-leave {
-  @include transform( translate(0, 0) );
-  opacity: 1;
-  @include transition( all .5s ease-in );
-}
-
-.modal-leave.modal-leave-active {
-  @include transform( translate(0, 50px) );
-  opacity: 0.01;
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
 }
 
 //the class of the items we're animating

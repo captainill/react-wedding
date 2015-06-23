@@ -11,6 +11,9 @@ import Home from './Home.jsx';
 import PageActionCreators from '../actions/PageActionCreators';
 import Debug from 'debug';
 
+const { addons } = React;
+const { CSSTransitionGroup } = addons;
+
 const debug = Debug('-------  MainContent.jsx: ');
 
 class MainContent extends React.Component{
@@ -67,7 +70,9 @@ class MainContent extends React.Component{
       <DocumentTitle title="Taylor + Erica">
       	<div>
           {contentComponent}
-          {modalComponent}
+          <CSSTransitionGroup component="div" transitionName="modal">
+            {modalComponent}
+          </CSSTransitionGroup>
         </div>
       </DocumentTitle>
     );
