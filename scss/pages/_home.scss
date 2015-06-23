@@ -173,7 +173,7 @@ $borderSize: 5px;
           padding-bottom: 67%;
         }
       }
-    }    
+    }
 
     &.-pb-80{
       .photo-item{
@@ -181,7 +181,7 @@ $borderSize: 5px;
           padding-bottom: 80%;
         }
       }
-    }  
+    }
 
     &.-pb-100{
       .photo-item{
@@ -197,7 +197,7 @@ $borderSize: 5px;
           padding-bottom: 120% !important;
         }
       }
-    }  
+    }
 
     &.-pb-160{
       .photo-item{
@@ -205,7 +205,7 @@ $borderSize: 5px;
           padding-bottom: 160% !important;
         }
       }
-    }        
+    }
 
     &.-pb-200{
       .photo-item{
@@ -329,8 +329,8 @@ $borderSize: 5px;
             a{
               //padding-bottom: 151.515151515152%;
               padding-bottom: 100%;
-            }             
-          }         
+            }
+          }
         }
         &.-w-3-1.-right{
           //width: 34%;
@@ -341,7 +341,7 @@ $borderSize: 5px;
             a{
               padding-bottom: 200%;
               //padding-bottom: 101.117647%;
-            }            
+            }
           }
         }
       }
@@ -389,7 +389,7 @@ $borderSize: 5px;
           //padding-right: $pad/2;
           a{
             //padding-bottom: 160%;
-          }          
+          }
         }
         /* &.-w-4-1.-right{
           padding-left: $pad/2;
@@ -435,7 +435,7 @@ $borderSize: 5px;
           //padding-left: $pad/2;
           a{
             padding-bottom: 100%;
-          }          
+          }
         }
 
         &.-w-4-1.-left{
@@ -458,7 +458,7 @@ $borderSize: 5px;
         }
       }
     }
-  }  
+  }
 
   .photo-item{
     position: relative;
@@ -484,7 +484,7 @@ $borderSize: 5px;
       &:after{
         border: 8px solid rgba(255, 255, 255, .2);
         @include transition(all .2s ease-in);
-      }      
+      }
     }
 
     &.lazy-load{
@@ -610,18 +610,18 @@ $borderSize: 5px;
 
           .heart-logo{
             opacity: 0;
-          }        
+          }
         }
       }
     }
   }
 }
 
-@media (max-width: 320px){
+@media (max-width: 480px){
   .photo-group{
     padding: 0 $pad;
     margin-bottom: $pad;
-    
+
     .col{
       &.-w-5-2,
       &.-w-5-1,
@@ -656,6 +656,6 @@ $borderSize: 5px;
           }
         }
       }
-    }    
+    }
   }
 }
