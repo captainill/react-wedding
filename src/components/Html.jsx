@@ -33,18 +33,18 @@ var Html = React.createClass({
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta name="keywords" content={Config.keywords} />
         <meta name="description" content={Config.siteDescription} />
-        <meta name="og:title" content={Config.siteTitle} />
-        <meta name="og:image" content={Config.siteImageUrl} />
-        <meta name="og:site_name" content={Config.siteTitle} />
-        <meta name="og:url" content={Config.siteUrl} />
-        <meta name="og:description" content={Config.siteDescription} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content={Config.siteUrl} />
-        <meta name="twitter:creator" content={Config.creatorTwitter} />
-        <meta name="twitter:title" content={Config.siteTitle} />
-        <meta name="twitter:description" content={Config.siteDescription} />
-        <meta name="twitter:image" content={Config.siteImageUrl} />
-        <meta name="twitter:url" content={Config.site} />
+        <meta property="og:title" content={Config.siteTitle} />
+        <meta property="og:image" content={Config.siteImageUrl} />
+        <meta property="og:site_name" content={Config.siteTitle} />
+        <meta property="og:url" content={Config.siteUrl} />
+        <meta property="og:description" content={Config.siteDescription} />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content={Config.siteUrl} />
+        <meta property="twitter:creator" content={Config.creatorTwitter} />
+        <meta property="twitter:title" content={Config.siteTitle} />
+        <meta property="twitter:description" content={Config.siteDescription} />
+        <meta property="twitter:image" content={Config.siteImageUrl} />
+        <meta property="twitter:url" content={Config.site} />
         <title>{ DocumentTitle.rewind() }</title>
         <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'/>
         <link rel="stylesheet" href={this.props.bundlePath + "/style.css"} />
