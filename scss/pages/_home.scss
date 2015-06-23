@@ -224,6 +224,8 @@ $borderSize: 5px;
     color: white;
 
     .photo-item{
+      background-color: $black;
+      
       &:hover{
         &:after{
           border: none;
