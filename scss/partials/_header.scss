@@ -1,14 +1,12 @@
 @mixin heart-hover{
-  &:hover{
-    svg{
-      .poly{
-        fill: $pink;
-        @include logoTransition();
-      }
+  svg{
+    .poly{
+      fill: $pink;
+      @include logoTransition();
     }
-    @include transform( scale(1.4) );
-    @include logoTransition();
   }
+  @include transform( scale(1.4) );
+  @include logoTransition();
 }
 
 //home scss
@@ -53,7 +51,6 @@
         @include logoTransition();
       }
     }
-    @include heart-hover();
   }
 
   p{
@@ -74,6 +71,26 @@
     }
   }
 } */
+
+.touch{
+  #header{
+    .heart-logo{
+      &:active{
+        @include heart-hover();
+      }
+    }
+  }
+}
+
+.no-touch{
+  #header{
+    .heart-logo{
+      &:hover{
+        @include heart-hover();
+      }
+    }
+  }
+}
 
 @media (min-width: 1140px){
   #header{

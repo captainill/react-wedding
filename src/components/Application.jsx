@@ -25,6 +25,15 @@ class Application extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    //fastclick
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+      }, false);
+    }    
+  }
+
   render() {
     const loaderClass = classNames({
         'page-loader': true,

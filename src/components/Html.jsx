@@ -54,7 +54,9 @@ var Html = React.createClass({
       </body>
       <script dangerouslySetInnerHTML={{__html: this.props.state}}></script>
       { hotServer }
-      <script src={this.props.bundlePath + "/client.js"} defer></script>
+      <script src="/assets/lib/modernizer.js" defer></script>
+      <script src="/assets/lib/fastclick.min.js" defer></script>
+      <script src={this.props.bundlePath + "/client.js"} defer></script>   
       </html>
     );
   }
