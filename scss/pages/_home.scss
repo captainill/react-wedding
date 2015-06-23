@@ -225,7 +225,7 @@ $borderSize: 5px;
 
     .photo-item{
       background-color: $black;
-      
+
       &:hover{
         &:after{
           border: none;
@@ -359,7 +359,7 @@ $borderSize: 5px;
 
         .photo-item{
           position: relative;
-          @include psuedo-subpixel-cover(0);
+          //@include psuedo-subpixel-cover(0);
         }
 
         a{
