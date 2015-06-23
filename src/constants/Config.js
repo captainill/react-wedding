@@ -9,7 +9,7 @@ const Config = {
   siteUrl: 'http://tayloranderica.com',
   siteTitle: 'Taylor & Erica Crawford',
   siteDescription: 'Happily Ever After...',
-  siteImageUrl: 'http://d7ut1n2771fln.cloudfront.net/images/DSC_0120.jpg'
+  siteImageUrl: 'http://d2dxb827r4wo7a.cloudfront.net/images/DSC_0120.jpg'
 }
 
 export default Config;
