@@ -1,6 +1,10 @@
 footer{
 	margin-top: 100px;
-	padding: 20px
+	padding: 20px;
+
+	.row{
+		@include site-max-width();
+	}
 }
 
 @media (max-width: 992px) {
