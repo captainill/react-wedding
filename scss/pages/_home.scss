@@ -1,6 +1,14 @@
 $borderSize: 5px;
 //home scss
 
+.home-page{
+  #header{
+    .heart-logo{
+      height: 34px;
+    }
+  }
+}
+
 .photo-group{
     position: relative;
     width: 100%;
@@ -577,6 +585,15 @@ $borderSize: 5px;
 }
 
 @media (max-width: 768px){
+
+  .home-page{
+    #header{
+      .heart-click{
+        left: 54px;
+      }
+    }
+  }
+
   .photo-group{
     &.feature{
       .photo-item a{
@@ -584,12 +601,12 @@ $borderSize: 5px;
       }
 
       #feature-text{
-        top: 20px;
+        top: 14px;
         bottom: auto;
         right: auto;
         left: 20px;
         max-width: 280px;
-        padding-left: 50px;
+        padding-left: 78px;
 
         h1{
           font-size: 26px;
@@ -618,6 +635,15 @@ $borderSize: 5px;
 }
 
 @media (max-width: 480px){
+
+  .home-page{
+    #header{
+      .heart-click{
+        left: 32px;
+      }
+    }
+  }
+
   .photo-group{
     padding: 0 $pad;
     margin-bottom: $pad;
@@ -632,6 +658,12 @@ $borderSize: 5px;
         width: 100%;
       }
     }
+
+    &.feature{
+      #feature-text{
+        padding-left: 54px;
+      }
+    }      
 
     &.fifty{
       .col{

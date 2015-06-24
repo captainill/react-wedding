@@ -27,9 +27,10 @@
     }
 
     .heart-logo{
-      height: 24px;
+      //height: 24px;
 
       svg{
+        height: 70%;
         .poly{
           fill: $black;
         }

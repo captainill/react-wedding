@@ -1,3 +1,18 @@
+.photo-modal-page.home-page{
+  #header{
+    
+    .row{
+      margin: 0;
+    }
+
+    .heart-click{
+      top: 24px;
+      left: 30px;
+      @include transition(all 200ms ease-in);
+    }
+  }
+}
+
 #photo-modal{
   position: fixed;
   width: 100%;
